@@ -187,6 +187,7 @@ CTRL + Shift + X 打开左侧插件
 - EditorConfig for VS Code
 - Easy Less
 - HTTP Server / HTML Preview 作者shawn Funke
+- sass 作者Robin Bentley
 
 
 ### setting
