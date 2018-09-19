@@ -22,32 +22,53 @@ trim_trailing_whitespace = true
 
 File -> preferneces -> User snippets -> Vue
 
-输入vue按Tab键
+vue
 
-```
+vts
+
+```js
 {
     "Print to console": {
         "prefix": "vue",
         "body": [
             "<template>",
-            " <div class=\"page\">\n",
+            " <div>\n",
             " </div>",
             "</template>\n",
-            "<script type=\"text/ecmascript-6\">",
+            "<script>",
             "export default {",
-            " data() {",
-            " return {\n",
-            " }",
-            " },",
-            " components: {\n",
-            " }",
+            "  data () {",
+            "    return {",
+            "    }",
+            "  }",
             "}",
             "</script>\n",
-            "<style scoped lang=\"stylus\">",
+            "<style scoped lang=\"less\">",
             "</style>",
             "$2"
         ],
         "description": "Log output to console"
+    },
+    "vue-cli3": {
+        "prefix": "vts",
+        "body": [
+            "<template>",
+            " <div class=\"${TM_FILENAME_BASE}\">\n",
+            " </div>",
+            "</template>\n",
+            "<script lang=\"ts\">",
+            "import { Component, Vue } from 'vue-property-decorator';\n",
+            "@Component({",
+            "  components: {",
+            "  },",
+            "})",
+            "export default class ${TM_FILENAME_BASE} extends Vue {",
+            "}",   
+            "</script>\n",
+            "<style scoped lang=\"scss\">",
+            "</style>"
+        ],
+        "description": "vue-cli3 for typescript and sass"
     }
 }
 ```
@@ -80,7 +101,7 @@ Markdown: <!-- #region --> and <!-- #endregion -->
 ```
 
 ## My setting
-```
+```js
 {
     "emmet.triggerExpansionOnTab": true,
     "editor.tabSize": 2,
@@ -127,39 +148,39 @@ clg -> console.log
 ## 快捷键
 [官网快捷键](https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf)
 
-CTRL + BackSpace/Delete 删除一个单词
-CTRL + Shift +  左右，光标选择移动
-CTRL + 左右，光标移动
-ALT + 上下，移动屏幕
-CTRL + G 跳行数
-ALT + 左右方向键，切换窗口
-CTRL+ K V 分屏预览markdown
-CTRL + Shift + V markdown预览
-F11 全屏
-CTRL + X 删除行
-CTRL + J 控制台
-CTRL + P 控制台
-CTRL + \ 分屏
-CTRL + ` 打开cmd
-CTRL + 1 2 3 界面切换
-:number + enter 跳转行
-CTRL + 鼠标左键 F12，跳到函数定义那里
-CTRL + Shift [ / ] 折叠代码
-上下移动一行： Alt+Up 或 Alt+Down
-向上向下复制一行： Shift+Alt+Up或Shift+Alt+Down
-左侧边栏 打开资源 ctrl+shift+E打开搜索 ctrl+shift+F
-重命名：比如要修改一个方法名，可以选中后按F2，输入新的名字，回车，会发现所有的文件都修改过了。
-查找 Ctrl+F
-查找替换 Ctrl+H
-自动保存：File -> AutoSave ，或者Ctrl+Shift+P，输入 auto
-ALT + 鼠标左键 多位置编辑
-ALT + Shift + 鼠标左键 多行编辑
-ALT + CTRL + Shift 多行编辑
-view -> toggle miniMap
-CTRL + Shift + P View in Browser 浏览器打开html
-颜色主题 File -? preferences -> color theme -> monokai
-CTRL + Shift + E 打开左侧文件
-CTRL + Shift + X 打开左侧插件
+- CTRL + BackSpace/Delete 删除一个单词
+- CTRL + Shift +  左右，光标选择移动
+- CTRL + 左右，光标移动
+- ALT + 上下，移动屏幕
+- CTRL + G 跳行数
+- ALT + 左右方向键，切换窗口
+- CTRL+ K V 分屏预览markdown
+- CTRL + Shift + V markdown预览
+- F11 全屏
+- CTRL + X 删除行
+- CTRL + J 控制台
+- CTRL + P 控制台
+- CTRL + \ 分屏
+- CTRL + ` 打开cmd
+- CTRL + 1 2 3 界面切换
+- :number + enter 跳转行
+- CTRL + 鼠标左键 F12，跳到函数定义那里
+- CTRL + Shift [ / ] 折叠代码
+- 上下移动一行： Alt+Up 或 Alt+Down
+- 向上向下复制一行： Shift+Alt+Up或Shift+Alt+Down
+- 左侧边栏 打开资源 ctrl+shift+E打开搜索 ctrl+shift+F
+- 重命名：比如要修改一个方法名，可以选中后按F2，输入新的名字，回车，会发现- 所有的文件都修改过了。
+- 查找 Ctrl+F
+- 查找替换 Ctrl+H
+- 自动保存：File -> AutoSave ，或者Ctrl+Shift+P，输入 auto
+- ALT + 鼠标左键 多位置编辑
+- ALT + Shift + 鼠标左键 多行编辑
+- ALT + CTRL + Shift 多行编辑
+- view -> toggle miniMap
+- CTRL + Shift + P View in Browser 浏览器打开html
+- 颜色主题 File -? preferences -> color theme -> monokai
+- CTRL + Shift + E 打开左侧文件
+- CTRL + Shift + X 打开左侧插件
  
 
 ## 安装插件

@@ -1,5 +1,107 @@
 ﻿# vue学习
 
+## tslint
+Calls to 'console.log' are not allowed.
+
+项目根目录的 tslint.json
+
+```js
+ {
+    "rules": {
+        "no-console": false
+    }
+}
+```
+
+## Vue使用TypeScript
+
+```ts
+import { Component, Prop, Vue, Watch } from 'vue-property-decorator'
+import { State, Action, Mutation, namespace } from 'vuex-class'
+import Toast from 'components/Toast.vue'
+
+const userState = namespace('business/user', State)
+
+@Component({
+  components: { Toast },
+})
+export default class extends Vue {
+  // data
+  title = 'demo'
+
+  @Prop({ default: '' })
+  text: string
+
+  // store
+  @userState userId
+
+  // computed
+  get name (): boolean {
+    return this.title + this.text
+  }
+
+  // watch
+  @Watch('text')
+  onChangeText () { }
+
+  // hooks
+  mounted() { }
+}
+```
+
+### vue-property-decorator
+[vue-property-decorator用法](https://github.com/kaorun343/vue-property-decorator)
+
+Example
+
+[github link](https://github.com/kaorun343/vue-property-decorator)
+
+### vuex-class
+
+[vuex-class](https://github.com/ktsn/vuex-class/)
+
+**Example**
+
+```js
+import Vue from 'vue'
+import Component from 'vue-class-component'
+import {
+  State,
+  Getter,
+  Action,
+  Mutation,
+  namespace
+} from 'vuex-class'
+
+const someModule = namespace('path/to/module')
+
+@Component
+export class MyComp extends Vue {
+  @State('foo') stateFoo
+  @State(state => state.bar) stateBar
+  @Getter('foo') getterFoo
+  @Action('foo') actionFoo
+  @Mutation('foo') mutationFoo
+  @someModule.Getter('foo') moduleGetterFoo
+
+  // If the argument is omitted, use the property name
+  // for each state/getter/action/mutation type
+  @State foo
+  @Getter bar
+  @Action baz
+  @Mutation qux
+
+  created () {
+    this.stateFoo // -> store.state.foo
+    this.stateBar // -> store.state.bar
+    this.getterFoo // -> store.getters.foo
+    this.actionFoo({ value: true }) // -> store.dispatch('foo', { value: true })
+    this.mutationFoo({ value: true }) // -> store.commit('foo', { value: true })
+    this.moduleGetterFoo // -> store.getters['path/to/module/foo']
+  }
+}
+```
+
 ## SSR
 
 [vue-cli3](https://juejin.im/post/5b98e5875188255c8320f88a)
