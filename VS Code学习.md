@@ -57,7 +57,7 @@ vts
             " </div>",
             "</template>\n",
             "<script lang=\"ts\">",
-            "import { Component, Vue } from 'vue-property-decorator';\n",
+            "import { Component, Vue } from 'vue-property-decorator'\n",
             "@Component({",
             "  components: {",
             "  },",
@@ -66,7 +66,7 @@ vts
             "}",   
             "</script>\n",
             "<style scoped lang=\"scss\">",
-            "</style>"
+            "</style>\n"
         ],
         "description": "vue-cli3 for typescript and sass"
     }
