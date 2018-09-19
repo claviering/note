@@ -209,9 +209,21 @@ clg -> console.log
 - Easy Less
 - HTTP Server / HTML Preview 作者shawn Funke
 - sass 作者Robin Bentley
+- EsLint (Dirk Beaumer) VsCode读取项目文件的Eslint规则 保存时自动修复格式错误
+- RegExp Preview and Edito 完美的展示你写的正则,图形化给你看你写正则的形成
+- fileheader ctrl+alt+i 顶部注释模板，可定义作者、时间等信息，并会自动更新最后修改时间
+- Node.js Modules Intellisense 对于node_module的智能提示
+
+### React插件
+
+- ES7 React/Redux/GraphQL/React-Native snippets
+- Useful React Snippets
 
 
-### setting
+
+#### EsLint插件配置
+
+[博客参考](https://juejin.im/post/5b9dee8ff265da0afe62d1dd)
 
 
 ## 下载安装

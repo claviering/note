@@ -141,8 +141,32 @@ text-indent:2em;
 ```
 
 ## css滤镜
-
+```css
 filter: blur(5px) // 模糊
+filter:brightness(70%);
+filter:contrast(50%);
+filter: drop-shadow(705px 0 0 #ccc);
+filter:hue-rotate(70deg);
+filter:invert(100%);
+filter:grayscale(80%);
+filter:sepia(50%)
+```
+终极变色解决方案！ 
+```css
+<svg height="0" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="change">
+                <feColorMatrix type="matrix" values="
+                0 0 0 0 0.55
+                0 0 0 0 0.23 
+                0 0 0 0 0 
+                0 0 0 0 1" />
+        </filter>
+    </defs>
+</svg>
+filter:url(#change);
+```
+[博客实例](https://juejin.im/post/5ba21d78f265da0af0337fe3)
 
 ##元素鼠标样式
 ```

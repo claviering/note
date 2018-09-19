@@ -1,5 +1,20 @@
 ﻿# JS学习
 
+## js类型检测
+用法
+
+`typeof(operand)` 或者 `typeof operand`
+
+其他类型都可以正确检测，除了 `typeof null` // 返回 object
+
+使用
+
+`Object.prototype.toString`,都能正确返回  `[object,class]`, class是大写字母开头的类型，
+
+用法
+
+`Object.prototype.toString.call(operand)`
+
 ## 使用模板字符串
 
 ```
