@@ -1,6 +1,99 @@
 ﻿# ES6 学习
 [toc]
 
+## decorator
+
+## ES5 模拟 ES6 Class
+
+没使用new来调用构造函数时，也要抛出一个错误，那么我们会想到类的校验方法
+
+```js
+// * 1.声明一个类的校验方法
+// *   参数一：指向的构造函数
+// *   参数二：被调用时，this的指向
+function _classCallCheck(constructor,instance) {
+  // * 2.如果这个instance指向的不是constructor的话，意味着不是通过new来调用构造函数
+  if(!(instance instanceof constructor)){
+    // * 3.不满足时，则抛出异常
+    throw TypeError("Class constructor Child cannot be invoked without 'new'")
+  }
+}
+
+let Child = (function(){
+  function Child(){
+    // * 4.在调用该构造函数的时候，先执行以下类的校验方法
+    _classCallCheck(Child,this)
+  }
+  return Child
+})()
+
+// 不通过new调用时，会报错
+Child() // 报错 Class constructor Child cannot be invoked without 'new'
+
+```
+
+## 实现双向数据绑定
+
+2种实现方法
+
+### Object.defineProperty
+
+```js
+// 需要注意的是，当使用get set时，则不能使用value和writable
+let obj = {}
+let str
+Object.defineProperty(obj,'name',{
+    enumerable:true,
+    configurable:true, 
+    get(){ // 读，当我们读取时，则会执行到get，比如obj.name
+        // return 'swr' // 当我们obj.name进行读取时，会返回'swr'
+        return str
+    },
+    set(newValue){ // 写，当我们写入时，则会执行到set，比如obj.name = 'swr'
+                   // 并且会把newValue作为参数传进去
+        str = newValue
+    }
+})
+```
+
+### Proxy
+Proxy代理也可以进行数据劫持，但是和Object.defineProperty不同的是，Proxy是在数据外层套了个壳，然后通过这层壳访问内部的数据，目前Proxy支持13种方式
+
+Proxy，我的理解是在数据外层套了个壳，然后通过这层壳访问内部的数据
+
+```js
+let dog = {
+  name:"小黄",
+  firends:[{
+    name:"小红"
+  }]
+}
+
+// 1.首先new一个Proxy对象
+let proxy = new Proxy(dog,{ // 2.参数一为需要代理的数据，参数二为上图可以代理的13种的配置对象
+    get(target,property){ // 3.参数1为上面dog对象，参数2为dog的属性
+        console.log('get被监控到了')
+        return target[property]
+    },
+    set(target,property,value){ // 4.参数1为上面dog对象，参数2为dog的属性，参数3为设置的新值
+                                // 有点类似Object.defineProperty
+        console.log('set被监控到了')
+        target[property] = value
+    }
+})
+
+// 那么接下来我们设置一下这个属性
+// dog.name = '小红'  // set值时，发现不会打印 'set被监控到了'
+// dog.name // get值时，发现不会打印 'get被监控到了'
+
+// 思考：为什么在set/get值的时候不会打印出来我们需要的东西呢？
+
+// 上面说得很明白了，proxy相当于是一个壳，代理我们需要监控的数据，也就是我们要通过proxy来访问内部数据才会被监控到
+
+proxy.name = '小红' // 打印输出 'set被监控到了'
+proxy.name // 打印输出 'get被监控到了'
+
+```
 
 [ES6入门电子版](http://es6.ruanyifeng.com/)
 
@@ -13,6 +106,44 @@
 方法简写
 method: function () {}
 method () {}
+```
+```js
+// 那么我们该怎样实现深度的数据劫持呢？
+let dog = {
+  name:"小黄",
+  firend:{
+    name:"小红"
+  }
+}
+
+// 我们首先写一个set方法，希望是通过这样来调用
+set(dog.firend,funtion(obj){
+    console.log(obj) // { name:"小红" }  回调函数中的obj代表的是dog.firend的对象
+})
+```
+```js
+// 实现
+let dog = {
+  name:"小黄",
+  firend:{
+    name:"小红"
+  }
+}
+
+function set(obj,callback){
+    let proxy = new Proxy(obj,{
+        set(target,property,value){
+            target[property] = value
+        }
+    })
+    // 最后把proxy传给我们的回调函数
+    callback(proxy)
+}
+
+set(dog.firend,function(obj){
+    console.log(obj) // { name:"小红" } 实际就是从set函数中传出来的proxy对象
+})
+
 ```
 
 
