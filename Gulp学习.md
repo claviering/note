@@ -13,9 +13,10 @@ gulp --help
 
 ## 插件
 - gulp-uglify (js压缩)
+- pump pipes streams together and destroys all of them if one of them closes.
 - gulp-clean-css (CSS压缩)
 - gulp-minify-html (html压缩)
-- gulp-htmlmin(html压缩)
+- gulp-htmlmin (html压缩)
 - gulp-jshint (js代码检查)
 - gulp-eslint (eslint代码检查)
 - gulp-concat (文件合并)
@@ -34,6 +35,8 @@ gulp --help
 - connect-livereload (热更新同步)
 - gulp-watch (监听修改后的文件，实时更新)
 - piped-webpack (gulp webpack功能)
+- gulp-connect Gulp plugin to run a webserver (with LiveReload)
+- gulp-dev 文件名加上hash
 
 ## 和webpack的区别
 
