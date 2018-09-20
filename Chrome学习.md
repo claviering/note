@@ -1,5 +1,9 @@
 ﻿# Chrome学习
 
+## 插件
+
+- Sword Art Online (SAO) Wallpapers HD New Tab
+
 ## ESC快捷键
 
 ESC快捷键打开控制台
