@@ -1,5 +1,12 @@
 ﻿# vue-router学习
 
+## this.$router 和 this.$route
+
+|this.$router|this.$route|
+|--|--|
+|路由转跳对象|vue路由对象$route(只读)|
+|push,go,replace...|param,name,query...|
+
 ## beforeRouterEnter获取组件内的数据
 ```js
 beforeRouterEnter (to ,from , next) {
