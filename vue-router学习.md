@@ -10,9 +10,9 @@
 ## beforeRouterEnter获取组件内的数据
 ```js
 beforeRouterEnter (to ,from , next) {
-    next( vm => {
-        console.log(vm.data)
-    })
+  next( vm => {
+      console.log(vm.data)
+  })
 }
 ```
 ## 动态路由
@@ -24,39 +24,39 @@ router-link :to="/app/id"
 ## children
 ```js
 children: {
-    path: '',
-    component: component
+  path: '',
+  component: component
 }
 ```
 ##  meta
 ```js
 meta: {
-    title: 'this is title',
-    descripation: 'some descripation'
+  title: 'this is title',
+  descripation: 'some descripation'
 }
 ```
 ## 路由滚动保存位置
 ```js
 scrollBehavior (to, from ,savePosition){
-    if (savePosition) {
-        return savePosition
-    } else {
-        return {x: 0, y: 0}
-    }
+  if (savePosition) {
+      return savePosition
+  } else {
+      return {x: 0, y: 0}
+  }
 }
 ```
 ## 路由模式
 ```js
 new router({
-    router,
-    mode: 'history', // url没有#开头
-    base: '/base/' // url上加上base
+  router,
+  mode: 'history', // url没有#开头
+  base: '/base/' // url上加上base
 })
 ```
 
 使用history的时候，每个url都会请求到服务器，服务器要做配置，不然会404，
 webpack-dev-server里配置historyApiFallback:{
-    index: '/index.html'
+  index: '/index.html'
 }
 
 在vue-cli的webpack-dev-config.js有配置了
