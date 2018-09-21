@@ -1,5 +1,9 @@
 # React 学习
 
+## 全家桶
+
+- Mobx 状态管理
+
 ## 安装
 
 ```shell
@@ -9,33 +13,10 @@ npm i -D react react-dom
 ## 初始化一个项目
 
 ```shell
-npm init react-app my-app
+npx create-react my-app
 cd my-app
-npm strat
+npm start
 npm run build
-```
-
-## 安装babel
-```shell
-npm i -D @bable/core @babel/preset-env @babel/preset-react babel-loader
-```
-
-配置babel
-```js
-module: {
-    rules: [
-      {
-        test: /\.js|jsx$/, 
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env', '@babel/preset-react']
-          }
-        }
-      }
-    ]
-  }
 ```
 
 ## 使用

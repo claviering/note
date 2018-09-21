@@ -124,7 +124,8 @@ Markdown: <!-- #region --> and <!-- #endregion -->
     },
     "workbench.statusBar.feedback.visible": false,
     "explorer.confirmDragAndDrop": false,
-    "shs.serverPort": 8085
+    "shs.serverPort": 8085,
+    "markdown-toc.depthFrom": 2
 }
 ```
 
@@ -213,6 +214,7 @@ clg -> console.log
 - RegExp Preview and Edito 完美的展示你写的正则,图形化给你看你写正则的形成
 - fileheader ctrl+alt+i 顶部注释模板，可定义作者、时间等信息，并会自动更新最后修改时间
 - Node.js Modules Intellisense 对于node_module的智能提示
+- markdown toc (AlanWalk)
 
 ### React插件
 
