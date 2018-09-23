@@ -1,5 +1,13 @@
 ﻿# Git学习
 
+## 安装配置
+
+```
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
+ssh-keygen -t rsa -C "youremail@example.com"
+```
+
 ## 远程仓库重命名
 `git remote rename old new`
 

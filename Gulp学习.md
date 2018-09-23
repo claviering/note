@@ -2,6 +2,19 @@
 
 自动化工具
 
+## 3.0升级到4.x版本
+
+https://www.liquidlight.co.uk/blog/article/how-do-i-update-to-gulp-4/
+
+## 同步任务，异步任务
+
+```js
+/*
+ * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
+ */
+var build = gulp.series(clean, gulp.parallel(styles, scripts));
+```
+
 ## 安装
 
 ```shell
@@ -37,6 +50,11 @@ gulp --help
 - piped-webpack (gulp webpack功能)
 - gulp-connect Gulp plugin to run a webserver (with LiveReload)
 - gulp-dev 文件名加上hash
+- gulp-webpack
+- webpack-stream
+
+
+
 
 ## 和webpack的区别
 

@@ -16,6 +16,7 @@
     - [配置typescript ts-loader](#%E9%85%8D%E7%BD%AEtypescript-ts-loader)
     - [使用babel-loader](#%E4%BD%BF%E7%94%A8babel-loader)
   - [插件配置](#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)
+    - [uglifyjs-webpack-plugin](#uglifyjs-webpack-plugin)
     - [MiniCssExtractPlugin](#minicssextractplugin)
     - [Clean for WebPack](#clean-for-webpack)
     - [DefinePlugin](#defineplugin)
@@ -248,6 +249,13 @@ module: {
   }
 ```
 ## 插件配置
+
+### uglifyjs-webpack-plugin
+
+代码压缩加速
+
+[github](https://github.com/webpack-contrib/uglifyjs-webpack-plugin)
+
 
 ### MiniCssExtractPlugin
 

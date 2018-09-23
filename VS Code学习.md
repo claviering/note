@@ -69,6 +69,42 @@ vts
             "</style>\n"
         ],
         "description": "vue-cli3 for typescript and sass"
+    },
+    "express in node": {
+        "prefix": "exp",
+        "body": [
+            "const express = require('express')",
+            "const app = express()\n",
+            "app.get('/', (req, res) => {",
+            "  res.send('ok')",
+            "})",
+            "app.listen(3000, () => {",
+            "console.log('running in:')",
+            "  console.log('http://127.0.0.1:3000')",
+            "})"
+        ],
+        "description": "use express in node"
+    },
+    "express in node using art-template": {
+        "prefix": "ept",
+        "body": [
+            "const express = require('express')",
+            "const app = express()",
+            "app.engine('html', require('express-art-template'));\n",
+            "app.get('/', function (req, res) {",
+            " res.render('index.html', {",
+            "   user: {",
+            "   name: 'aui',",
+            "   tags: ['art', 'template', 'nodejs']",
+            "   }",
+            " });",
+            "});\n",
+            "app.listen(3000, () => {",
+            "console.log('running in:')",
+            "  console.log('http://127.0.0.1:3000')",
+            "})"
+        ],
+        "description": "use express and art-template in node"
     }
 }
 ```
@@ -189,31 +225,32 @@ clg -> console.log
 快捷键Ctrl + P，打开插件，输入 ext install
 ### 插件列表
 - HTML Snippets
-- HTML CSS Support
+- HTML CSS Support view a list of attributes via ctrl + space 配置"css.fileExtensions": [ "css", "scss"]
 - emmet 开发者jakethashi
 - view in broswer 开发者 Koppt Ho (ctrl + F1 在默认的浏览器中运行当前的html)
 - vscode-icon （让vscode的文件夹目录添加上对应的图标）
 - AutoFileName (文件路径自动补全插件)
 - Bracket Pair Colorizer （让括号有独立的颜色）
 - vetur （语法高亮、智能感知、Emmet等）
-- VueHelper （snippet代码片段）
+- VueHelper （snippet代码片段） oysun 
 - easy less（保存后自动编译）
 - JavaScript (ES6) code snippets
 - TODO
 - REST Client 它允许您在Visual Studio Code中直接发送 HTTP 请求并查看响应
 - 自动闭合标记(Auto Close Tag)和自动重命名标记(Auto Rename Tag)
 - highlight-matching-tag
-- Indenticator(缩进指示器)
 - 跳转到 CSS 定义行 – CSS Peek
+ + Peek: load the css file inline and make quick edits right there. (Ctrl+Shift+F12)
+ + Go To: jump directly to the css file or open it in a new editor (F12)
+ + Hover: show the definition in a hover over the symbol (Ctrl+hover)
 - Beautify
 - EditorConfig for VS Code
-- Easy Less
 - HTTP Server / HTML Preview 作者shawn Funke
 - sass 作者Robin Bentley
 - EsLint (Dirk Beaumer) VsCode读取项目文件的Eslint规则 保存时自动修复格式错误
 - RegExp Preview and Edito 完美的展示你写的正则,图形化给你看你写正则的形成
 - fileheader ctrl+alt+i 顶部注释模板，可定义作者、时间等信息，并会自动更新最后修改时间
-- Node.js Modules Intellisense 对于node_module的智能提示
+- Node.js Modules Intellisense (Zongmin Lei) 对于node_module的智能提示
 - markdown toc (AlanWalk)
 
 ### React插件

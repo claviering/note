@@ -146,13 +146,14 @@ function checkCookie() {
         }
     }
 }
-checkCookie(); 
+checkCookie();
 </script>
 ```
 
 ## 获取DOM内容
 ```
 var x = document.getElementById("myBtn").textContent
+let num = document.getElementById('num').value
 ```
 
 ## 改变DOM元素内容
