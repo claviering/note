@@ -1,5 +1,16 @@
 ﻿# VS Code学习
 
+## emmet 缩写
+
+
+```
+m10 margin: 10px;
+df display: flex;
+p10 padding: 10px;
+pt10 padding-top: 10px;
+单词的开头+属性值
+```
+
 ## HTTP Server插件使用
 F1 > Simple HTTP Server: Create HTTP Server With Current File
 
@@ -139,7 +150,6 @@ Markdown: <!-- #region --> and <!-- #endregion -->
 ## My setting
 ```js
 {
-    "emmet.triggerExpansionOnTab": true,
     "editor.tabSize": 2,
     "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\cmd.exe",
     "workbench.activityBar.visible": false,
@@ -161,7 +171,10 @@ Markdown: <!-- #region --> and <!-- #endregion -->
     "workbench.statusBar.feedback.visible": false,
     "explorer.confirmDragAndDrop": false,
     "shs.serverPort": 8085,
-    "markdown-toc.depthFrom": 2
+    "markdown-toc.depthFrom": 2,
+    "emmet.showSuggestionsAsSnippets": true,
+    "editor.snippetSuggestions": "top",
+    "emmet.triggerExpansionOnTab": true
 }
 ```
 

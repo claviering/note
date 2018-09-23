@@ -1,9 +1,47 @@
 # node.js学习
 
+## 模块
+每个模块都有一个自己的module对象,module对象中有一个exports成员,文件最后`return module.exports`,为了简化代码，有一句 `var exports =  module.exports`所以`exports.a = 1`是等价`module.exports.a = 1`
+
+```js
+var module = {
+  exports: {}
+}
+
+return module.exports
+```
+
+### 导出多个成员
+a.js
+```js
+exports.obj = {a:1}
+```
+b.js
+```js
+const hello = requirt('./a.js) 
+// b.js文件的 hello === exports a.js文件中的exports
+```
+### 导出单个成员
+a.js
+```js
+module.exports = 'hello'
+```
+b.js
+```js
+const hello = require('./a.js')
+// b.js文件的 hello ===  a.js文件中的'hello'
+```
+
 ## cli-color
 输出颜色
 
 ## 中间件使用
+
+### compression
+
+[Compress HTTP responses.](http://www.expressjs.com.cn/en/resources/middleware/compression.html)
+
+`npm install -S compression`
 
 ### body-parser
 
