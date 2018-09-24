@@ -174,7 +174,8 @@ Markdown: <!-- #region --> and <!-- #endregion -->
     "markdown-toc.depthFrom": 2,
     "emmet.showSuggestionsAsSnippets": true,
     "editor.snippetSuggestions": "top",
-    "emmet.triggerExpansionOnTab": true
+    "emmet.triggerExpansionOnTab": true,
+    "githubCompatibility": true
 }
 ```
 
