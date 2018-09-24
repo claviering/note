@@ -2,6 +2,42 @@
 
 自动化工具
 
+## 深入学习
+
+gulp 是基于数据流的构建系统
+### 要素一: stream
+1. 管道 pipe()
+2. 内存操作 在内存中进行
+3. 事件 .on() 添加事件
+4. 类型
+
+### 要素二: Viny文件系统
+
+用js对象来描述文件
+```js
+var File = require('vinyl');
+
+var coffeeFile = new File({
+  cwd: "/",
+  base: "/test/",
+  path: "/test/file.coffee",
+  contents: new Buffer("test = 123")
+});
+```
+使用 vinyl-fs
+```js
+var vfs = require('vinyl-fs');
+// ...
+Gulp.prototype.src = vfs.src;
+Gulp.prototype.dest = vfs.dest;
+// ...
+```
+也就是说，gulp.src()和gulp.dest()直接来源于vinyl-fs。
+
+### Gulp 错误处理
+
+`.on('error')`
+
 ## 3.0升级到4.x版本
 
 https://www.liquidlight.co.uk/blog/article/how-do-i-update-to-gulp-4/
@@ -52,7 +88,8 @@ gulp --help
 - gulp-dev 文件名加上hash
 - gulp-webpack
 - webpack-stream
-
+- gulp-load-plugins 自动加载插件
+- gulp-browserify js模块化构建
 
 
 

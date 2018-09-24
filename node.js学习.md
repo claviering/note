@@ -36,6 +36,74 @@ const hello = require('./a.js')
 输出颜色
 
 ## 中间件使用
+### serve-static
+在给定的目录插件服务
+
+### vhost
+域名请求过滤
+`npm install -S vhost`
+### connect-timeout
+
+请求超时
+`npm install connect-timeout`
+
+### express-session
+
+### response-time
+响应时间
+
+`npm install -S response-time`
+```js
+app.use(responseTime((req, res, time) => {
+  console.log(time)
+}))
+```
+### Multer
+
+多文件上传
+
+`npm install --save multer`
+
+### morgan
+
+HTTP request logger
+
+HTTP 请求日志记录
+
+`npm i -S morgan`
+
+### errorhandler
+错误处理
+`npm install errorhandler`
+
+### cors
+跨域中间件
+`npm install cors`
+
+### cookie-session
+`npm install cookie-session`
+
+### cookie-parser
+
+`npm install -S cookie-parser`
+
+```js
+var express = require('express')
+var cookieParser = require('cookie-parser')
+
+var app = express()
+app.use(cookieParser())
+
+app.get('/', function (req, res) {
+  // Cookies that have not been signed
+  console.log('Cookies: ', req.cookies)
+
+  // Cookies that have been signed
+  console.log('Signed Cookies: ', req.signedCookies)
+})
+
+app.listen(8080)
+```
 
 ### compression
 
@@ -106,6 +174,9 @@ app.get('/', function (req, res) {
 });
 ```
 ## express
+
+[中间件说明](https://juejin.im/post/5b9a23a45188255c9c751b07)
+
 
 `npm i -S express`
 

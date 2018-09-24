@@ -1,7 +1,24 @@
 ﻿# ES6 学习
-[toc]
+
+[ES6入门电子版](http://es6.ruanyifeng.com/)
 
 ## decorator
+装饰器是用来装饰类的
+
+```js
+// 在类前面写@myFunction
+@myFunction('hello')
+class Person {
+
+}
+
+function myFunction(value) {
+  return function(target){ // target代表的是类
+      target['myName'] = value
+  }
+}
+console.log(Person['myName']) // hello
+```
 
 ## ES5 模拟 ES6 Class
 
@@ -94,8 +111,6 @@ proxy.name = '小红' // 打印输出 'set被监控到了'
 proxy.name // 打印输出 'get被监控到了'
 
 ```
-
-[ES6入门电子版](http://es6.ruanyifeng.com/)
 
 ## Symbol
 ## 对象拓展

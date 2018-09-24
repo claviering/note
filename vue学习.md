@@ -1,5 +1,23 @@
 ﻿# vue学习
 
+## 深入响应式原理
+
+**任何追踪变化**
+
+当你把一个普通的 JavaScript 对象传给 Vue 实例的 data 选项，Vue 将遍历此对象所有的属性，并使用 `Object.defineProperty` 把这些属性全部转为 `getter/setter`
+
+每个组件实例都有相应的 **watcher** 实例对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 `setter` 被调用时，会通知 `watcher` 重新计算，从而致使它关联的组件得以更新。
+
+**异步更新队列**
+
+可能你还没有注意到，Vue **异步**执行 DOM 更新。只要观察到数据变化，Vue 将开启一个 **队列**，并缓冲在同一事件循环中发生的所有数据改变。如果同一个 watcher 被多次触发，只会被推入到队列中 **一次**。这种在缓冲时去除重复数据对于避免不必要的计算和 DOM 操作上非常重要。然后，在下一个的事件循环“tick”中，Vue 刷新队列并执行实际 (已去重的) 工作。Vue 在内部尝试对异步队列使用原生的 Promise.then 和 MessageChannel，如果执行环境不支持，会采用 setTimeout(fn, 0) 代替。
+
+## computed 和 watch 差异
+
+1. computed是计算一个新的属性，并且挂载到vm上, watch 是监听存在并且挂载到vm上的数据，所以watch可以监听computed计算属性的变化
+2. computed是依赖变化就计算，watch是数据变化执行函数
+3. 使用场景不同，computed 使用一个数据或者多个数据，watch适用一个数据影响多个数据
+
 ## tslint
 Calls to 'console.log' are not allowed.
 
@@ -164,6 +182,15 @@ conponent: () => import('./Foo.vue')
 ## Vue生命周期视频详解
 
 [Vue生命周期视频详解 P52](https://www.bilibili.com/video/av25294556/?p=52)
+
+- beforeCreate
+- created
+- beforeMount
+- Mounted
+- beforeUpdate
+- updated
+- beforeDestroy
+- destoryed
 
 ## vue学习
 [网站](https://www.tutorialsplane.com/vue-js-close-window/)

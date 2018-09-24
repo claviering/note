@@ -1,5 +1,13 @@
 ﻿# Git学习
 
+[指令大全](https://segmentfault.com/a/1190000016345117)
+
+## 3个规则
+
+1. Create a Git repository for every new project
+2. Greate a new branch for every new feature
+3. Use Pull requests to merge code to Master
+
 ## 安装配置
 
 ```
@@ -27,11 +35,15 @@ git reset --soft HEAD^
 ```
 
 ## reset file change
-
+`git checkout -- . #从暂存区取出文件覆盖工作区`
 `git checkout -- file-name`
 
 ## reset after add file
-`git reset HEAD file-name`
+```
+git add file#.或*代表全部添加
+git rm --cached 在commit之前撤销git add操作
+git reset head好像比上面git rm --cached更方便
+```
 
 ## 分支
 ```shell
