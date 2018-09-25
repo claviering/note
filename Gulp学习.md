@@ -13,7 +13,7 @@ gulp 是基于数据流的构建系统
 
 ### 要素二: Viny文件系统
 
-用js对象来描述文件
+用 js 对象来描述文件
 ```js
 var File = require('vinyl');
 

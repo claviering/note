@@ -124,7 +124,7 @@ export class MyComp extends Vue {
 
 [vue-cli3](https://juejin.im/post/5b98e5875188255c8320f88a)
 
-## vue中使用js-cookie
+## vue 中使用 js-cookie
 [js-cookie](https://github.com/js-cookie/js-cookie)
 ```
 npm i js-cookie --save

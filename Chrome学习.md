@@ -1,5 +1,17 @@
 ﻿# Chrome学习
 
+## lighthouse
+
+网站 audits 工具
+
+Install
+`npm i -g lighthouse`
+
+Usage
+
+`lighthouse https://example.com`
+
+
 ## 插件
 
 - Sword Art Online (SAO) Wallpapers HD New Tab

@@ -5,7 +5,7 @@
 - [webpack 学习](#webpack-%E5%AD%A6%E4%B9%A0)
   - [基本配置](#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)
     - [路径](#%E8%B7%AF%E5%BE%84)
-    - [x 配置 mode](#x-%E9%85%8D%E7%BD%AE-mode)
+    - [webpack4.x 配置 mode](#webpack4x-%E9%85%8D%E7%BD%AE-mode)
   - [三十分钟掌握Webpack性能优化](#%E4%B8%89%E5%8D%81%E5%88%86%E9%92%9F%E6%8E%8C%E6%8F%A1webpack%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
   - [loader 配置](#loader-%E9%85%8D%E7%BD%AE)
     - [sass-loader / less-loader](#sass-loader--less-loader)
@@ -16,6 +16,7 @@
     - [配置typescript ts-loader](#%E9%85%8D%E7%BD%AEtypescript-ts-loader)
     - [使用babel-loader](#%E4%BD%BF%E7%94%A8babel-loader)
   - [插件配置](#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)
+    - [webpack-bundle-analyzer](#webpack-bundle-analyzer)
     - [uglifyjs-webpack-plugin](#uglifyjs-webpack-plugin)
     - [MiniCssExtractPlugin](#minicssextractplugin)
     - [Clean for WebPack](#clean-for-webpack)
@@ -48,7 +49,7 @@ module.exports = {
 }
 ```
 
-### x 配置 mode
+### webpack4.x 配置 mode
 
 webpack.config.js
 ```js
@@ -250,6 +251,12 @@ module: {
 ```
 ## 插件配置
 
+### webpack-bundle-analyzer
+
+块分析插件
+
+[webpack-bundle-analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer)
+
 ### uglifyjs-webpack-plugin
 
 代码压缩加速
@@ -369,7 +376,8 @@ module.exports = {
 }
 ```
 ### CommonsChunkPlugin
-提取公共模块
+
+多人口时候提取公共模块
 
 
 ### ProvidePlugin
