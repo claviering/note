@@ -2,6 +2,14 @@
 
 [ES6入门电子版](http://es6.ruanyifeng.com/)
 
+## 迭代器和Iterables
+- 主对象/类应该存储一些数据。
+- 主对象/类必须具有全局“众所周知的`Symbolssymbol.iterator`作为其属性，Symbols根据规则＃3至＃6实现特定方法
+- 此`symbol.iterator`方法必须返回另一个对象 - “迭代器”对象
+- 这个迭代器对象必须有一个称为next的方法
+- `next`方法应该可以访问存储在规则1中的数据
+- 如果我们调用`iteratorObj.next()`，它应该返回规则＃1中的一些存储数据无论是想要返回更多值`{value:<stored data>, done: false}`，还是不想返回任何数据`{done: true}`
+
 ## decorator
 装饰器是用来装饰类的
 
@@ -113,6 +121,25 @@ proxy.name // 打印输出 'get被监控到了'
 ```
 
 ## Symbol
+```js
+let mySymbol = symbol()
+let mySymbol = symbol('hello')
+
+const mySymbol1 =Symbols（'some text'）; 
+const mySymbol2 =Symbols（'some text'）; 
+mySymbol1 == mySymbol2 // false
+
+var mySymbol1 = Symbol .for（'some key'）; //创建一个新symbol
+var mySymbol2 = Symbol .for（'some key'）; // ** 返回相同的symbol
+mySymbol1 == mySymbol2 // true
+
+Symbol 的值变量可以放到 [] 中使用
+
+const mySymbol = Symbol('description')
+const Obj = {name: 'jok'}
+Obj[mySymbol] // jok
+```
+
 ## 对象拓展
 ```
 属性简写

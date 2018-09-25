@@ -1,5 +1,38 @@
 ﻿# JS学习
 
+## 捕获，冒泡
+捕获 向下
+
+冒泡 向上
+
+为一个web开发者，你可以选择是在捕获阶段还是冒泡阶段绑定事件处理函数，这是通过addEventListener()方法实现的，如果这个函数的最后一个参数是true，则在捕获阶段绑定函数，反之false，在冒泡阶段绑定函数
+```js
+element1.addEventListener('click',doSomething2,true)
+
+element2.addEventListener('click',doSomething,false)
+```
+
+## `this`在javascript中是如何工作的
+
+```js
+var fullname = 'John Doe';
+var obj = {
+   fullname: 'Colin Ihrig',
+   prop: {
+      fullname: 'Aurelio De Rosa',
+      getFullname: function() {
+         return this.fullname;
+      }
+   }
+};
+console.log(obj.prop.getFullname()); // Aurelio De Rosa
+var test = obj.prop.getFullname;
+console.log(test()); // John Doe
+
+// 在第一个`console.log()`调用中， `getFullname()`是作为`obj.prop`的函数被调用的。因此，这里的语境指向后者并且函数返回对象的 `fullname`属性。相反，当 `getFullname()` 被指定为test的变量，那个语境指向全局对象`(window)`。因为test相当于设置为全局对象的属性。因为这个原因，函数返回window的一个`fullname`属性，这在这个案例中是在代码片段中第一行设置的
+
+```
+
 ## 垃圾回收
 
 自动垃圾收集机制，它的原理其实很简单：
