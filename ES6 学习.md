@@ -165,7 +165,7 @@ set(dog.firend,function(obj){
 ## 数组的拓展
 拓展运算符...
 ### 合并数组
-```
+```js
 let arr1 = []
 let arr2 = []
 [...arr1, ...arr2]
@@ -183,7 +183,7 @@ Array.of(1,2,3,4,5)
 
 ### find()
 找出第一个符合条件的成员，参数是一个回调函数
-```
+```js
 [1,2,3,3,-5].find((n) => n > 0) // -5
 ```
 
@@ -191,7 +191,7 @@ Array.of(1,2,3,4,5)
 使用给定值填充数组
 
 ### 数组实例 entries(), keys(), values()
-```
+```js
 for (let index of [].keys())
 for (let index of [].values())
 for (let [index, elem] of [].entries())
@@ -203,12 +203,13 @@ for (let [index, elem] of [].entries())
 ## 函数拓展
 ### 默认参数
 ### 展开运算符
-
+```js
 function add(...values)
   for (let val of values)
     sum += val
-### 箭头函数
 ```
+### 箭头函数
+```js
 () => {}
 参数 => 返回值(只有一行可以不用{})
 ```
@@ -218,12 +219,12 @@ function add(...values)
 
 ### 二进制，八进制
 
-```
+```js
 0b111
 0o767
 ```
 转10进制
-```
+```js
 Number('0b111')
 Number('0o10')
 ```
@@ -271,12 +272,12 @@ Number.isSafeinteger()判断一个整数是否在上面的范围中
 
 
 ## 字符串拓展
-```
+```js
 \u{20bb7} 码点放到大括号中
 codePointAt() // 返回一个字符的码点
 ```
 ### 遍厉字符串
-```
+```js
 for (let codePoint of 'foo') {
     console.log(codePoint)
 }
@@ -308,7 +309,7 @@ for (let codePoint of 'foo') {
 
 ## 正则表达式拓展
 
-```
+```js
 var regex = /xyz/iuy
 u修饰符，Unicode模式
 y修饰符，粘连修饰符,和g修饰符区分开
@@ -324,7 +325,7 @@ y修饰符，粘连修饰符,和g修饰符区分开
 变量在块级作用域使用let声明，不会外泄
 
 ## do表达式
-```
+```js
 let x = do{
     let t = f()
     t * t + 1

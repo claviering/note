@@ -5,6 +5,22 @@
 自动垃圾收集机制，它的原理其实很简单：
 
 确定变量中有哪些还在使用，哪些已经不再使用，然后 **垃圾收集器**会按照固定的时间间隔去周期性的释放已经不再继续使用的变量所占的内存。
+## html上获取事件对象
+
+`<li poetry='a' onclick="showDraw(this)">`
+
+传参数 **this**
+
+## 用变量获取对象的value
+
+```js
+function getPoetry (key) {
+    let poetryList = {
+        a: '1111'
+    }
+    return poetryList[key] // 不能用poetryList.key获取
+}
+```
 
 ## js类型检测
 用法
@@ -32,7 +48,7 @@ var name = `Your name is ${first} ${last}.`
 JSON.parse(string).data
 
 ## 判断是否为chrome浏览器
-```
+```js
 function isChromeFirefox () {
   var isChrome = window.navigator.userAgent.indexOf('Chrome') !== -1
   var isFirefox = window.navigator.userAgent.indexOf('Firefox') !== -1
@@ -46,13 +62,13 @@ isChromeFirefox()
 
 ## confire
 
-global.confirm() 窗口弹出提示
+`global.confirm`() 窗口弹出提示
 
-可以在路由的beforeRouterLeave用,判断用户是否要离开页面
+可以在路由的`beforeRouterLeave`用,判断用户是否要离开页面
 
 ## JS中更好使用数组
 - 使用 Array.includes 替代 Array.indexOf
-如果我们仅需要知道数组中是否包含给定元素呢？这意味着只是是与否的区别，这是一个布尔问题（boolean question）。针对这种情况，我建议使用直接返回布尔值的 Array.includes。
+如果我们仅需要知道数组中是否包含给定元素呢？这意味着只是是与否的区别，这是一个布尔问题（boolean question）。针对这种情况，我建议使用直接返回布尔值的 `Array.includes`。
 
 - 使用 Array.find 替代 Array.filter
 - 使用 Array.some 替代 Array.find
@@ -65,7 +81,7 @@ global.confirm() 窗口弹出提示
 
 函数防抖就是法师发技能的时候要读条，技能读条没完再按技能就会重新读条。
 
-```
+```js
 //模拟一段ajax请求
 function ajax(content) {
   console.log('ajax request ' + content)
@@ -92,28 +108,29 @@ inputb.addEventListener('keyup', function (e) {
 ```
 ## 添加，删除监听事件
 
-```
+```js
 drag.addEventListener('mousedown', handler = function (e) {}, false)
 drag.removeEventListener('mousedown', handler, false)
 ```
 ## URL编码，解码
-encodeURIComponent()
-decodeURIComponent()
+
+`encodeURIComponent()`
+`decodeURIComponent()`
 
 
 ## DOM操作
-```
+```js
 var par=s.parentNode;   //得到s的父节点
 document.createElement('img')
 appendChild(DOM)
 ```
 
 ## 识别浏览器版本，操作系统
-```
+```js
 alert(navigator.userAgent)
 ```
 ## 操作cookie
-```
+```js
 <script>
  //设置cookie
 function setCookie(cname, cvalue, exdays) {
@@ -157,25 +174,25 @@ checkCookie();
 ```
 
 ## 获取DOM内容
-```
+```js
 var x = document.getElementById("myBtn").textContent
 let num = document.getElementById('num').value
 ```
 
 ## 改变DOM元素内容
-```
+```js
 document.getElementById("p1").innerHTML="New text!";
 ```
 
 ## 先复制在添加一个DOM对象，不从原来删除
-```
+```js
 var itm = document.getElementById("myList2").lastChild
 var cln = itm.cloneNode(true)
 document.getElementById("myList1").appendChild(cln)
 ```
 
 ## 删除原来的DOM对象，添加到另一个的DOM对象中
-```
+```js
 var node = document.getElementById("myList2").lastChild
 document.getElementById("myList1").appendChild(node)
 ```
@@ -185,7 +202,7 @@ document.getElementById("myList1").appendChild(node)
 [vue组件github](https://github.com/xlsdg/vue-countup-v2)
 
 用法
-```
+```js
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -217,20 +234,20 @@ document.getElementById("myList1").appendChild(node)
 
 ## 禁止拖动图片
 给父级元素添加
-```
+```js
 <div ondragstart='return false;'></div>
 ```
 ## 选择器
-```
+```js
 let tmp = document.getElementsByClassName('className') // 返回的是一个对象数组
 ```
 ## 获取属性值
-```
+```js
 var div1 = document.getElementById("div1");
 var align = div1.getAttribute("align");
 ```
 ## 设置属性值
-```
+```js
 var b = document.querySelector("button"); 
 
 b.setAttribute("name", "helloButton");
@@ -238,17 +255,17 @@ b.setAttribute("disabled", "");
 ```
 
 ## JS 添加z-index属性
-```
+```js
 object.style.zIndex = 'num'
 ```
 
 ## 禁止div中文字选中
-```
+```js
 <div onselectstart="javascript:return false;">不能被选择</div>
 ```
 
 ## querySelector选择器
-```
+```js
 <div id="foo\bar"></div>
 <div id="foo:bar"></div>
 
@@ -270,6 +287,7 @@ object.style.zIndex = 'num'
 ## classList用法
 [classList用法](https://www.w3schools.com/jsref/prop_element_classlist.asp)
 
+```js
 classList.add(class1, class2, ...) 添加属性
 
 classList.contains(class) 判断是否有class
@@ -279,12 +297,12 @@ classList.item(index) 返回index位置class name
 classList.remove(class1, class2, ...) 删除class
 
 classList.toggle(class, true|false) 切换一个class
-
+```
 添加返回true，删除返回false,第2个参数强制添加(true)删除(false)
 
 ## 切换DOM css代码 执行一次添加，再执行一次删除
 
-```
+```js
 <style>
 .mystyle {
     width: 100%;
@@ -304,7 +322,7 @@ function myFunction() {
 ```
 
 ## 保存数据到本地,取出数据
-```
+```js
 localStorage.setItem('token', token) // 保存(key,value)
 const token = localStorage.getItem('token') || '' // 取出
 localStorage.removeItem('token') // 删除
@@ -320,7 +338,7 @@ localStorage.removeItem('token') // 删除
 
 ## JS读文件
 [例子](https://jsfiddle.net/0GiS0/nDVYd/)
-```
+```js
 var reader = new FileReader();
 reader.onload = function(e) {
   console.log(e.target.result); // 文件内容
