@@ -3,7 +3,7 @@
 ## emmet 缩写
 
 
-```
+```css
 m10 margin: 10px;
 df display: flex;
 p10 padding: 10px;
@@ -17,7 +17,7 @@ F1 > Simple HTTP Server: Create HTTP Server With Current File
 ## EditorConfig for VS Code
 配置
 项目根目录新建.editorconfig
-```
+```js
 root = true
 
 [*]
