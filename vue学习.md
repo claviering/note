@@ -1,5 +1,55 @@
 ﻿# vue学习
 
+## slots
+
+插槽使用
+
+`<navigation-link>` 组件模板
+```js
+<a
+  v-bind:href="url"
+  class="nav-link"
+>
+  <slot></slot>
+</a>
+```
+```html
+<navigation-link url="/profile">
+  Your Profile // 这里的东西会替换 <slot></slot> 位置
+</navigation-link>
+```
+### 命名插槽
+
+```html
+<div class="container">
+  <header>
+    <slot name="header"></slot>
+  </header>
+  <main>
+    <slot></slot>
+  </main>
+  <footer>
+    <slot name="footer"></slot>
+  </footer>
+</div>
+
+<!-- template 插入到slot name = header 里 -->
+<template slot="header">
+    <h1>Here might be a page title</h1>
+</template>
+
+<!-- slot属性可以直接用到普通标签上 -->
+<h1 slot="header">Here might be a page title</h1>
+```
+
+### 默认插槽
+
+```html
+<button type="submit">
+  <slot>Submit</slot>
+</button>
+```
+
 ## 深入响应式原理
 
 **任何追踪变化**
@@ -242,7 +292,8 @@ let app = new Vue({
   </body>
   <script src="js/main.js"></script>
 ```
-```main.js
+main.js
+```js
 Vue.component('my-checkbox', {
   template: '#checkbox-template',
   data() {
@@ -264,16 +315,42 @@ let app = new Vue({
 
 ## 父组件传值给子组件
 父组件代码
-```
+```html
 <son v-bind:sentToSon="sentToSon"><son>
 ```
 子组件代码
 
 获取数据，直接this.sentToSon
-```
+```js
 export default {
   pros: ['sentToSon'], // 如果要把sentToSon的值保存到子组件data中，可以在html上使用v-models:vuale="sentToSon"
 }
+```
+
+## 子组件给父组件传值
+
+父组件 `child-say` 绑定一个事件,子组件`emit`监听这个事件 `emit` 可以换其他 `on` `once` `off`
+
+```js
+<component-a  v-on:child-say="listenToMyBoy"></component-a>
+<p>Do you like me? {{childWords}}</p>
+ methods: {
+            listenToMyBoy: function (somedata){
+              this.childWords = somedata
+            }
+          }
+```
+
+子组件
+
+```js
+<button v-on:click="onClickMe">like!</button>
+
+methods: {
+          onClickMe: function(){
+            this.$emit('child-say',this.somedata);
+          }
+        }
 ```
 
 ## methods 中参数event(可以简写e)的使用,html中使用$event传参
@@ -342,7 +419,7 @@ Vue.component('lottie', lottie)
 ## vue-router-then
 在当前组件上获取路由组件的数据，不通过vuex
 安装
-```
+```js
 npm install vue-router-then --save
 import Vue from 'vue'
 import router from './router'
@@ -353,7 +430,7 @@ Vue.use(routerThen)
 ```
 
 使用
-```
+```html
 <!-- buySomething.vue -->
 <inputSelectedAddress v-model="item.addressID" v-model-link="'/select_address'"  placeholder="选择地址" /> 
 
@@ -380,7 +457,7 @@ Vue.use(routerThen)
 ## Vue 全站缓存
 将 router-view 放置到 keep-alive 中，即可粗暴的实现所有路由页的缓存功能。
 [参考](https://juejin.im/post/5b610f32e51d4519115d3e66)
-```
+```html
 <keep-alive><router-view class="transit-view"></router-view></keep-alive>
 ```
 我们既希望填写一半进入下一页面时能保留填写的数据，我们又希望新进入的表单是一个全新的表单页。，
@@ -390,27 +467,29 @@ Vue.use(routerThen)
 
 
 ## 修改npm包下载地址
+```
 npm i nrm -g
 nrm ls 查看npm安装地址
 npm use taobao 使用taobao下载npm的包
-
+```
 ## 项目初始化
+```
 npm install vue-cli
 vue init webpack my-project -y
 cd my-project
 npm install
 npm run dev
-
+```
 
 ### state
 在 Vue 组件中获得 Vuex 状态
-```
+```js
 this.$store.state.value
 ```
 mapState 辅助函数
 
 当一个组件需要获取多个状态时候,可以使用 mapState 辅助函数帮助我们生成计算属性
-```
+```js
 // 在单独构建的版本中辅助函数为 Vuex.mapState
 import { mapState } from 'vuex'
 
@@ -434,7 +513,7 @@ export default {
 
 ### 提交载荷（Payload）
 
-```
+```js
 // ...
 mutations: {
   increment (state, n) {
@@ -448,7 +527,7 @@ store.commit('increment', 10)
 ```
 
 ## 动态组件
-```
+```html
 <!-- 组件会在 `currentTabComponent` 改变时改变 -->
 <component v-bind:is="currentTabComponent"></component>
 ```
@@ -458,7 +537,7 @@ store.commit('increment', 10)
 ## 在动态组件上使用 keep-alive
 
 保存组件的操作
-```
+```html
 <!-- 失活的组件将会被缓存！-->
 <keep-alive>
   <component v-bind:is="currentTabComponent"></component>
@@ -486,7 +565,7 @@ store.commit('increment', 10)
 用transition标签包含过渡动画的组件，用myname替换上面的v
 
 myname-enter,myname-leave
-```
+```html
 <transitaion name="myname">
 </transition>
 ```
@@ -496,7 +575,7 @@ myname-enter,myname-leave
 
 打开build/utils.js
 publicPath: '../../',  添加上这个
-```
+```js
     // Extract CSS when that option is specified
     // (which is the case during production build)
     if (options.extract) {
