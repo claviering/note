@@ -30,7 +30,7 @@ function run():void {} // 函数没返回值
 
 ## 函数
 
-```
+```js
 function run(name:string, age:number): number {
     return 12
 }
@@ -38,7 +38,7 @@ function run(name:string, age:number): number {
 
 ### 可选参数
 参数后面加?,并且在参数列表的最后
-```
+```js
 function run(name:string, age?:number): number {
     return 12
 }
@@ -46,7 +46,7 @@ function run(name:string, age?:number): number {
 
 ### 默认参数
 
-```
+```js
 function run(name:string, age:number = 20): number {
     return 12
 }
@@ -62,7 +62,7 @@ ES6中类似
 - private
 - protected
 
-```
+```js
 class Person{
     public name:string
 }
@@ -70,13 +70,13 @@ class Person{
 ### 多态
 
 ### 抽象类
-```
+```js
 abstract class Animal{
     abstract eat():any
 }
 ```
 ## 接口
-```
+```js
 interface FullName(
     firstName:string;
     secondName?:string; // 可选接口
@@ -87,7 +87,7 @@ function printName(name:FullName){
 ```
 
 ## 函数接口
-```
+```js
 interface encrypt {
     (key:string, value:string):string
 }
@@ -96,7 +96,7 @@ var sha1:encrypt = function(){}
 ```
 ## 数组接口
 
-```
+```js
 interface Arr{
     [index:number]:string
 }
@@ -104,7 +104,7 @@ var myarr:Arr=['aa', 'bb']
 myarr[0]
 ```
 ## 类接口
-```
+```js
 interface Animal{
     name:string
     eat():void
@@ -114,7 +114,7 @@ class Dog implements Animal{}
 
 ## 接口拓展
 
-```
+```js
 interface Animal{
     eat():void
 }
@@ -130,7 +130,7 @@ class Web implements Person{
 ```
 
 ## 泛型
-```
+```js
 function getData<T>(value:T):T{
     return valur
 }
@@ -139,14 +139,14 @@ getData<string>('hello world')
 ```
 
 泛型类
-```
+```js
 class MinClass<T>{
     public list:T
 }
 ```
 
 泛型接口
-```
+```js
 interface Config<T> {
     (value:T):T
 }
