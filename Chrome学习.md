@@ -1,5 +1,16 @@
 ﻿# Chrome学习
 
+## console
+console.time()和console.timeEnd()打印计时。用来跟踪某一个操作的占用时长。每一个计时器必须拥有唯一的名字，time()的参数名和timeEnd()的参数名要一样。可以没有参数，默认计时提示为default
+
+console.table()可以将数组、对象等复杂类型的数据打印成表格的形式
+
+console.warn()打印一条警告信息
+
+console.error()打印错误
+
+console.profile() 和 console.profileEnd() 新建一个性能分析器(基于cpu的使用情况)。用于函数性能分析的利器,控制台右边的三个点，在下拉菜单中依次选择More tools -> JavaScript Profiler选项
+
 ## lighthouse
 
 网站 audits 工具

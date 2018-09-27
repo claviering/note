@@ -1,5 +1,70 @@
 # React 学习
 
+## 配置 sass
+
+1. 创建项目
+2. npm run eject
+3. npm i -D sass-loader node-sass
+
+edit the webpack.config.dev.js
+
+Also don’t forget to replicate the same in webpack.config.prod.js for production builds.
+
+`file-loader` 前面添加
+```js
+{
+  test: /\.scss|sass$/,
+  use: ["style-loader", "css-loader", "sass-loader"]
+}
+```
+
+## Adding a Router
+
+```sh
+npm install --save react-router-dom
+```
+
+## Adding Bootstrap
+
+```sh
+npm install --save react-bootstrap bootstrap@3
+```
+
+```js
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap-theme.css';
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
+```
+
+## 组件
+
+`Button.js`
+```js
+import React, { Component } from 'react';
+
+class Button extends Component {
+  render() {
+    // ...
+  }
+}
+
+export default Button; // Don’t forget to use export default!
+```
+`DangerButton.js`
+```js
+import React, { Component } from 'react';
+import Button from './Button'; // Import a component from another file
+
+class DangerButton extends Component {
+  render() {
+    return <Button color="red" />;
+  }
+}
+
+export default DangerButton;
+```
+
 ## 虚拟DOM
 1. DOM的本质: 浏览器中的js对象,用js对象表示页面上的元素,提供操作DOM的API
 2. React中的虚拟DOM，框架中的概念，用js模拟页面上的DOM
@@ -65,7 +130,7 @@ npm i -D react react-dom
 ## 初始化一个项目
 
 ```shell
-npx create-react my-app
+npx create-react-app my-app
 cd my-app
 npm start
 npm run build
