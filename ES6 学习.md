@@ -2,6 +2,128 @@
 
 [ES6入门电子版](http://es6.ruanyifeng.com/)
 
+## generator
+
+函数，普通函数一路到底，generator函数,中间能停顿
+
+本质上是分成很多个小函数，next()的时候调用一个函数
+
+```js
+// 函数前有个星号
+function* show () {
+    console.log('a')
+    let a = yield // 可以传参数，可以返回
+    console.log('b')
+}
+let genObj = show()
+genObj().next()
+```
+
+### yield 传参
+
+```js
+function* show () {
+    console.log('a')
+    yield 
+    console.log('b')
+}
+let genObj = show()
+genObj().next(12)
+genObj().next(5) // a = 5 第一个next 传不了
+```
+
+### yield 返回
+
+```js
+function* show () {
+    console.log('a')
+    yield 12 
+    console.log('b')
+    return 11
+}
+let genObj = show()
+let res1 = genObj().next(12) // obiect {12, done: false}
+let res2 = genObj().next(5) // obiect {11, done: true} 最后一步又 return 完成
+```
+
+### runner
+```js
+runner(function* () {
+    let a1 = yield oper1
+    let a2 = yield oper2
+    let a3 = yield oper3
+
+    console.log(a1, a2, a3)
+})
+```
+## Promise
+
+用同步一样的方式写异步
+
+```js
+let p2 = new Promise((resolve, reject) => {
+    // 成功调用 resolve
+    // 失败调用 reject
+})
+let p2 = new Promise((resolve, reject) => {
+    // 成功调用 resolve
+    // 失败调用 reject
+})
+
+function createPrimise () {
+    return new Promise((resolve, reject) => {
+        // 成功调用 resolve
+        // 失败调用 reject
+    })
+}
+
+Promise.all([p1, p2])
+    .then(res => {
+        // 全都成功
+    }, err => {
+        // 至少一个失败
+    })
+Promise.race()
+```
+
+## async ES7
+
+```js
+// async 函数默认返回一个promise对象
+// async 代替 ES6 点星号
+// asyncs 可以写箭头函数
+async function getA () {
+    await // 代替 ES6 的 yield
+}
+
+getA().then((res) => {
+    console.log(res)
+    }).catch((err) => {
+    console.log(err)
+    })
+```
+
+## await ES7
+
+```js
+let p = new Promise((resolve, reject) => {
+    resolve('ok')
+})
+
+// async 函数默认返回一个promise对象
+async function getA () {
+    // await 相当是一个语法糖，不用通过then方法
+    await p; 
+    console.log('ok 2') // 等待 await p 执行完再执行这行,将异步变成同步
+}
+
+getA().then((res) => {
+    console.log(res)
+    }).catch((err) => {
+    console.log(err)
+    })
+```
+
 ## 迭代器和Iterables
 - 主对象/类应该存储一些数据。
 - 主对象/类必须具有全局“众所周知的`Symbolssymbol.iterator`作为其属性，Symbols根据规则＃3至＃6实现特定方法

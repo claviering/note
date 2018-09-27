@@ -297,7 +297,13 @@ object.style.zIndex = 'num'
 <div onselectstart="javascript:return false;">不能被选择</div>
 ```
 
+## querySelectorAll
+
+选择全部元素
+
 ## querySelector选择器
+
+选择第一个元素
 ```js
 <div id="foo\bar"></div>
 <div id="foo:bar"></div>

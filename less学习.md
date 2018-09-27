@@ -13,7 +13,7 @@ lessc my.less 生成my.css文件
 ## vue中使用
 
 ### 单组件中使用 添加lang='less'
-```
+```js
 <style scoped lang='less'>
 @mainColor: #2c3e50;
 #app {
@@ -23,7 +23,7 @@ lessc my.less 生成my.css文件
 ```
 
 ### 写入.less文件 通过import引入
-```
+```js
 //GlobleLessVarables.less
 @mainColor: #2c3e50;
 
@@ -41,7 +41,7 @@ lessc my.less 生成my.css文件
 没看懂，下次再继续
 
 ## 变量
-```
+```css
 @color: #4D926F;
 #header {
   color: @color;
@@ -53,7 +53,7 @@ h2 {
 
 ### @arguments 变量
 @arguments包含了所有传递进来的参数,如果你不想单独处理每一个参数的话就可以像这样写:
-```
+```css
 .box-shadow (@x: 0, @y: 0, @blur: 1px, @color: #000) {
   box-shadow: @arguments;
   -moz-box-shadow: @arguments;
@@ -62,14 +62,14 @@ h2 {
 .box-shadow(2px, 5px);
 ```
 输出
-```
+```css
   box-shadow: 2px 5px 1px #000;
   -moz-box-shadow: 2px 5px 1px #000;
   -webkit-box-shadow: 2px 5px 1px #000;
 ```
 
 ## 混合
-```
+```css
 .rounded-corners (@radius: 5px) {
   border-radius: @radius;
   -webkit-border-radius: @radius;
@@ -85,7 +85,7 @@ h2 {
 ```
 
 ## 嵌套规则
-```
+```css
 #header {
   h1 {
     font-size: 26px;
@@ -100,7 +100,7 @@ h2 {
 ```
 
 ## 运算
-```
+```css
 @the-border: 1px;
 @base-color: #111;
 @red:        #842210;
@@ -118,15 +118,15 @@ h2 {
 
 ## 在客户端使用
 引入你的 .less 样式文件的时候要设置 rel 属性值为 “stylesheet/less”:
-```
+```js
 <link rel="stylesheet/less" type="text/css" href="styles.less">
 ```
 下载 less.js, 在<head> 中引入:
-```
+```js
 <script src="less.js" type="text/javascript"></script>
 ```
 ## 引导
-```
+```css
 .mixin (@a) when (lightness(@a) >= 50%) {
   background-color: black;
 }
@@ -169,7 +169,7 @@ floor(2.6);  // returns `2`
 percentage(0.5); // returns `50%`
 ```
 ## 命名空间
-```
+```css
 #bundle (){
   .button {
     display: block;
@@ -190,7 +190,7 @@ percentage(0.5); // returns `50%`
 ```
 
 ## 字符串插值
-```
+```css
 @base-url: "http://assets.fnord.com";
 background-image: url("@{base-url}/images/bg.png");
 @min768: (min-width: 768px);
@@ -213,7 +213,7 @@ JavaScript 表达式也可以在.less 文件中使用. 可以通过反引号的�
 ```
 
 ## 不编译
-```
+```css
 .class {
   filter: ~"ms:alwaysHasItsOwnSyntax.For.Stuff()";
 }
