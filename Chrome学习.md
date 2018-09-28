@@ -39,5 +39,14 @@ ESC快捷键打开控制台
 4.  Tap the List icon in Chrome and select Settings on the drop-down menu. Now, tap Privacy to gain access to your Privacy options.
 5.  Tap Search and Suggestions to turn the option on.
 
+## 关闭 Android 在新的 tab 中显示下载内容 
 
+1. chrome://flags
+2. search download
+3. disable it
 
+## 关闭 react Recent bookmarks
+
+1. chrome://flags
+2. search enable-ntp-bookmark-suggestions
+3. disable it

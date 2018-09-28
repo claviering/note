@@ -1,5 +1,9 @@
 # React 学习
 
+## 添加 alias
+
+`'@': path.resolve(__dirname, '../src'),`
+
 ## 配置 sass
 
 1. 创建项目
@@ -27,14 +31,19 @@ npm install --save react-router-dom
 ## Adding Bootstrap
 
 ```sh
-npm install --save react-bootstrap bootstrap@3
+npm install --save reactstrap
 ```
 
 ```js
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/css/bootstrap-theme.css';
-// Put any other imports below so that CSS from your
-// components takes precedence over default styles.
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS in the src/index.js file:
+import { Button } from 'reactstrap';
+
+export default (props) => {
+  return (
+    <Button color="danger">Danger!</Button>
+  );
+};
 ```
 
 ## 组件
