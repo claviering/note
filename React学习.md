@@ -1,5 +1,69 @@
 # React 学习
 
+## 组件传值
+
+### 子组件传给父组件 父组件传给子组件
+
+子组件 Search.jsx -> 父组件 App.jsx -> 子组件 Main.jsx
+
+子组件 Search.jsx
+```js
+import PropTypes from 'prop-types'
+
+state propTypes = {
+  setSearchName: PropTypes.func.isRequired
+}
+
+search = () => {
+  const searchName = this.input.value.trim()
+  if (searchName) {
+    this.props.setSearchName(searchName)
+  }
+}
+
+render () {
+  return (
+    <input ref={input => this.input = input}></input>
+    <button onClick={this.search}></button>
+  )
+}
+```
+
+父组件 App.jsx
+```js
+state = {
+  searchName: ''
+}
+
+setSearchName = (searchName) => {
+  this.setState({searchName})
+}
+
+render () {
+  return (
+    <div>
+      <Search setSearchName={this.setSearchName}></Search>
+      <Main searchName={this.state.searchName}></Main>
+    </div>
+  )
+}
+```
+
+子组件 Main.jsx
+```js
+import PropTypes from 'prop-types'
+state propTypes = {
+  searchName: PropTypes.string.isRequired
+}
+
+render () {
+  const {searchName} = this.props
+  return (
+    <h1>{searchName}<h1>
+  )
+}
+```
+
 ## 添加 alias
 
 `'@': path.resolve(__dirname, '../src'),`
