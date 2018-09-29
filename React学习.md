@@ -1,6 +1,51 @@
 # React 学习
 
+## 类似 vue 的 v-for
+```js
+return (
+  this.state.list.map((item, index) => (
+    <ul>
+    {
+      <li>
+        {item}{index}
+      </li>
+    }
+    </ul>
+  ))
+)
+```
 ## 组件传值
+
+1. props
+2. 使用消息订阅 subscribe -发布 publish 机制
+3. redux
+
+### 组件传值 使用 redux
+
+### 组件传值 使用 PubSubJS
+
+[github](https://github.com/mroderick/PubSubJS)
+
+兄弟组件 search.jsx
+```js
+import PubSub from 'pubsub-js'
+
+// 发布消息 消息名, 发送的数据
+PubSub.publish('search', searchName)
+```
+
+兄弟组件 main.jsx
+```js
+import PubSub from 'pubsub-js'
+
+// 订阅消息 消息名, 接收的数据
+PubSub.subscribe('search', (msg, searchName) => {
+  console.log(msg, searchName)
+})
+```
+
+
+### 组件传值 使用 props
 
 ### 子组件传给父组件 父组件传给子组件
 
@@ -86,11 +131,55 @@ Also don’t forget to replicate the same in webpack.config.prod.js for producti
 }
 ```
 
-## Adding a Router
+## react Router
 
 ```sh
 npm install --save react-router-dom
 ```
+
+### 路由转跳2种方法
+
+1. 路由组件
+2. 函数
+
+#### 函数转跳
+
+```js
+function show () {
+  this.props.history.push(url)
+}
+```
+
+### 路由组件
+
+```js
+<BrowserRouter></BrowserRouter> // 包含着<App /> 接管应用 <BrowserRouter><App /></BrowserRouter> 
+<HashRouter></HashRouter>
+<Router></Router> // 路由显示组件
+<Redirct></Redirct> // 路由重定向
+<Link></Link> // 路由链接
+<NavLink></NavLink>
+<Switch></Switch> // 只匹配一个路由
+```
+
+### 重新封装路由组件
+```js
+render () {
+  reutrn (
+    <NavLink {..this.props} mysetting></NavLink>
+  )
+}
+```
+
+### 路由传值
+父组件
+ ```js
+ <Route path={'/home/:id'}>
+ ```
+ 子组件
+ ```js
+ const id = this.props.match.params.id
+ ```
 
 ## Adding Bootstrap
 
