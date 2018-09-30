@@ -1,5 +1,26 @@
 # ES7学习.md
 
+## async await
+
+```js
+let p = new Promise((resolve, reject) => {
+    resolve('ok')
+})
+
+// async 函数默认返回一个promise对象
+async function getA () {
+    // await 相当是一个语法糖，不用通过then方法
+    await p; 
+    console.log('ok 2') // 等待 await p 执行完再执行这行,将异步变成同步
+}
+
+getA().then((res) => {
+    console.log(res)
+    }).catch((err) => {
+    console.log(err)
+    })
+```
+
 ## array
 ```js
 array.includes()

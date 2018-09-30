@@ -16,7 +16,7 @@ function* show () {
     console.log('b')
 }
 let genObj = show()
-genObj().next()
+genObj.next()
 ```
 
 ### yield 传参
@@ -64,10 +64,20 @@ runner(function* () {
 let p2 = new Promise((resolve, reject) => {
     // 成功调用 resolve
     // 失败调用 reject
+    if (/* 异步操作成功 */){
+        resolve(value);
+    } else {
+        reject(error);
+    }
 })
 let p2 = new Promise((resolve, reject) => {
     // 成功调用 resolve
     // 失败调用 reject
+    if (/* 异步操作成功 */){
+        resolve(value);
+    } else {
+        reject(error);
+    }
 })
 
 function createPrimise () {
@@ -84,44 +94,6 @@ Promise.all([p1, p2])
         // 至少一个失败
     })
 Promise.race()
-```
-
-## async ES7
-
-```js
-// async 函数默认返回一个promise对象
-// async 代替 ES6 点星号
-// asyncs 可以写箭头函数
-async function getA () {
-    await // 代替 ES6 的 yield
-}
-
-getA().then((res) => {
-    console.log(res)
-    }).catch((err) => {
-    console.log(err)
-    })
-```
-
-## await ES7
-
-```js
-let p = new Promise((resolve, reject) => {
-    resolve('ok')
-})
-
-// async 函数默认返回一个promise对象
-async function getA () {
-    // await 相当是一个语法糖，不用通过then方法
-    await p; 
-    console.log('ok 2') // 等待 await p 执行完再执行这行,将异步变成同步
-}
-
-getA().then((res) => {
-    console.log(res)
-    }).catch((err) => {
-    console.log(err)
-    })
 ```
 
 ## 迭代器和Iterables
