@@ -3,6 +3,8 @@
 <!-- TOC -->
 
 - [webpack 学习](#webpack-%E5%AD%A6%E4%B9%A0)
+  - [Webpack揭秘——走向高阶前端的必经之路](#webpack%E6%8F%AD%E7%A7%98%E8%B5%B0%E5%90%91%E9%AB%98%E9%98%B6%E5%89%8D%E7%AB%AF%E7%9A%84%E5%BF%85%E7%BB%8F%E4%B9%8B%E8%B7%AF)
+    - [Webpack运行机制](#webpack%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6)
   - [基本配置](#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)
     - [路径](#%E8%B7%AF%E5%BE%84)
     - [webpack4.x 配置 mode](#webpack4x-%E9%85%8D%E7%BD%AE-mode)
@@ -30,6 +32,17 @@
     - [html-webpack-plugin 插件配置](#html-webpack-plugin-%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)
 
 <!-- /TOC -->
+
+## Webpack揭秘——走向高阶前端的必经之路
+
+[Webpack揭秘—](https://juejin.im/post/5badd0c5e51d450e4437f07a)
+
+### Webpack运行机制
+
+初始化配置参数 -> 绑定事件钩子回调 -> 确定Entry逐一遍历 -> 使用loader编译文件 -> 输出文件
+
+
+
 ## 基本配置
 
 ### 路径

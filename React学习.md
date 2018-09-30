@@ -1,5 +1,17 @@
 # React 学习
 
+## Redux
+
+1. 状态管理的 js 库
+2. 集中管理组件共享状态
+
+## UI 库
+
+1. ant-design
+2. material-ui
+
+`babel-loader-import` 按需打包
+
 ## 类似 vue 的 v-for
 ```js
 return (

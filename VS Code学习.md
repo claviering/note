@@ -276,9 +276,9 @@ clg -> console.log
 - 自动闭合标记(Auto Close Tag)和自动重命名标记(Auto Rename Tag)
 - highlight-matching-tag
 - 跳转到 CSS 定义行 – CSS Peek
- + Peek: load the css file inline and make quick edits right there. (Ctrl+Shift+F12)
- + Go To: jump directly to the css file or open it in a new editor (F12)
- + Hover: show the definition in a hover over the symbol (Ctrl+hover)
+  + Peek: load the css file inline and make quick edits right there. (Ctrl+Shift+F12)
+  + Go To: jump directly to the css file or open it in a new editor (F12)
+  + Hover: show the definition in a hover over the symbol (Ctrl+hover)
 - Beautify
 - EditorConfig for VS Code
 - HTTP Server / HTML Preview 作者shawn Funke
