@@ -1,6 +1,86 @@
 # React 学习
 
+## 懒加载
+
+`react-loadable`
+
+```js
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Loadable from 'react-loadable';
+
+const Loading = () => <div>Loading...</div>;
+
+const Home = Loadable({
+  loader: () => import('./routes/Home'),
+  loading: Loading,
+});
+
+const About = Loadable({
+  loader: () => import('./routes/About'),
+  loading: Loading,
+});
+
+const App = () => (
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Home}/>
+      <Route path="/about" component={About}/>
+    </Switch>
+  </Router>
+);
+```
+
+## 动画
+
+`react-transition-group`
+
+## 条件渲染
+
+```js
+{this.props.loginstate !== 1 && <Login />}	
+{this.props.loginstate === 1 && <UserInfo />}
+```
+
+```js
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+ReactDOM.render(
+  // 修改为 isLoggedIn={true} 试试:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
+);
+```
+
+## 组件中的函数
+
+```js
+onClick = { this.handleClick.bind(this) }
+// 绑定 this, 函数中才能用到 this
+```
+
 ## Redux
+
+### react- redux
+
+### 调试工具
+
+`npm i -D redux-devtool-extension`
+
+```js
+import { composeWithDevTools } from 'redux-devtool-extension'
+const store = createStore(
+  counter,
+  composeWithDevTools(applyMiddleware(thunk))
+)
+```
+
+
 
 1. 状态管理的 js 库
 2. 集中管理组件共享状态
@@ -25,6 +105,19 @@ return (
     </ul>
   ))
 )
+```
+
+或者
+```js
+const numbers = [1, 2, 3, 4, 5];
+const listItems = numbers.map((number) =>
+  <li key={number.toString()}>{number}</li>
+);
+
+ReactDOM.render(
+  <ul>{listItems}</ul>,
+  document.getElementById('root')
+);
 ```
 ## 组件传值
 
@@ -157,8 +250,21 @@ npm install --save react-router-dom
 #### 函数转跳
 
 ```js
+// 组件中的路由转跳
 function show () {
   this.props.history.push(url)
+}
+```
+
+或者
+
+```js
+// 整个页面转跳
+import { BrowserRouter } from 'react-router-dom'
+import { hashHistory } from 'react-router'
+handelClick(id){
+  hashHistory.push(url)
+  BrowserRouter.push(url)
 }
 ```
 
