@@ -1,5 +1,14 @@
 ﻿# JS学习
 
+## 获取 url 参数
+
+```js
+var url_string = "http://www.example.com/t.html?a=1&b=3&c=m2-m3-m4-m5"; //window.location.href
+var url = new URL(url_string);
+var c = url.searchParams.get("c");
+console.log(c);
+```
+
 ## js 代码加上调试
 
 代码中添加

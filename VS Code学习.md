@@ -125,14 +125,14 @@ js from react
   "reactFormApp": {
     "prefix": "react",
     "body": [
-      "import React, { Component } from 'react';\n",
+      "import React, { Component } from 'react'\n",
       "class ${TM_FILENAME_BASE} extends Component {",
-      "  render() {",
+      "  render () {",
       "    return (",
       "      <div className=\"${TM_FILENAME_BASE}\">",
       "        $1",
       "      </div>",
-      "    );",
+      "    )",
       "  }",
       "}\n",
       "export default ${TM_FILENAME_BASE};"

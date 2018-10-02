@@ -64,26 +64,9 @@ onClick = { this.handleClick.bind(this) }
 // 绑定 this, 函数中才能用到 this
 ```
 
-## Redux
-
-### react- redux
-
-### 调试工具
-
-`npm i -D redux-devtool-extension`
-
-```js
-import { composeWithDevTools } from 'redux-devtool-extension'
-const store = createStore(
-  counter,
-  composeWithDevTools(applyMiddleware(thunk))
-)
-```
 
 
 
-1. 状态管理的 js 库
-2. 集中管理组件共享状态
 
 ## UI 库
 
@@ -236,68 +219,6 @@ Also don’t forget to replicate the same in webpack.config.prod.js for producti
 }
 ```
 
-## react Router
-
-```sh
-npm install --save react-router-dom
-```
-
-### 路由转跳2种方法
-
-1. 路由组件
-2. 函数
-
-#### 函数转跳
-
-```js
-// 组件中的路由转跳
-function show () {
-  this.props.history.push(url)
-}
-```
-
-或者
-
-```js
-// 整个页面转跳
-import { BrowserRouter } from 'react-router-dom'
-import { hashHistory } from 'react-router'
-handelClick(id){
-  hashHistory.push(url)
-  BrowserRouter.push(url)
-}
-```
-
-### 路由组件
-
-```js
-<BrowserRouter></BrowserRouter> // 包含着<App /> 接管应用 <BrowserRouter><App /></BrowserRouter> 
-<HashRouter></HashRouter>
-<Router></Router> // 路由显示组件
-<Redirct></Redirct> // 路由重定向
-<Link></Link> // 路由链接
-<NavLink></NavLink>
-<Switch></Switch> // 只匹配一个路由
-```
-
-### 重新封装路由组件
-```js
-render () {
-  reutrn (
-    <NavLink {..this.props} mysetting></NavLink>
-  )
-}
-```
-
-### 路由传值
-父组件
- ```js
- <Route path={'/home/:id'}>
- ```
- 子组件
- ```js
- const id = this.props.match.params.id
- ```
 
 ## Adding Bootstrap
 
