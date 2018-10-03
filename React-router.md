@@ -1,12 +1,18 @@
 # React router 学习
 
+## 给路由组件传值
+```js
+tmpTodoList = () => (<TodoList store={ this.store }></TodoList>) // 先封装一次
+<Route exact path="/" component={ this.tmpTodoList } />
+```
+
 ## React Router页面传值的三种方法
 
 ### props.params
 
 `<Route path='/user/:name' component={UserPage}></Route>`
 
-### query
+### query 传递参数为明文
 
 使用
 ```js
@@ -23,8 +29,8 @@ var path = {
 var data = this.props.location.state;
 var {id,name,age} = data;
 ```
-### state
-
+### state 方式类似于 post 方式
+ 
 使用
 ```js
 var data = {id:3,name:sam,age:36};

@@ -305,7 +305,7 @@ React生命周期主要包括三个阶段：初始化阶段、运行中阶段和
 
 1. 设置组件的默认属性
 2. 设置组件的初始化状态
-3. componentWillMount() 组件即将被渲染到页面之前触发，此时可以进行开启定时器、向服务器发送请求等操作
+3. UNSAFE_componentWillMount() componentWillMount() 组件即将被渲染到页面之前触发，此时可以进行开启定时器、向服务器发送请求等操作
 4. render() 组件渲染
 5. componentDidMount() 组件已经被渲染到页面中后触发：此时页面中有了真正的DOM的元素，可以进行DOM相关的操作
 
