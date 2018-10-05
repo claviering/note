@@ -1,5 +1,17 @@
 ﻿# CSS 学习
 
+## display: none 和 visibility:hidden
+
+`display:none` 不占用原来的位置，而`visibility:hidden`保留原来的位置后
+
+浏览器会解析HTML标签生成DOM Tree，解析CSS生成CSSOM，然后将DOM Tree和CSSOM合成生成Render Tree，元素在Render Tree中对应0或多个盒子，然后浏览器以盒子模型的信息布局和渲染界面。而设置为display:none的元素则在Render Tree中没有生成对应的盒子模型，因此后续的布局、渲染工作自然没它什么事了，至于DOM操作还是可以的
+
+### none
+
+1. 无法响应任何事件，无论是捕获、命中目标和冒泡阶段均不可以
+2. 不耽误form表单提交数据 虽然我们无法看到display:none的元素，但当表单提交时依然会将隐藏的input元素的值提交上去
+3. CSS中的counter会忽略display:none的元素
+
 ## CSS 的 white-space 属性
 [white-space](http://www.ruanyifeng.com/blog/2018/07/white-space.html)
 CSS 提供了一个white-space属性，可以提供更精确一点的空格处理方式。该属性共有六个值，除了一个通用的inherit（继承父元素），下面依次介绍剩下的五个值。

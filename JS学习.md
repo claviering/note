@@ -1,5 +1,46 @@
 ﻿# JS学习
 
+## js 深入
+
+js 是单线程异步,多线程靠浏览器
+
+有事件队列和执行栈
+
+任务队列分为 macrotasks 和 microtasks, 而promise中的then方法的函数会被推入到microtasks队列中，而setTimeout函数会被推入到macrotasks
+
+任务队列中，在每一次事件循环中，macrotask只会提取一个执行，而microtask会一直提取，直到microsoft队列为空为止,Promise的函数代码的异步任务会优先于setTimeout的延时为0的任务先执行.事件循环每次只会入栈一个macrotask,主线程执行完成该任务后又会检查microtasks队列并完成里面的所有任务后再执行macrotask的任务
+
+```js
+setTimeout(()=>{
+    console.log('A');
+},0);
+var obj={
+    func:function () {
+        setTimeout(function () {
+            console.log('B')
+        },0);
+        return new Promise(function (resolve) {
+            console.log('C');
+            resolve();
+        })
+    }
+};
+obj.func().then(function () {
+    console.log('D')
+});
+console.log('E');
+
+1. 首先 setTimeout A 被加入到事件队列中  ==>  此时macrotasks中有[‘A’]
+2. obj.func()执行时，setTimeout B 被加入到事件队列中  ==> 此时macrotasks中有[‘A’，‘B’]
+3. 接着return一个Promise对象，Promise 新建后立即执行 执行console.log('C'); 控制台首次打印‘C’
+4. 然后，then方法指定的回调函数，被加入到microtasks队列，将在当前脚本所有同步任务执行完才会执行 ==>  此时microtasks中有[‘D’]
+5. 然后继续执行当前脚本的同步任务，故控制台第二次输出‘E’
+6. 此时所有同步任务执行完毕，如上所述先检查microtasks队列，完成其中所有任务，故控制台第三次输出‘D’
+7. 最后再执行macrotask的任务，并且按照入队列的时间顺序，控制台第四次输出‘A’，控制台第五次输出‘B’
+8. 输出 C E D A B
+
+```
+
 ## 获取 url 参数
 
 ```js
@@ -110,7 +151,8 @@ isChromeFirefox()
 
 ## confire
 
-`global.confirm`() 窗口弹出提示
+`global.confirm()` 窗口弹出提示
+`result = window.confirm(message);`
 
 可以在路由的`beforeRouterLeave`用,判断用户是否要离开页面
 
