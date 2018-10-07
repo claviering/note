@@ -1,5 +1,11 @@
 # vue-cli 3.x 学习
 
+## 编译为组件 或 异步组件
+
+`-target wc`
+
+`-target-async wc`
+
 ## 安装
 
 卸载vue 2.x

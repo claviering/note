@@ -1,5 +1,23 @@
 # ES7学习.md
 
+## await 并行执行
+
+```js
+let a1 = await p1
+let a2 = await p2
+let res1 = await a1
+let res2 = await a2
+```
+```js
+Promise.all([p1, p2])
+```
+
+在循环中并行 `await`
+
+循环的是 `Promise` 数组
+
+`for (promise of promises)`
+
 ## async await
 
 ```js
