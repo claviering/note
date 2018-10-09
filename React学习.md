@@ -1,5 +1,39 @@
 # React 学习
 
+## 添加环境变量
+
+目录: 
+
+`src/utils`
+
+`export const api = process.env.REACT_APP_URL || http://example.com/api`
+
+`src/`
+
+开发环境
+
+文件
+`.env.development.local`
+添加变量
+
+process.env.REACT_APP_URL =  http://example.com/api
+
+生产环境
+
+`.env.production.local`
+process.env.REACT_APP_URL =  http://example.com/api
+
+
+## Prop 类型检测
+
+`import PropTypes from 'prop-types'`
+
+```js
+Records.propTypes = {
+  id: PropTypes.number
+}
+```
+
 ## 懒加载
 
 `react-loadable`

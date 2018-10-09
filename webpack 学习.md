@@ -2,22 +2,23 @@
 
 <!-- TOC -->
 
-- [webpack 学习](#webpack-%E5%AD%A6%E4%B9%A0)
-  - [Webpack揭秘——走向高阶前端的必经之路](#webpack%E6%8F%AD%E7%A7%98%E8%B5%B0%E5%90%91%E9%AB%98%E9%98%B6%E5%89%8D%E7%AB%AF%E7%9A%84%E5%BF%85%E7%BB%8F%E4%B9%8B%E8%B7%AF)
-    - [Webpack运行机制](#webpack%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6)
-  - [基本配置](#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)
-    - [路径](#%E8%B7%AF%E5%BE%84)
-    - [webpack4.x 配置 mode](#webpack4x-%E9%85%8D%E7%BD%AE-mode)
-  - [三十分钟掌握Webpack性能优化](#%E4%B8%89%E5%8D%81%E5%88%86%E9%92%9F%E6%8E%8C%E6%8F%A1webpack%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
-  - [loader 配置](#loader-%E9%85%8D%E7%BD%AE)
+- [webpack 学习](#webpack-学习)
+  - [Webpack揭秘——走向高阶前端的必经之路](#webpack揭秘走向高阶前端的必经之路)
+    - [Webpack运行机制](#webpack运行机制)
+  - [代码拆分](#代码拆分)
+  - [基本配置](#基本配置)
+    - [路径](#路径)
+    - [webpack4.x 配置 mode](#webpack4x-配置-mode)
+  - [三十分钟掌握Webpack性能优化](#三十分钟掌握webpack性能优化)
+  - [loader 配置](#loader-配置)
     - [sass-loader / less-loader](#sass-loader--less-loader)
-    - [配置html-loader](#%E9%85%8D%E7%BD%AEhtml-loader)
+    - [配置html-loader](#配置html-loader)
     - [url-loader](#url-loader)
-    - [配置 css-loader](#%E9%85%8D%E7%BD%AE-css-loader)
+    - [配置 css-loader](#配置-css-loader)
       - [making CSS modular](#making-css-modular)
-    - [配置typescript ts-loader](#%E9%85%8D%E7%BD%AEtypescript-ts-loader)
-    - [使用babel-loader](#%E4%BD%BF%E7%94%A8babel-loader)
-  - [插件配置](#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)
+    - [配置typescript ts-loader](#配置typescript-ts-loader)
+    - [使用babel-loader](#使用babel-loader)
+  - [插件配置](#插件配置)
     - [webpack-bundle-analyzer](#webpack-bundle-analyzer)
     - [uglifyjs-webpack-plugin](#uglifyjs-webpack-plugin)
     - [MiniCssExtractPlugin](#minicssextractplugin)
@@ -27,9 +28,9 @@
     - [ExtractTextWebpackPlugin](#extracttextwebpackplugin)
     - [CommonsChunkPlugin](#commonschunkplugin)
     - [ProvidePlugin](#provideplugin)
-    - [配置 webpack-dev-server](#%E9%85%8D%E7%BD%AE-webpack-dev-server)
+    - [配置 webpack-dev-server](#配置-webpack-dev-server)
     - [AutomaticPrefetchPlugin](#automaticprefetchplugin)
-    - [html-webpack-plugin 插件配置](#html-webpack-plugin-%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)
+    - [html-webpack-plugin 插件配置](#html-webpack-plugin-插件配置)
 
 <!-- /TOC -->
 
@@ -42,6 +43,18 @@
 初始化配置参数 -> 绑定事件钩子回调 -> 确定Entry逐一遍历 -> 使用loader编译文件 -> 输出文件
 
 
+## 代码拆分
+
+```js
+module.export = {
+    // ...
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    }
+}
+```
 
 ## 基本配置
 
