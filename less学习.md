@@ -1,13 +1,27 @@
-﻿# less学习
+# less学习
 LESS 将 CSS 赋予了动态语言的特性，如 变量， 继承， 运算， 函数. LESS 既可以在 客户端 上运行 (支持IE 6+, Webkit, Firefox)，也可以借助Node.js或者Rhino在服务端运行。
 
-[教程](http://www.bootcss.com/p/lesscss/)
+[教程1](http://www.bootcss.com/p/lesscss/)
+
+[教程2](http://lesscss.org/functions/)
 
 ## 安装
 ```
 npm install less less-loader --save
 npm install -g less
 lessc my.less 生成my.css文件
+```
+## Each
+@value, @key, and @index
+
+```less
+@selectors: blue, green, red;
+
+each(@selectors, {
+  .sel-@{value} {
+    a: b;
+  }
+});
 ```
 
 ## vue中使用

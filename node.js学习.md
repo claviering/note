@@ -1,5 +1,81 @@
 # node.js学习
 
+## 操作 xlsx 文件
+
+node-xlsx
+
+## 文件上传
+
+multer
+
+文件属性
+
+```js
+exports.uploadFile = (req, res) => {
+  var file = req.file;
+  console.log('文件类型：%s', file.mimetype);
+  console.log('原始文件名：%s', file.originalname);
+  console.log('文件大小：%s', file.size);
+  console.log('文件保存路径：%s', file.path);
+  res.send('upload success')
+}
+```
+
+保存原文件名的
+```js
+const multer = require('multer');
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+})
+
+const upload = multer({ storage: storage });
+app.post('/upload', upload.single('file'), controller.uploadFile);
+```
+
+没有保存文件名的
+```js
+const express = require('express');
+const multer = require('multer');
+const upload = multer({
+  dest: 'uploads/' // this saves your file into a directory called "uploads"
+}); 
+
+const app = express();
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
+
+// It's very crucial that the file name matches the name attribute in your html
+app.post('/', upload.single('file-to-upload'), (req, res) => {
+  res.redirect('/');
+});
+
+app.listen(3000);
+```
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Simple Multer Upload Example</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <form action="/" enctype="multipart/form-data" method="post">
+      <input type="file" name="file-to-upload">
+      <input type="submit" value="Upload">
+    </form>  
+  </body>
+</html>
+```
+
 ## 模块
 每个模块都有一个自己的module对象,module对象中有一个exports成员,文件最后`return module.exports`,为了简化代码，有一句 `var exports =  module.exports`所以`exports.a = 1`是等价`module.exports.a = 1`
 
@@ -159,13 +235,13 @@ var express = require('express');
 var app = express();
 
 // art参数要和res.render第一个参数的文件后缀名一样
-app.engine('art', require('express-art-template'));
+app.engine('html', require('express-art-template'));
 app.set('view options', {
     debug: process.env.NODE_ENV !== 'production'
 });
 
 app.get('/', function (req, res) {
-    res.render('index.art', {
+    res.render('index.html', {
         user: {
             name: 'aui',
             tags: ['art', 'template', 'nodejs']
@@ -201,6 +277,12 @@ app.get('/student/:num, (req, res) => {
 })
 ```
 ## fs
+
+使用 Promise 
+fs.promised
+```js
+fs.promised
+```
 
 没有data目录要先创建目录，不然报错
 ```js
