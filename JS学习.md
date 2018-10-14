@@ -1,5 +1,9 @@
 ﻿# JS学习
 
+## 删除属性
+
+`removeAttribute`
+
 ## js 深入
 
 js 是单线程异步,多线程靠浏览器

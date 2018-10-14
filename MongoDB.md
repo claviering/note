@@ -2,6 +2,14 @@
 
 集合 === 数据库
 
+## Mac 上开启 MongoDB
+
+`mongod` 开启服务
+
+`mongo` 链接数据库
+
+## 使用 mongoose 链接 MongoDB
+
 ## Node.js 连接 MongoDB
 
 `npm i mongodb`
