@@ -45,9 +45,13 @@ git rm --cached 在commit之前撤销git add操作
 git reset head好像比上面git rm --cached更方便
 ```
 
+## pull
+
+git pull <remoter> <branch>
+
 ## 分支
 ```shell
-git branch 查看分支
+git branch 查看分支 -a 全部分支 -r 远程分支
 git branch dev  创建分支
 git checkout dev  切换分支
 git checkout -b dev 创建并且切换分支
