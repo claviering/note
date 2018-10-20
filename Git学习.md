@@ -42,7 +42,7 @@ git reset --soft HEAD^
 ```
 git add file#.或*代表全部添加
 git rm --cached 在commit之前撤销git add操作
-git reset head好像比上面git rm --cached更方便
+git reset head 好像比上面git rm --cached更方便
 ```
 
 ## pull
@@ -58,6 +58,26 @@ git checkout -b dev 创建并且切换分支
 Switched to branch 'dev'
 git merge dev 合并dev分支到当前分支
 git branch -d dev 删除dev分支
+git branch -m old_branch new_branch         # Rename branch locally    
+git push origin :old_branch                 # Delete the old branch    
+git push --set-upstream origin new_branch   # Push the new branch, set local branch to track the new remote
 ```
+
+## 查看修改
+想看到最近一次提交所有更改过的文件
+
+对应命令 `git log -n 1 --stat`
+
+想看到最近一次提交所有更改的细节
+
+对应命令 `git log -n 1 -p`
+
+查看指定commit hashID的所有修改：
+
+`git show commmitId`
+
+查看指定commit hashID的具体文件的修改：
+
+`git show commmitId fileName`
 
 

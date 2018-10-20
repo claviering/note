@@ -46,6 +46,12 @@ for..in.. // (循环的是下标)
 for..of.. // (循环的是值)
 ```
 ## Object
+```js
+const obj = { a: 5, b: 7, c: 9 };
+for (const [key, value] of Object.entries(obj)) {
+  console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
+}
+```
 ### Object.values()
 
 ```js
