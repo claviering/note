@@ -1,8 +1,8 @@
 ﻿# JS学习
 
-## 删除属性
+## 删除对象属性
 
-`removeAttribute`
+`delete Attribute`
 
 ## js 深入
 

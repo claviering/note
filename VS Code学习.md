@@ -197,7 +197,9 @@ Markdown: <!-- #region --> and <!-- #endregion -->
     "emmet.showSuggestionsAsSnippets": true,
     "editor.snippetSuggestions": "top",
     "emmet.triggerExpansionOnTab": true,
-    "githubCompatibility": true
+    "githubCompatibility": true,
+    "fileheader.Author": "lin weiye",
+    "fileheader.LastModifiedBy": "weiye"
 }
 ```
 
