@@ -290,6 +290,8 @@ clg -> console.log
 - fileheader ctrl+alt+i 顶部注释模板，可定义作者、时间等信息，并会自动更新最后修改时间
 - Node.js Modules Intellisense (Zongmin Lei) 对于node_module的智能提示
 - markdown toc (AlanWalk)
+- BookMarks
+- fileheader
 
 ### React插件
 
