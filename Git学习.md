@@ -80,4 +80,8 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 
 `git show commmitId fileName`
 
+## delete Untracked file
+
+`git clean -f`
+
 

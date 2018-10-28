@@ -1,5 +1,22 @@
 ﻿# JS学习
 
+## 替换数组对象
+
+```js
+var stooges = [
+            {label:1,value:1,placeCode: 'sh', stock_code: 40},
+            {label:1,value:1,placeCode: 'sh', stock_code: 50},
+            {label:1,value:1,placeCode: 'sz', stock_code: 60,status:1},
+            {label:1,value:1,placeCode: 'sz', stock_code: 39,status:1}
+        ];
+var maps= new Map([['sh','沪'],['sz','深圳']]);
+stooges = stooges.map(element =>{
+    element.placeCode = maps.get(element.placeCode);
+    return element;
+});
+console.log(stooges);
+```
+
 ## 删除对象属性
 
 `delete Attribute`
