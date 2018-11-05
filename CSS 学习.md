@@ -1,5 +1,29 @@
 ﻿# CSS 学习
 
+## rem 适配
+
+```css
+html{
+		font-size:16px;
+	}
+@media screen and (min-width:240px) {
+    html {
+        font-size:9px;
+    }
+}
+@media screen and (min-width:320px) {
+	html {
+		font-size:12px;
+	}
+}
+@media screen and (min-width:375px) {
+	html{
+		font-size:14.0625px;
+	}
+}
+
+```
+
 ## display: none 和 visibility:hidden
 
 `display:none` 不占用原来的位置，而`visibility:hidden`保留原来的位置后
