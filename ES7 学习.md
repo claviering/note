@@ -62,6 +62,11 @@ console.log(vals) // [3,2,1]
 ```
 
 ### Object.entries()
+```js
+for (const [key, value] of Object.entries(obj)) {
+  console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
+}
+```
 
 返回 `key` 和 `values`
 

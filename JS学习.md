@@ -1,5 +1,16 @@
 ﻿# JS学习
 
+## rem 适配
+
+```js
+function setRem () {
+        let htmlRem = document.documentElement.clientWidth
+        document.documentElement.style.fontSize = htmlRem/7.5 + 'px'
+      }
+setRem()
+
+```
+
 ## 替换数组对象
 
 ```js

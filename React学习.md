@@ -1,5 +1,42 @@
 # React 学习
 
+## 16.6 版本更新
+
+### lazy
+
+```js
+import React, {lazy, Suspense} from 'react';
+const OtherComponent = lazy(() => import('./OtherComponent'));
+
+function MyComponent() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <OtherComponent />
+    </Suspense>
+  );
+}
+```
+
+### React.memo
+
+即浅比较props是否有变化，如果没有变化，就不重新渲染当前组件
+
+```js
+const FunctionalComponent = React.memo((props) => {
+  // only render if props change
+})
+
+```
+
+### getDerivedStateFromError()
+
+组价出现错误时执行
+
+componentDidCatch() 错误发生时的生命周期
+
+意味着以后出现错误的时候，修改state应该放在这里去做，而后续收集错误信息之类的放到
+componentDidCatch里面
+
 ## 添加环境变量
 
 目录: 
