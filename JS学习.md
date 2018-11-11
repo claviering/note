@@ -1,5 +1,20 @@
 ﻿# JS学习
 
+## 获取 url 参数
+
+```js
+// localhost:8080/#/?storeCode=666&storeName=name
+function getUrlVars () {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
+this.storeCode = getUrlVars()['storeCode']
+this.storeName = decodeURI(getUrlVars()['storeName'])
+```
+
 ## rem 适配
 
 ```js

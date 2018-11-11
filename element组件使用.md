@@ -29,3 +29,7 @@ focus
 在组件中使用,前面要加@
 
 @focus="myfunction"
+
+## 表格
+获取 index 和 col 数据
+`@click.native.prevent="deleteRow(scope.$index, scope.row)"`

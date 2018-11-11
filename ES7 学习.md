@@ -51,14 +51,27 @@ const obj = { a: 5, b: 7, c: 9 };
 for (const [key, value] of Object.entries(obj)) {
   console.log(`${key} ${value}`); // "a 5", "b 7", "c 9"
 }
+
+var string1 = "";
+var object1 = {a: 1, b: 2, c: 3};
+
+for (var property1 in object1) {
+  string1 += object1[property1];
+}
+
+console.log(string1);
+// expected output: "123"
 ```
 ### Object.values()
 
 ```js
 for..in.. // (循环的是下标)
 const cars = {BMW: 3, Tesla: 2, Toy: 1}
-const vals = Obj.values(cars)
+const vals = Object.values(cars)
 console.log(vals) // [3,2,1]
+for (const value of Object.values(obj)) {
+  console.log(value); // 3 2 1
+}
 ```
 
 ### Object.entries()
