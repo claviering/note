@@ -1,5 +1,15 @@
 ﻿# JS学习
 
+## 排序数组对象
+
+`objs.sort((a,b) => (a.key > b.key) ? 1 : ((b.key > a.key) ? -1 : 0))`
+
+## 数组交集
+
+```js
+resStoreList = tokenStoreList.filter(value => -1 !== stores.indexOf(value));
+```
+
 ## 获取 url 参数
 
 ```js
