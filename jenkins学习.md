@@ -29,3 +29,24 @@ java -jar jenkins.war --httpPort=9090
 ### 创建 Admin
 
 root toor
+
+## 新建
+
+new project -> Maven project
+
+## 配置 Global Tool Configuration
+
+### 配置 JDK
+
+查看 java 安装路径
+
+`/usr/libexec/java_home -V`
+
+添加 djk
+`/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home`
+
+### 配置 maven
+
+google 下载 
+
+添加路径
