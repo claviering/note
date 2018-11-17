@@ -1,5 +1,21 @@
 # node.js学习
 
+## 配置 https
+
+### 安装 openssl
+下载 openssl 解压 VSCode 打开
+`./config --prefix=/Users/linweiye/Documents/openssl-1-1-1 --openssldir=/Users/linweiye/Documents/openssl-1-1-1 enable-ec_nistp_64_gcc_128`
+
+```
+$ make depend
+$ make
+$ sudo make install
+```
+在 `/Users/linweiye/Documents/openssl-1-1-1 ` 目录下 
+
+`private/` 目录 私钥
+`certs/` 目录 根证书
+
 ## 操作 xlsx 文件
 
 node-xlsx
