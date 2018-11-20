@@ -2,23 +2,24 @@
 
 <!-- TOC -->
 
-- [webpack 学习](#webpack-学习)
-  - [Webpack揭秘——走向高阶前端的必经之路](#webpack揭秘走向高阶前端的必经之路)
-    - [Webpack运行机制](#webpack运行机制)
-  - [代码拆分](#代码拆分)
-  - [基本配置](#基本配置)
-    - [路径](#路径)
-    - [webpack4.x 配置 mode](#webpack4x-配置-mode)
-  - [三十分钟掌握Webpack性能优化](#三十分钟掌握webpack性能优化)
-  - [loader 配置](#loader-配置)
+- [webpack 学习](#webpack-%E5%AD%A6%E4%B9%A0)
+  - [优化](#%E4%BC%98%E5%8C%96)
+  - [Webpack揭秘——走向高阶前端的必经之路](#webpack%E6%8F%AD%E7%A7%98%E8%B5%B0%E5%90%91%E9%AB%98%E9%98%B6%E5%89%8D%E7%AB%AF%E7%9A%84%E5%BF%85%E7%BB%8F%E4%B9%8B%E8%B7%AF)
+    - [Webpack运行机制](#webpack%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6)
+  - [代码拆分](#%E4%BB%A3%E7%A0%81%E6%8B%86%E5%88%86)
+  - [基本配置](#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)
+    - [路径](#%E8%B7%AF%E5%BE%84)
+    - [webpack4.x 配置 mode](#webpack4x-%E9%85%8D%E7%BD%AE-mode)
+  - [三十分钟掌握Webpack性能优化](#%E4%B8%89%E5%8D%81%E5%88%86%E9%92%9F%E6%8E%8C%E6%8F%A1webpack%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
+  - [loader 配置](#loader-%E9%85%8D%E7%BD%AE)
     - [sass-loader / less-loader](#sass-loader--less-loader)
-    - [配置html-loader](#配置html-loader)
+    - [配置html-loader](#%E9%85%8D%E7%BD%AEhtml-loader)
     - [url-loader](#url-loader)
-    - [配置 css-loader](#配置-css-loader)
+    - [配置 css-loader](#%E9%85%8D%E7%BD%AE-css-loader)
       - [making CSS modular](#making-css-modular)
-    - [配置typescript ts-loader](#配置typescript-ts-loader)
-    - [使用babel-loader](#使用babel-loader)
-  - [插件配置](#插件配置)
+    - [配置typescript ts-loader](#%E9%85%8D%E7%BD%AEtypescript-ts-loader)
+    - [使用babel-loader](#%E4%BD%BF%E7%94%A8babel-loader)
+  - [插件配置](#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)
     - [webpack-bundle-analyzer](#webpack-bundle-analyzer)
     - [uglifyjs-webpack-plugin](#uglifyjs-webpack-plugin)
     - [MiniCssExtractPlugin](#minicssextractplugin)
@@ -28,11 +29,25 @@
     - [ExtractTextWebpackPlugin](#extracttextwebpackplugin)
     - [CommonsChunkPlugin](#commonschunkplugin)
     - [ProvidePlugin](#provideplugin)
-    - [配置 webpack-dev-server](#配置-webpack-dev-server)
+    - [配置 webpack-dev-server](#%E9%85%8D%E7%BD%AE-webpack-dev-server)
     - [AutomaticPrefetchPlugin](#automaticprefetchplugin)
-    - [html-webpack-plugin 插件配置](#html-webpack-plugin-插件配置)
+    - [html-webpack-plugin 插件配置](#html-webpack-plugin-%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)
 
 <!-- /TOC -->
+## 优化
+构建优化
+1. 减少编译体积 ContextReplacementPugin、IgnorePlugin、babel-plugin-import、babel-plugin-transform-runtime。
+2. 并行编译 happypack、thread-loader、uglifyjsWebpackPlugin开启并行
+3. 缓存 cache-loader、hard-source-webpack-plugin、uglifyjsWebpackPlugin开启缓存、babel-loader开启缓存
+4. 预编译 dllWebpackPlugin && DllReferencePlugin、auto-dll-webapck-plugin
+
+性能优化
+
+1. 减少编译体积 Tree-shaking、Scope Hositing。
+
+2. hash缓存 webpack-md5-plugin
+
+3. 拆包 splitChunksPlugin、import()、require.ensure
 
 ## Webpack揭秘——走向高阶前端的必经之路
 

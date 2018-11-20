@@ -51,18 +51,21 @@ ECDSA 密钥
 
 1. 创建 fd.cnf 文件
 ```
-[req]
-prompt = no
-distinguished_name = dn
-req_extensions = ext
-input_password = PASSWOED
-
-[dn]
-CN = www.example.com
-emailAddress = name@mail.com
-O = Organization Name
-L = Locality Name
-C = Country Name
+[ req ]
+default_bits       = 4096
+default_md         = sha512
+default_keyfile    = domain.com.key
+prompt             = no
+encrypt_key        = no
+distinguished_name = req_distinguished_name
+# distinguished_name
+[ req_distinguished_name ]
+countryName            = "DE"                     # C=
+localityName           = "Berlin"                 # L=
+organizationName       = "My Company"             # O=
+organizationalUnitName = "Departement"            # OU=
+commonName             = "*.domain.com"           # CN=
+emailAddress 
 ```
 `openssl req -new -config fd.cnf -key fd.key -out fd.csr`
 
@@ -89,9 +92,9 @@ C = Country Name
 #### 密钥和证书格式转换
 
 PEM -> DER
-`openssl x509 -infom PEM -in fd.pem -outform DER -out fd.pem`
+`openssl x509 -infom PEM -in fd.pem -outform DER -out fd.der`
 DER -> PEM
-`openssl x509 -infom DER -in fd.der -outform PEM -out fd.der`
+`openssl x509 -infom DER -in fd.der -outform PEM -out fd.pem`
 
 ## 配置
 
