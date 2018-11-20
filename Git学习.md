@@ -55,7 +55,8 @@ git branch 查看分支 -a 全部分支 -r 远程分支
 git branch dev  创建分支
 git checkout dev  切换分支
 git checkout -b dev 创建并且切换分支
-git checkout -b --orphan dev 创建并且切换分支,没有历史记录
+git checkout -b dev sha1 从 sha1 位置创建并且切换分支
+git checkout --orphan dev 创建并且切换分支,没有历史记录
 Switched to branch 'dev'
 git merge dev 合并dev分支到当前分支
 git branch -d dev 删除dev分支
