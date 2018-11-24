@@ -116,3 +116,40 @@ DER -> PEM
 ## 连接 SSL 服务
 
 `openssl s_client -connect www.example.com:443`
+
+```
+# HTTPS
+openssl s_client -connect remote.host:443
+
+# LDAPS
+openssl s_client -connect remote.host:636
+
+# IMAPS
+openssl s_client -connect remote.host:993
+
+# POP3S
+openssl s_client -connect remote.host:995
+```
+
+## 生成椭圆曲线密钥
+
+`openssl ecparam -out key.pem -name prime256v1 -genkey`
+
+## 测试一个数是否为素数
+`openssl prime 119054759245460753`
+返回的是16进制数
+
+## 生成随机数
+
+```
+# 直接在控制台输出128位base64格式的随机数
+openssl rand -base64 128
+
+# 在指定的文件中输出1024位二进制随机数
+openssl rand -out random-data.bin 1024
+
+# 从浏览器缓存取到半随机子节数据作为种子来生成随机数
+cd $(find ~/.mozilla/firefox -type d -name Cache)
+openssl rand -rand $(find . -type f -printf '%f:') -base64 1024
+
+```

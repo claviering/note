@@ -53,7 +53,7 @@ git pull <remoter> <branch>
 ```shell
 git branch 查看分支 -a 全部分支 -r 远程分支
 git branch dev  创建分支
-git checkout dev  切换分支
+git checkout dev  切换分支 dev 可以是远程分支
 git checkout -b dev 创建并且切换分支
 git checkout -b dev sha1 从 sha1 位置创建并且切换分支
 git checkout --orphan dev 创建并且切换分支,没有历史记录
