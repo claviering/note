@@ -50,3 +50,13 @@ new project -> Maven project
 google 下载 
 
 添加路径
+
+## 集成 Github
+
+1. 生成 github Token. settings -> Developer settings -> personal access token 选择权限生成 Token
+2. repo -> setting -> Webhooks -> Add Webhooks ( 好像不配置也行 )
+3. 配置 Jenkins Manage Jenkins -> Configure System -> Github -> Add Github Server
+4. 输入 https://api.github.com
+5. Credentials 填充 Token
+6. Project Url 填写 代码库 url ( url 没有.git )
+7. 在 Source Code Managerment 填写代码块 git 的访问地址 ( url 有.git )

@@ -6,17 +6,37 @@ Thonny
 
 ## 虚环境安装
 
-给每个python项目提供不同环境，python版本，数据库版本等
+### venv
+a single version different virtual environments
+Python 单版本, 虚拟环境
+
+给每个python项目提供不同环境，数据库版本等
 ```
 pip install virtualenv  //安装
 cd dir  //进项目目录
-virtualenv venv //新建venv目录,负责系统python到venv
+virtualenv venv //新建venv目录,复制系统python到venv
 ./venv/bin/pip install tornado //虚环境安装tornado
 ./venv/bin/python xxxx.py //虚环境运行xxxx.py
 source ./venv/bin/activate //activate命令启动虚环境，不用显式调用虚环境bin
 deactivate //退出虚环境
 // 使用``~/.bashrc``的一个环境变量将解释器改为全局性的：
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
+```
+### pyenv
+to use multiple versions without virtual environments
+
+```
+brew update
+brew pyenv install/upgrade
+pyenv install 2.7.8
+brew uninstall pyenv  卸载 pyenv
+pyenv uninstall  卸载 python 版本
+pyenv install 3.6.3  # Install Python version
+pyenv install 3.4.0
+pyenv versions       # Displays the currently active Python version, along with information on how it was set.
+pyenv version       # Lists all Python versions known to pyenv, and shows an asterisk next to the currently active version.
+pyenv global 3.6.3   # Set your system's Python version
+pyenv whence # Lists all Python versions with the given command installed.
 ```
 
 ## xampp Apache服务器配置Python
@@ -53,4 +73,3 @@ c contune
 q quit
 j 10 jump 10 跳到第10行
 直接回车是重复前一条命令!
-
