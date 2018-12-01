@@ -1,5 +1,15 @@
 ﻿# JS学习
 
+## 判断对象有没有属性
+
+`Object.hasOwnProperty('key)`
+
+## 数字格式化
+
+`Number.toLocaleString()`
+小数点后保留2位
+`toFixed(2)`
+
 ## 正则表达式
 
 ```
@@ -25,7 +35,19 @@
 ## 数组交集
 
 ```js
-resStoreList = tokenStoreList.filter(value => -1 !== stores.indexOf(value));
+c = a ∩ b
+c = a.filter(value => -1 !== b.indexOf(value));
+
+```
+## 数组补集
+```js
+c = a 和 b 补集 
+c = a.filter(value =>  b.indexOf(value) < 0);
+```
+## 数组并集
+```js
+c = a ∪ b
+c = [...new Set([...a, ...b])]
 ```
 
 ## 获取 url 参数
