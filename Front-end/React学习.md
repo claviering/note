@@ -1,5 +1,19 @@
 # React 学习
 
+## React.PureComponent VS React.Component
+
+PureComponent: 纯组件, 调用 setState() 会调用 shouldComponentUpdate() 做浅比较, 性能更好
+
+array数组的引用发生变化 PureComponent 才会 re-render
+
+```js
+const newArray = [].concat(array)
+this.setState({array:newArray})
+```
+
+Component: 在调用 setState() 都会去 re-render 组件
+
+
 ## 表格大小
 ant-design 大小设置 width
 
