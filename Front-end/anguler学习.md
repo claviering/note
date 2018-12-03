@@ -211,3 +211,39 @@ newMessage () {
   <a routerLink="/heroes">Heroes</a>
 </nav>
 ```
+
+## UI 组件 material
+```
+npm install --save @angular/material @angular/cdk @angular/animations
+或者
+ng add @angular/material
+```
+
+app.module.ts 导入
+`import { MatSidenavModule, MatRadioModule} from '@angular/material'`
+
+imports 和 exports 给别的组件用
+```ts
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    AboutComponent,
+    NavComponent,
+    ContactComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatRadioModule
+  ],
+  exports : [
+    MatRadioModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+```
