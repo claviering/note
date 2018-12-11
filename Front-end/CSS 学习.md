@@ -1,4 +1,9 @@
 ﻿# CSS 学习
+## transition
+```css
+// Background colour transition
+transition: background 0.2s ease-in-out;
+```
 
 ## rem 适配
 

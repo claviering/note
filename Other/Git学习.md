@@ -88,5 +88,6 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 
 ## 找到要回滚的commitID
 `git log`
-`git revert commitID`
+`git reset --hard cedc856`
+`git push --force origin master`
 

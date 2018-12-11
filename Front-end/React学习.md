@@ -1,5 +1,35 @@
 # React 学习
 
+## react 中使用 函数防抖
+
+```js
+import react, { Component } from 'react';
+import _ from 'lodash';
+
+export default class Debounce extends Component {
+  construtor() {
+    super();
+    this.callAjax = _.debounce(this.callAjax, 300);
+  }
+  
+  callAjax = (value) => {
+    console.log('value :: ', value);
+    // call ajax
+  }
+  printChange(e) {
+    e.persist();
+    this.callAjax(e.target.value);
+  }
+  render() {
+    return (
+      <div>
+        <input onChange={this.printChange} />
+      </div>
+    );
+  }
+}
+```
+
 ## React.PureComponent VS React.Component
 
 PureComponent: 纯组件, 调用 setState() 会调用 shouldComponentUpdate() 做浅比较, 性能更好

@@ -178,6 +178,8 @@ export class DataService {
 其他组件获取数据
 
 ```js
+import { DataService } from '../data.service';
+constructor(private data: DataService) { }
 message: string
 Oninit () {
   this.data.currentMessage.subscribe(message => this.message = message)
@@ -247,3 +249,50 @@ imports 和 exports 给别的组件用
   bootstrap: [AppComponent]
 })
 ```
+## 绑定属性
+
+```html
+<h1 [ngClass]="{
+  'gray': h1Style,
+  'large': !h1Style
+}">Home</h1>
+<h1 [ngStyle]="{
+  'color': h1Style ? 'gray' : 'black',
+  'font-size': h1Style ? '1em' : '4em'
+}">Home</h1>
+```
+## 单向数据绑定
+
+`<img [src]="heroImageUrl">`
+
+或者
+
+`<img bind-src="heroImageUrl">`
+
+## 双向数据绑定
+
+`[(ngModel)]="person.name"`
+
+## for 
+`<li *ngFor="let hero of heroes">`
+
+## click
+
+`(click)="onSelect(hero)"`
+
+`<button on-click="onSave()">On Save</button>`
+
+## if
+
+`<div *ngIf="selectedHero">`
+
+## 生命周期
+
+1. ngOnChanges()
+2. ngOnInit()
+3. ngDoCheck()
+4. ngAfterContentInit()
+5. ngAfterContentChecked()
+6. ngAfterViewInit()
+7. ngAfterViewChecked()
+8. ngOnDestroy()
