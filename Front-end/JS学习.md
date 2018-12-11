@@ -1,4 +1,22 @@
 ﻿# JS学习
+
+
+## Object.create(null) 和 {} 的区别
+
+```js
+let n = Object.create(null) // 就是空
+console.log(n)
+let m = {}  // 继承了对象原型的空对象
+console.log(m)
+```
+
+## 交换2个数
+```js
+let a = 1.11
+let b = 2.22
+[b, a] = [a, b]
+```
+
 ## 虚拟列表优化长列表的原理
 
 原理
@@ -98,8 +116,10 @@ console.log(stooges);
 ```
 
 ## 删除对象属性
-
-`delete Attribute`
+```js
+delete object.property 
+delete object['property']
+```
 
 ## js 深入
 

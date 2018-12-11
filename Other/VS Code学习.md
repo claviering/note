@@ -1,5 +1,11 @@
 ﻿# VS Code学习
 
+## Git history
+
+```
+> git view file history
+```
+
 ## emmet 缩写
 
 
@@ -8,6 +14,7 @@ m10 margin: 10px;
 df display: flex;
 p10 padding: 10px;
 pt10 padding-top: 10px;
+p[myatter='']
 单词的开头+属性值
 ```
 
@@ -256,6 +263,11 @@ clg -> console.log
 - 颜色主题 File -? preferences -> color theme -> monokai
 - CTRL + Shift + E 打开左侧文件
 - CTRL + Shift + X 打开左侧插件
+- command shift k 删除行
+- command shift 左右 选择到行首行尾
+- option command + [] 折叠代码
+- control + G 定位行数
+- command + p + @ 搜索函数方法
  
 
 ## 安装插件
@@ -292,6 +304,7 @@ clg -> console.log
 - markdown toc (AlanWalk)
 - BookMarks
 - fileheader
+- setting sync 配置同步到 git
 
 ### React插件
 
