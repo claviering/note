@@ -1,5 +1,13 @@
 # node.js学习
 
+## xlsx 读取 xlsx 文件
+
+```js
+const XLSX = require('xlsx')
+// sheet1 表 数据转 json
+let dataList = XLSX.utils.sheet_to_json(workbook.Sheets.Sheet1)
+```
+
 ## 配置 https
 
 ### 安装 openssl
