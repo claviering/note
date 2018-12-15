@@ -1,5 +1,8 @@
 ﻿# JS学习
 
+## _.get + filter
+
+`_.get(newAdjustGrade.filter(it => it.key == status).pop(), 'value')`
 
 ## Object.create(null) 和 {} 的区别
 
@@ -30,7 +33,7 @@ let b = 2.22
 
 `Number.toLocaleString()`
 小数点后保留2位
-`toFixed(2)`
+`num.toFixed(2)`
 
 ## 正则表达式
 
