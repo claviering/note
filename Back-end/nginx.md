@@ -1,5 +1,9 @@
 # Nginx 学习
 
+## 在线配置
+
+[在线配置](https://www.nginxconfig.io)
+
 反向代码
 
 ## 启用 TLS
