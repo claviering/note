@@ -1,5 +1,23 @@
 # openssl 学习
 
+## 口令加密
+
+```
+加密
+$ openssl enc -base64 -aes-256-cbc -salt -pbkdf2 -in file.txt -out file.txt.enc
+解密
+$ openssl enc -base64 -aes-256-cbc -d -pbkdf2 -in file.txt.enc -out file.txt
+```
+
+非交互
+
+```
+加密
+$ openssl enc -base64 -aes-256-cbc -salt -pbkdf2 -in file.txt -out file.txt.enc -k PASS
+解密
+$ openssl enc -base64 -aes-256-cbc -d -pbkdf2 -in file.txt.enc -out file.txt -k PASS
+```
+
 ## 安装 openssl
 
 ### 添加环境变量

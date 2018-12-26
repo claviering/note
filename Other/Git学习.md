@@ -66,7 +66,7 @@ ssh-keygen -t rsa -C "youremail@example.com"
 
 ## reset a comit
 ```
-git reset --soft HEAD^  
+git reset --soft HEAD^
 ```
 
 ## reset file change
@@ -126,3 +126,54 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 `git reset --hard cedc856`
 `git push --force origin master`
 
+## 保持develop分支与master分支同步：
+`git checkout develop`
+
+`git rebase master`
+
+## 工作流
+1. 去自己的工作分支
+`$ git checkout work`
+
+2. 工作
+....
+
+3. 提交工作分支的修改
+`$ git commit -a`
+
+4. 回到主分支
+`$ git checkout master`
+
+5. 获取远程最新的修改，此时不会产生冲突
+`$ git pull`
+
+6. 回到工作分支
+`$ git checkout work`
+
+7. 用rebase合并主干的修改，如果有冲突在此时解决
+`$ git rebase master`
+
+`git add .`
+
+`git commit -m "message"`
+
+`git rebase --continue` 可以不用这命令
+`git rebase --skip` || `git pull (rebase) vsCode`
+
+8. 回到主分支
+`$ git checkout master`
+
+9. 合并工作分支的修改，此时不会产生冲突。
+`$ git merge work`
+
+10. 提交到远程主干
+`$ git push`
+
+## git rebase
+
+`git rebase -i  [startpoint]  [endpoint]`
+如果不指定[endpoint]，则该区间的终点默认是当前分支HEAD所指向的commit
+
+## 格式化 Log 输出
+
+`git log --oneline`

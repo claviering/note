@@ -75,6 +75,18 @@ c = a ∪ b
 c = [...new Set([...a, ...b])]
 ```
 
+## 差集
+```js
+var a = [1,2,3,4,5]
+var b = [2,4,6,8,10]
+console.log("数组a：", a);
+console.log("数组b：", b);
+var sa = new Set(a);
+var sb = new Set(b);
+let minus = a.filter(x => !sb.has(x));
+
+```
+
 ## 获取 url 参数
 
 ```js
