@@ -1,5 +1,13 @@
 ﻿# Git学习
 
+## 快速 clone
+
+`git clone --depth 1 repo`
+
+## 建立追踪关系
+
+`git branch --set-upstream dev origin/dev`
+
 ## 配置错误用户名和邮箱, github 不统计 contributions
 
 解决方法
@@ -177,3 +185,22 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 ## 格式化 Log 输出
 
 `git log --oneline`
+
+## Github 贡献代码
+
+Fork and Pull request
+
+Fork 到自己的仓库
+
+git clone 下来
+
+修改 git add .  git commit git push
+
+然后提 Pull request
+
+保持同步
+```shell
+git fetch upstream
+git checkout master
+git merge upstream/master
+```

@@ -248,7 +248,7 @@ User -> Controller <-> Model -> View
 
 ## express中使用 art-template 模板引擎
 
-**install **
+install 
 
 ```js
 npm install --save art-template express-art-template
