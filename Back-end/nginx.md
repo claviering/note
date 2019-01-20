@@ -1,5 +1,15 @@
 # Nginx 学习
 
+检查配置
+`nginx -t`
+
+```
+nginx -s reload    在不重新启动nginx的情况下重新加载配置文件
+nginx -s reopen    重启nginx
+nginx -s stop      停止nginx
+nginx -s quit      停止nginx
+```
+
 ## 在线配置
 
 [在线配置](https://www.nginxconfig.io)

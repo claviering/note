@@ -204,3 +204,6 @@ git fetch upstream
 git checkout master
 git merge upstream/master
 ```
+## 合并某个 commit 
+
+`git check-pick commitID`

@@ -1,5 +1,9 @@
 ﻿# Wireshark学习
 
+## 抓取本地数据包
+
+lo 网卡
+
 ## 跟踪TCP流
 右击TCP，http包 follow -> TCP Stream
 
