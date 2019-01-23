@@ -476,8 +476,13 @@ var align = div1.getAttribute("align");
 ```js
 var b = document.querySelector("button"); 
 
-b.setAttribute("name", "helloButton");
-b.setAttribute("disabled", "");
+b.style.property = new style
+```
+## 设置CSS
+```js
+var b = document.querySelector("button"); 
+
+b.style("name", "helloButton");
 ```
 
 ## JS 添加z-index属性

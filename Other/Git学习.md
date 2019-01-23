@@ -204,6 +204,19 @@ git fetch upstream
 git checkout master
 git merge upstream/master
 ```
-## 合并某个 commit 
+## 合并某个 commit 的代码
 
 `git check-pick commitID`
+
+## 合并多个 commit 为一个 commit
+
+`git rebase -i [startpoint]  [endpoint]`
+
+startpoint: 合并不包含此 commit
+
+不指定 endpoint 默认是当前分支HEAD所指向的commit
+
+:x 保存退出后提示 Could not execute editor
+
+解决:
+`git config --global core.editor "/usr/bin/vim"`
