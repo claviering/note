@@ -1,5 +1,30 @@
 # Nginx 学习
 
+## 配置 TLS 1.3
+
+server {
+      listen          443 ssl http2;
+      listen [::]:443 ssl http2;
+      server_name     127.0.0.1;
+
+      # 证书
+      ssl_certificate      /Users/linweiye/Documents/me/tls/server.crt;
+      # 私钥
+      ssl_certificate_key  /Users/linweiye/Documents/me/tls/server.key;
+      ssl_protocols        TLSv1 TLSv1.1 TLSv1.2 TLSv1.3;
+
+      ssl_protocols              TLSv1.1 TLSv1.2 TLSv1.3;
+      ssl_prefer_server_ciphers  on;
+      ssl_ciphers                TLS-CHACHA20-POLY1305-SHA256:TLS-AES-256-GCM-SHA384:TLS-AES-128-GCM-SHA256:HIGH:!aNULL:!MD5;
+  
+      location / {
+          root   html;
+          index  index.html index.htm;
+      }
+  }
+
+## 基本命令
+
 检查配置
 `nginx -t`
 

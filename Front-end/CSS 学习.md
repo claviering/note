@@ -1,5 +1,17 @@
 ﻿# CSS 学习
 
+## 媒体查询
+
+```css
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+}
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
+}
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) {
+}
+
+```
+
 ## rem 计算
 
 ```js

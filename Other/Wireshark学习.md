@@ -14,7 +14,6 @@ Capture -> Option -> Options -> Resolv network names || Resolve transport names
 
 Statistics
 
-
 ## 显示过滤器
 ip.addr == ip
 !tcp.post == 3389
