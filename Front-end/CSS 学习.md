@@ -1,5 +1,21 @@
 ﻿# CSS 学习
 
+## fixed 定位失效 | 不受控制的 position:fixed 
+1. 任何非 none 的 transform 值都会导致一个堆叠上下文（Stacking Context）和包含块（Containing Block）的创建
+2. 由于堆叠上下文的创建，该元素会影响其子元素的固定定位。设置了 position:fixed 的子元素将不会基于 viewport 定位，而是基于这个父元素
+
+## 命名规范
+
+BEM
+
+BEM代表块（Block），元素（Element），修饰符（Modifier）
+```js
+// block-name
+// block-name--modifier-name
+// block-name__element-name
+// block-name__element-name--modifier-name
+```
+
 ## 媒体查询
 
 ```css

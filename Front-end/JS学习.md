@@ -92,7 +92,7 @@ let b = 2.22
 字符串.match(正则) return array
 字符串.replace(正则,新的字符串) return new string
 
-## 仓库滚动
+## 窗口滚动到指定坐标
 
 `window.scrollTo(x, y)`
 

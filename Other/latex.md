@@ -1,5 +1,17 @@
 # latex
 
+## 字体
+
+```latex
+\heiti 黑体
+\songti 宋体
+```
+## 查看文档
+
+`lexdoc ctex`
+
+修改 section 样式 `\ctexset`
+
 ## 中文编译
 
 `\usepackage{ctex}`
