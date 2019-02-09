@@ -1,5 +1,16 @@
 ﻿# markdown
 
+## 代码块
+
+方式一
+```js
+console.log('hello wolrd')
+```
+方式二: 缩进4个空格, hexo中代码块顶部和底部也要缩进4个空格
+    
+    console.log('hello wolrd')
+    
+
 ## 文字右对齐
 
 <p align="right">右对齐</p>
