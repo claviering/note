@@ -1,5 +1,19 @@
 # hexo
 
+## hexo 插入数学公式
+
+文件中引入
+
+`<script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>`
+
+行内公式
+
+`\\( b^c \\)`
+
+块公式
+
+`$$b^c$$`
+
 ## start 
 ```
 npm install hexo-cli -g

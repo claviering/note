@@ -1,5 +1,19 @@
 ﻿# CSS 学习
 
+## hyphens 连字符样式
+
+[hyphens](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens)
+
+```css
+.hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+```
+
 ## fixed 定位失效 | 不受控制的 position:fixed 
 1. 任何非 none 的 transform 值都会导致一个堆叠上下文（Stacking Context）和包含块（Containing Block）的创建
 2. 由于堆叠上下文的创建，该元素会影响其子元素的固定定位。设置了 position:fixed 的子元素将不会基于 viewport 定位，而是基于这个父元素
