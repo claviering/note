@@ -34,9 +34,24 @@
 ## 添加列表
 
 [列表](https://www.overleaf.com/learn/latex/Lists)
+无序列表
 ```latex
 \begin{itemize}
   \item One entry in the list
   \item Another entry in the list
 \end{itemize}
+```
+有序列表
+```latex
+\begin{enumerate}
+  \item One entry in the list
+  \item Another entry in the list
+\end{enumerate}
+```
+自定义列表
+```latex
+\begin{description}
+  \item[自定义列表1] One entry in the list
+  \item[自定义列表2] Another entry in the list
+\end{description}
 ```

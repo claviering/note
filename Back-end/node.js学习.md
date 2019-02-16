@@ -1,5 +1,11 @@
 # node.js学习
 
+## nodemon
+
+nodemon 监控文件变化运行命令
+
+`nodemon -x python some.py`
+
 ## xlsx 读取 xlsx 文件
 
 ```js

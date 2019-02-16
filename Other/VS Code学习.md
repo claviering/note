@@ -1,5 +1,17 @@
 ﻿# VS Code学习
 
+## LaTeX-Workshop 插件配置
+
+使用 xelatex 编译：
+
+在latex源文件的第一行加入如下指令即可
+
+`%!TEX program = xelatex`
+
+如果需要在编译出PDF文件后，删除临时文件，则加上如下配置：
+
+`"latex-workshop.latex.clean.enabled": true`
+
 ## Git history
 
 ```
@@ -268,6 +280,7 @@ clg -> console.log
 - option command + [] 折叠代码
 - control + G 定位行数
 - command + p + @ 搜索函数方法
+- Ctrl + Alt + A 快速添加函数注释 (Document this 插件快捷键)
  
 
 ## 安装插件
@@ -277,7 +290,7 @@ clg -> console.log
 - HTML Snippets
 - HTML CSS Support view a list of attributes via ctrl + space 配置"css.fileExtensions": [ "css", "scss"]
 - emmet 开发者jakethashi
-- view in broswer 开发者 Koppt Ho (ctrl + F1 在默认的浏览器中运行当前的html)
+- view in browser 开发者 Koppt Ho (ctrl + F1 在默认的浏览器中运行当前的html)
 - vscode-icon （让vscode的文件夹目录添加上对应的图标）
 - AutoFileName (文件路径自动补全插件)
 - Bracket Pair Colorizer （让括号有独立的颜色）
@@ -297,7 +310,7 @@ clg -> console.log
 - EditorConfig for VS Code
 - HTTP Server / HTML Preview 作者shawn Funke
 - sass 作者Robin Bentley
-- EsLint (Dirk Beaumer) VsCode读取项目文件的Eslint规则 保存时自动修复格式错误
+- EsLint (Dirk Beaumer) VsCode 读取项目文件的Eslint规则 保存时自动修复格式错误
 - RegExp Preview and Edito 完美的展示你写的正则,图形化给你看你写正则的形成
 - fileheader ctrl+alt+i 顶部注释模板，可定义作者、时间等信息，并会自动更新最后修改时间
 - Node.js Modules Intellisense (Zongmin Lei) 对于node_module的智能提示
@@ -305,6 +318,7 @@ clg -> console.log
 - BookMarks
 - fileheader
 - setting sync 配置同步到 git
+- REST Client 比 postman 好用的的插件
 
 ### React插件
 

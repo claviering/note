@@ -1,5 +1,53 @@
 # Nginx 学习
 
+## 编译安装
+
+[下载源代码](https://nginx.org/download/)
+
+安装 pcre
+```
+$ wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.42.tar.gz
+$ tar -zxf pcre-8.42.tar.gz
+$ cd pcre-8.42
+$ ./configure
+$ make
+$ sudo make install
+```
+
+安装 zlib
+```
+$ wget http://zlib.net/zlib-1.2.11.tar.gz
+$ tar -zxf zlib-1.2.11.tar.gz
+$ cd zlib-1.2.11
+$ ./configure
+$ make
+$ sudo make install
+```
+
+安装 openssl
+
+```
+$ wget http://www.openssl.org/source/openssl-1.0.2q.tar.gz
+$ tar -zxf openssl-1.0.2q.tar.gz
+$ cd openssl-1.0.2q
+$ ./Configure darwin64-x86_64-cc --prefix=/usr
+$ make
+$ sudo make install
+```
+
+安装 nginx
+```
+$ wget https://nginx.org/download/nginx-1.15.7.tar.gz
+$ tar zxf nginx-1.15.7.tar.gz
+$ cd nginx-1.15.7
+$ ./configure --with-pcre=../pcre-8.42 --with-zlib=../zlib-1.2.11 --with-http_ssl_module --with-stream --with-mail=dynamic --with-openssl=/Users/linweiye/Documents/openssl-OpenSSL_1_1_1 --with-http_v2_module
+```
+
+nginx 配置文件目录
+```
+/usr/local/nginx
+```
+
 ## 配置 TLS 1.3
 
 server {
