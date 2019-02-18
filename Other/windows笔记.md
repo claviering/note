@@ -1,5 +1,11 @@
 ﻿# windows笔记
 
+## 制作 windows 10 ISO
+
+工具 [NTLite](https://www.ntlite.com/download/)
+
+[B 站视频](https://www.bilibili.com/video/av43379038)
+
 ## 安装英文
 
 1. 下载对应版本的英文包

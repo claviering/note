@@ -1,5 +1,47 @@
 # latex
 
+## 代码
+
+```latex
+\usepackage{listings}
+\usepackage{fontspec}
+\newfontfamily\menlo{Menlo}
+
+\begin{lstlisting}[language={[ANSI]C},
+        numbers=left,
+        numberstyle=\tiny\menlo,
+        basicstyle=\small\menlo]
+#include <stdio.h>
+#include <stdbool.h>
+#include <ctype.h>
+
+#define SIZE 26
+
+int
+main (int argc, char *argv[])
+{
+  int array[SIZE];
+  int i;
+  char c;
+
+  for (i = 0; i < SIZE; i++)
+    array[i] = 0;
+
+  while ((c = getchar ()) != EOF)
+    {
+      if (isupper (c))
+        {
+          array[c - 'A']++;
+        }
+    }
+  for (i = 0; i < 26; i++)
+    printf ("%c:%5d\n", (char) ('A' + i), array[i]);
+
+  return 0;
+}
+\end{lstlisting}
+```
+
 ## 字体
 
 ```latex

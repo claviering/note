@@ -1,5 +1,9 @@
 ﻿# JS学习
 
+## 阻止事件冒泡
+
+`e.stopPropagation()`
+
 ## 数字补零
 
 ```js
