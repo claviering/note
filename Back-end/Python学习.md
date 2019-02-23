@@ -23,9 +23,11 @@ deactivate //退出虚环境
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2.7
 ```
 ### pyenv
+
+Python 多版本管理
 to use multiple versions without virtual environments
 
-```
+```shell
 brew update
 brew pyenv install/upgrade
 pyenv install 2.7.8

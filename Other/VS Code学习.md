@@ -1,5 +1,21 @@
 ﻿# VS Code学习
 
+## VSCode terminal
+
+VSCode 默认使用不登陆的 shell, 加载 .bashrc 文件
+
+配置 VSCode 使用 login shell, 就会加载 .bash_prefile
+
+[terminal 官网文档](https://code.visualstudio.com/docs/editor/integrated-terminal#_linux-os-x)
+
+```js
+// macOS:
+"terminal.integrated.shellArgs.osx": [ "-l" ]
+// Linux
+"terminal.integrated.shellArgs.linux": [ "-l" ]
+```
+```
+
 ## LaTeX-Workshop 插件配置
 
 使用 xelatex 编译：
@@ -11,6 +27,8 @@
 如果需要在编译出PDF文件后，删除临时文件，则加上如下配置：
 
 `"latex-workshop.latex.clean.enabled": true`
+
+使用命令 `LaTeX Workshop: Build LaTeX project` 编译
 
 ## Git history
 
@@ -319,6 +337,7 @@ clg -> console.log
 - fileheader
 - setting sync 配置同步到 git
 - REST Client 比 postman 好用的的插件
+- polacode 代码截图保存 >polacode
 
 ### React插件
 

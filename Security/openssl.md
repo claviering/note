@@ -1,5 +1,21 @@
 # openssl 学习
 
+## openssl 的 Client 测试 0-RTT
+
+`openssl s_client -connect halfrost.com:443 -tls1_3 -keylogfile=/Users/ydz/Documents/sslkeylog.log -sess_out=/Users/ydz/Documents/tls13.sess`
+
+接下来在复用刚刚的连接，命令如下
+
+`openssl s_client -connect halfrost.com:443 -tls1_3 -keylogfile=/Users/ydz/Documents/sslkeylog.log -sess_in=/Users/ydz/Documents/tls13.sess -early_data=/Users/ydz/Documents/req.txt`
+
+req.txt 里面只是简单的写一个 GET 请求:
+
+```
+GET / HTTP/1.1
+HOST: halfrost.com
+Early-Data: 657567765
+```
+
 ## 口令加密
 
 ```
