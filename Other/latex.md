@@ -1,5 +1,12 @@
 # latex
 
+## 导入代码
+```tex
+\usepackage{listings}
+\usepackage{color}
+\lstinputlisting[language=C]{./src/clientHello.txt}
+\lstinputlisting[language=Python, firstline=37, lastline=45]{source_filename.py}
+```
 ## 表格居中
 
 ```tex

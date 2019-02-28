@@ -188,6 +188,13 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 
 ## Github 贡献代码
 
+```
+docs，文档类修改
+fix，bug 修复
+feat，升级、新增特性
+test，新增、修改测试
+```
+
 Fork and Pull request
 
 Fork 到自己的仓库
@@ -200,6 +207,7 @@ git clone 下来
 
 保持同步
 ```shell
+git remote add upstream https://github.com/user/repo.git
 git fetch upstream
 git checkout master
 git merge upstream/master

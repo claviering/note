@@ -1,5 +1,25 @@
 ﻿# CSS 学习
 
+## 单行隐藏省略号
+
+```css
+width: 100px;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+```
+
+多行
+
+```css
+.txt{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 3;//需要省略的行数
+  -webkit-box-orient: vertical;
+}
+```
+
 ## hyphens 连字符样式
 
 [hyphens](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens)
