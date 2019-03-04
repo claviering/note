@@ -3,11 +3,11 @@
 
 ## openssl 的 Client 测试 0-RTT
 
-`openssl s_client -connect halfrost.com:443 -tls1_3 -keylogfile=/Users/ydz/Documents/sslkeylog.log -sess_out=/Users/ydz/Documents/tls13.sess`
+`openssl s_client -connect localhost:443 -tls1_3 -keylogfile=/Users/username/Documents/me/tls/sslkeylog.log -sess_out=/Users/username/Documents/tls13.sess`
 
 接下来在复用刚刚的连接，命令如下
 
-`openssl s_client -connect halfrost.com:443 -tls1_3 -keylogfile=/Users/ydz/Documents/sslkeylog.log -sess_in=/Users/ydz/Documents/tls13.sess -early_data=/Users/ydz/Documents/req.txt`
+`openssl s_client -connect localhost:443 -tls1_3 -keylogfile=/Users/username/Documents/me/tls/sslkeylog.log -sess_in=/Users/username/Documents/tls13.sess -early_data=/Users/username/Documents/req.txt`
 
 req.txt 里面只是简单的写一个 GET 请求:
 

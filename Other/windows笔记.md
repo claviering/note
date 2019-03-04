@@ -1,5 +1,11 @@
 ﻿# windows笔记
 
+## 删除 Windows 文件
+
+C:\Windows\WinSxS\backup
+
+users\usename\AppData\local\Temp
+
 ## 制作 windows 10 ISO
 
 工具 [NTLite](https://www.ntlite.com/download/)

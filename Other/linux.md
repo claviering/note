@@ -1,5 +1,13 @@
 # linux 学习
 
+## 查找统计字数
+
+`find . -name "*.tex" | xargs cat | wc -w`
+
+## 命名
+
+文件夹和文件用 `-` 连接 `file-name` 
+
 ## 输出环境变量
 
 `env`
