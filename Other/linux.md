@@ -1,5 +1,12 @@
 # linux 学习
 
+## 命令行历史
+
+```
+export HISTSIZE=10000
+export HISEFILESIZE=10000
+```
+
 ## 查找统计字数
 
 `find . -name "*.tex" | xargs cat | wc -w`
