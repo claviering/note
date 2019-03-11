@@ -214,7 +214,7 @@ git merge upstream/master
 ```
 ## 合并某个 commit 的代码
 
-`git check-pick commitID`
+`git cherry-pick commitID`
 
 ## 合并多个 commit 为一个 commit
 

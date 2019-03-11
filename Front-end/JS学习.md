@@ -1,5 +1,9 @@
 ﻿# JS学习
 
+## 移动端键盘出现问题
+
+移动端底部input被弹出的键盘遮挡 `Element.scrollIntoView()` 把元素滚动到可视化区域
+
 ## 阻止事件冒泡
 
 `e.stopPropagation()`

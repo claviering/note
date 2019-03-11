@@ -77,10 +77,12 @@ server {
 `nginx -t`
 
 ```
+nginx              启动 nginx
+nginx -t           检查配置
 nginx -s reload    在不重新启动nginx的情况下重新加载配置文件
-nginx -s reopen    重启nginx
-nginx -s stop      停止nginx
-nginx -s quit      停止nginx
+nginx -s reopen    重启 nginx
+nginx -s stop      停止 nginx
+nginx -s quit      停止 nginx
 ```
 
 ## 在线配置
