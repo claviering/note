@@ -74,6 +74,8 @@ pyenv install 3.4.0
 pyenv versions       # Displays the currently active Python version, along with information on how it was set.
 pyenv version       # Lists all Python versions known to pyenv, and shows an asterisk next to the currently active version.
 pyenv global 3.6.3   # Set your system's Python version
+pyenv shell 3.6.3   # Set your shell's Python version
+pyenv shell   # show your shell's Python version
 pyenv whence # Lists all Python versions with the given command installed.
 ```
 

@@ -1,5 +1,28 @@
 # node.js学习
 
+## 编译安装 nodejs
+
+`./configure --prefix=/usr/local/node --debug` 配置安装目录 debug 模式
+`make -j4 test` 测试
+`make install` 安装
+
+测试是否安装成功
+
+```console
+> Release\node -e "console.log('Hello from Node.js', process.version)"
+```
+
+## 目录结构
+
+                        
+    nodejs
+    ├── deps nodejs 依赖
+    ├── lib nodejs 的核心模块
+    └── src nodejs 的 C++ 内建模块
+                        
+
+其中 lib 目录是我们 nodejs 对外暴露的 js 模块源码, js 封装了 C++ 的实现方式对外提供的 api。而这部分的 C++ 的代码就放在 src 目录下. V8 引擎运行和 libuv 实现跨平台的，对于这部分的依赖是放在 deps 目录中的
+
 ## nodemon
 
 nodemon 监控文件变化运行命令

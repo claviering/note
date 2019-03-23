@@ -1,5 +1,40 @@
 # openssl 学习
 
+## 调试 openssl
+
+[bilibili](https://www.bilibili.com/video/av31463471)
+
+[Github](https://github.com/jzysheep/Youtube)
+
+export LD_LIBRARY_PATH=/usr/local/ssl/lib:$LD_LIBRARY_PATH
+
+## 编译安装
+
+下载源代码
+
+之前有 make 过，先执行 `make clean`
+
+`./config --prefix=/Users/linweiye/Documents/openssl-debug --openssldir=/Users/linweiye/Documents/openssl-debug -d shared no-asm no-ssl2 -g3 -ggdb -gdwarf-4 -fno-inline -O0 -fno-omit-frame-pointer`
+
+参数说明
+```
+--prefix and --openssldir control the configuration of installed components
+-d: Debug build of the library
+share: Build a shared object in addition to the static archive
+no-asm: Disables assembly language routines (and uses C routines)
+no-ssl2: Disables SSLv2
+no-ssl3: Disables SSLv3
+-g3: Include extra debug information. Some debuggers support macro expansions when you use -g3
+-ggdb3: Use most expressive format available to produce debugging information
+-gdwarf-4: Produce debugging information in DWARF format (if that is supported). For more information, visit: debuggingwith attributedrecord formats
+-fno-inline: Do not expand any functions inline apart from those marked with "always_inline" attribute
+-O0: Reduce compilation time and make debugging produce the expected results
+-fno-omit-frame-pointer: Omitting it makes debugging impossible on some machines (Recommended by official OpenSSL)
+```
+
+```
+make && make install
+```
 
 ## openssl 的 Client 测试 0-RTT
 
