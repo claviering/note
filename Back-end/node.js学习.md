@@ -1,5 +1,13 @@
 # node.js学习
 
+## Buffer 理解使用
+
+> https://semlinker.com/node-buffer/
+
+## 模块位置
+
+核心模块定义在源码lib/目录下
+
 ## 编译安装 nodejs
 
 `./configure --prefix=/usr/local/node --debug` 配置安装目录 debug 模式

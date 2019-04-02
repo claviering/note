@@ -41,6 +41,8 @@ $ wget https://nginx.org/download/nginx-1.15.7.tar.gz
 $ tar zxf nginx-1.15.7.tar.gz
 $ cd nginx-1.15.7
 $ ./configure --with-pcre=../pcre-8.42 --with-zlib=../zlib-1.2.11 --with-http_ssl_module --with-stream --with-mail=dynamic --with-openssl=/Users/linweiye/Documents/openssl-OpenSSL_1_1_1 --with-http_v2_module
+$ sudo make
+$ sudo make install
 ```
 
 nginx 配置文件目录
@@ -133,5 +135,316 @@ server {
 server {
   listen 192.168.0.1:443 ssl;
   server_name site2.example.com;
+}
+```
+
+## 配置备份
+
+```
+
+#user  nobody;
+worker_processes  1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+
+
+events {
+    worker_connections  1024;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+
+    #access_log  logs/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    server {
+        listen       80;
+        server_name  localhost;
+        # return 301 https://localhost;
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            root   html;
+            index  index.html index.htm;
+        }
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+
+        # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+        #
+        #location ~ \.php$ {
+        #    proxy_pass   http://127.0.0.1;
+        #}
+
+        # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+        #
+        #location ~ \.php$ {
+        #    root           html;
+        #    fastcgi_pass   127.0.0.1:9000;
+        #    fastcgi_index  index.php;
+        #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+        #    include        fastcgi_params;
+        #}
+
+        # deny access to .htaccess files, if Apache's document root
+        # concurs with nginx's one
+        #
+        #location ~ /\.ht {
+        #    deny  all;
+        #}
+    }
+
+
+    # another virtual host using mix of IP-, name-, and port-based configuration
+    #
+    server {
+        listen 8000;
+        server_name boss.fpdev.trendy-global.com;
+        location / {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://127.0.0.1:8004;
+        }
+    }
+    server {
+        listen 8000;
+        server_name mmsfe.fpdev.trendy-global.com;
+        location / {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://127.0.0.1:8005;
+        }
+    }
+    server {
+        listen 8000;
+        server_name crmfe.fpdev.trendy-global.com;
+        location / {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://127.0.0.1:8010;
+        }
+    }
+    server {
+        listen 8000;
+        server_name me.fpdev.trendy-global.com;
+        location / {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://127.0.0.1:8081;
+        }
+    }
+    server {
+        listen 9000;
+        server_name passport.example.com;
+        location / {
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://127.0.0.1:7000;
+        }
+    }
+    server {
+        listen 9000;
+        server_name sit1.example.com;
+        location / {
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://127.0.0.1:7001;
+        }
+    }
+    server {
+        listen 9000;
+        server_name sit2.example.com;
+        location / {
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass http://127.0.0.1:7002;
+        }
+    }
+    server {
+        listen  8082;
+        server_name 127.0.0.1;
+        
+        location / {
+            proxy_pass  http://127.0.0.1:8082;
+        }
+        
+        location ~ /api/ {
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_pass  http://shop.fpsit.trendy-global.com;
+        }
+    }
+    # 本地 build 生产 dist 目录测试
+    # dist
+    server {
+        listen  8083;
+        server_name me.fpdev.trendy-global.com;
+
+        access_log  logs/8083.access.log;
+        error_log  logs/error.log;
+
+        location / {
+            root dist;
+            index  index.html;
+        }
+        
+        location /api {
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-NginX-Proxy true;
+            proxy_pass  http://127.0.0.1:3009;
+            proxy_redirect off;
+        }
+    }
+
+
+    # HTTPS server
+    #
+    map $http_upgrade $connection_upgrade {
+    default upgrade;
+    '' close;
+    }
+    upstream websocket {
+        server 127.0.0.1:8200;  #这里可以是多个服务端IP（分多行），设置权重就可以实现负载均衡了
+    }
+    # 默认代理
+    server {
+        listen 443 ssl http2;
+        listen [::]:443 ssl http2;
+        server_name     localhost;
+        # 开启 HSTS 315360000 秒 = 10年
+        add_header Strict-Transport-Security "max-age=0; includeSubDomains" always;
+        # 证书
+        ssl_certificate      /Users/linweiye/Documents/me/tls/server.crt;
+        # 私钥
+        ssl_certificate_key  /Users/linweiye/Documents/me/tls/server.key;
+        ssl_protocols        TLSv1.3 TLSv1.2 TLSv1.1;
+        ssl_prefer_server_ciphers  on;
+        # 0-RTT 模式
+        ssl_early_data on;
+        proxy_set_header Early-Data $ssl_early_data;
+        ssl_ciphers TLS13-CHACHA20-POLY1305-SHA256:!TLS13-AES-128-GCM-SHA256:!TLS13-AES-256-GCM-SHA384:;
+        # ssl_ciphers TLS-CHACHA20-POLY1305-SHA256;
+    
+        location / {
+            root   html;
+            index  https.html;
+        }
+        access_log  logs/https.access.log;
+        error_page  404              /404.html;
+        error_page  500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+    # 毕业论文代码
+    server {
+        listen 8400 ssl http2;
+        listen [::]:8400 ssl http2;
+        server_name     localhost;
+        # 开启 HSTS 315360000 秒 = 10年
+        add_header Strict-Transport-Security "max-age=0; includeSubDomains" always;
+        # 证书
+        ssl_certificate      /Users/linweiye/Documents/me/tls/server.crt;
+        # 私钥
+        ssl_certificate_key  /Users/linweiye/Documents/me/tls/server.key;
+        ssl_protocols        TLSv1.3 TLSv1.2 TLSv1.1;
+        ssl_prefer_server_ciphers  on;
+        # 0-RTT 模式
+        ssl_early_data on;
+        proxy_set_header Early-Data $ssl_early_data;
+        ssl_ciphers TLS13-CHACHA20-POLY1305-SHA256:!TLS13-AES-128-GCM-SHA256:!TLS13-AES-256-GCM-SHA384:;
+        # ssl_ciphers TLS-CHACHA20-POLY1305-SHA256;
+    
+        location / {
+            # early data 请求头
+            proxy_set_header Early-Data $ssl_early_data;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "Upgrade";
+            proxy_pass http://127.0.0.1:8600;
+        }
+        access_log  logs/thesis.access.log;
+        error_page  404              /404.html;
+        error_page  500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+
+    # 小程序开发使用
+    # server {
+    #     listen 443 ssl http2;
+    #     listen [::]:443 ssl http2;
+    #     server_name     scnu.club;
+    #     # 开启 HSTS 315360000 秒 = 10年
+    #     add_header Strict-Transport-Security "max-age=315360000; includeSubDomains" always;
+    #     # 证书
+    #     ssl_certificate      /Users/linweiye/Documents/me/wepy-demo-server/app/env/scnu.crt;
+    #     # 私钥
+    #     ssl_certificate_key      /Users/linweiye/Documents/me/wepy-demo-server/app/env/scnu-without-passphrase.key;
+    #     ssl_protocols        TLSv1 TLSv1.1 TLSv1.2;
+    #     ssl_ciphers ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+    #     ssl_prefer_server_ciphers  on;
+    #     access_log  logs/scnu.access.log;
+    #     error_log   logs/scnu.error.log;
+    #     error_page  404              /404.html;
+    #     error_page  500 502 503 504  /50x.html;
+    #     location / {
+    #         proxy_http_version 1.1;
+    #         proxy_set_header Host $host;
+    #         proxy_set_header X-Real-IP $remote_addr;
+    #         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    #         proxy_set_header Upgrade $http_upgrade;
+    #         proxy_set_header Connection "Upgrade";
+    #         proxy_read_timeout 300s;
+    #         proxy_connect_timeout 75s;
+    #         proxy_pass http://127.0.0.1:8200;
+    #     }
+    #     location = /50x.html {
+    #         root   html;
+    #     }
+    # }
 }
 ```
