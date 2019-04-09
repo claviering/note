@@ -1,5 +1,17 @@
 # openssl 学习
 
+## 私钥中输出公钥
+
+`openssl ec -in tls/server.key -pubout -out public.pem`
+
+## 证书输出公钥
+
+`openssl x509 -pubkey -noout -in server.crt > server.public.key`
+
+## 输出证书信息
+
+`openssl x509 -noout -text -in client/certs/test1.cert.pem`
+
 ## 调试 openssl
 
 [bilibili](https://www.bilibili.com/video/av31463471)

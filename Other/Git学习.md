@@ -1,5 +1,15 @@
 ﻿# Git学习
 
+## tag
+
+标签操作
+
+```
+git tag -a v0.0.1 -m 'message'
+git tag
+git push origin --tags
+```
+
 ## 快速 clone
 
 `git clone --depth 1 repo`

@@ -1,5 +1,50 @@
 # latex
 
+## 图片适应宽度
+
+`width=\linewidth`
+
+```tex
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\linewidth]{./graphics/压力测试折线图.png}
+	\caption{服务器占用资源变化}
+\end{figure}
+```
+
+## 单位
+
+|缩写|单位|换算关系|
+| - | - | - |
+|pt|point| 1 in = 72.27 pt|
+|pc|pica| |
+|in|inch| |
+|bp|big point| |
+|cm|centimetre| |
+|mm|| |
+|dd|| |
+|cc|| |
+
+## 水平空格，垂直空格，段落缩进
+
+> http://softlab.sdut.edu.cn/blog/xuqianhui/2017/06/18/%E5%9C%A8latex%E4%B8%AD%E4%BA%A7%E7%94%9F%E7%A9%BA%E7%99%BD%E7%A9%BA%E9%97%B4/
+
+```tex
+\hspace{单位}
+\vspace{单位}
+\noindent % 阻止LaTeX缩进段落
+\indent % 强制LaTeX缩进段落
+```
+
+## 断词
+
+`\-`
+
+## 分文件 引入文件
+
+`\input{}`
+`\include{}`
+
 ## 统计字数
 
 `find . -name "*.tex" | xargs cat | wc -w`
@@ -162,4 +207,10 @@ xelatex main.tex
   \item[自定义列表1] One entry in the list
   \item[自定义列表2] Another entry in the list
 \end{description}
+首个符号为 -
+```tex
+\begin{itemize}
+  \item[-] One entry in the list
+  \item[] Another entry in the list
+\end{itemize}
 ```

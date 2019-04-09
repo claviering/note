@@ -1,5 +1,13 @@
 # linux 学习
 
+## 输出 base64 格式
+
+`base64 sign.txt.sha384`
+
+## 查找删除
+
+`find . -name "FILE-TO-FIND" -exec rm -rf {} \;`
+
 ## 命令行历史
 
 ```

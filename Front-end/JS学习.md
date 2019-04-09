@@ -1,5 +1,10 @@
 ﻿# JS学习
 
+## 检查一个对象是否为空
+
+`const isEmptyObj = object => !Object.getOwnPropertySymbols(object).length && !Object.getOwnPropertyNames(object).length`
+
+
 ## 移动端键盘出现问题
 
 移动端底部input被弹出的键盘遮挡 `Element.scrollIntoView()` 把元素滚动到可视化区域
