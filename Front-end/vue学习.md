@@ -1,5 +1,9 @@
 ﻿# vue学习
 
+## 动态动态路劲
+
+> [vue动态定义图片路径](https://www.jianshu.com/p/fab484498e4e)
+
 ## slots
 
 插槽使用

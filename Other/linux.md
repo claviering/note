@@ -1,5 +1,17 @@
 # linux 学习
 
+## 查找排除文件夹
+
+`find . -path "./node_modules" -prune -o -print`
+
+排除多个
+
+`find . -type d \( -path "./node_modules" -o -path "./.cache" -o -path "./.cache-loader" \) -prune -o -print`
+
+## 查找合并代码
+
+`find . -name "*.js" | xargs cat > code.txt`
+
 ## 输出 base64 格式
 
 `base64 sign.txt.sha384`

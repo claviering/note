@@ -1,5 +1,47 @@
 ﻿# JS学习
 
+## Buffer
+
+```js
+let buf = Buffer.from('abc') // 61 62 63 Hex 编码
+let buf = Uint8Array(buf) // 97 98 99 ASCII 编码
+```
+
+## 前端模块化
+
+CommonJS
+
+导出 `module.exports = {name}` 引入 `const name = require('moduleName') ` 使用 直接 `name`
+
+ES6
+
+```js
+// 导出
+export default {
+  name
+}
+// 引入
+import module = from 'moduleName'
+// 使用
+module.name
+```
+
+## 字符串转 ArrayBuffer
+
+浏览器上直接用
+```
+let message = 'abc'
+let enc = new TextEncoder();
+return enc.encode(message) // Uint8Array(3) [97, 98, 99]
+```
+
+## 浏览器加密接口
+
+> https://www.w3.org/TR/WebCryptoAPI/
+
+> https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify
+
+
 ## 检查一个对象是否为空
 
 `const isEmptyObj = object => !Object.getOwnPropertySymbols(object).length && !Object.getOwnPropertyNames(object).length`

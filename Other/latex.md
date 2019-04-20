@@ -1,5 +1,9 @@
 # latex
 
+## 空白页
+
+`\afterpage{\null\newpage}`
+
 ## 图片适应宽度
 
 `width=\linewidth`
