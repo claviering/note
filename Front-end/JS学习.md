@@ -1,5 +1,18 @@
 ﻿# JS学习
 
+## 循环
+
+```js
+//推荐
+for(var i=items.length;i--;){
+    //todo
+}
+//不推荐
+for(var i=0,len=items.length;i<len;i++){
+    //todo
+}   
+```
+
 ## Buffer
 
 ```js
@@ -11,19 +24,40 @@ let buf = Uint8Array(buf) // 97 98 99 ASCII 编码
 
 CommonJS
 
-导出 `module.exports = {name}` 引入 `const name = require('moduleName') ` 使用 直接 `name`
+暴露模块：`module.exports = value` 或 `exports.xxx = value` 或 `module.exports = {}`
+
+const xxx = require('./lib')
+
+xxx 就等于 module.exports 或者 xxx 等于 exports
+
+xxx 就等于 module.exports 或者 xxx 等于 exports
+
+require('./lib') 就等于 module.exports 或者 require('./lib') 等于 exports
+
+require('./lib') 就等于 module.exports 或者 require('./lib') 等于 exports
 
 ES6
 
+`import` 的名字代替 `export default`
+
 ```js
-// 导出
+// 导出方式一
 export default {
-  name
+  name: (a, b) => a + b
 }
-// 引入
-import module = from 'moduleName'
+
+// 导出方式二
+export name = (a, b) => a + b
+
+// 引入方式一
+import module from 'moduleName'
+// 引入方式二
+import { name } from 'moduleName'
+
 // 使用
-module.name
+module.name()
+// 或者
+name()
 ```
 
 ## 字符串转 ArrayBuffer

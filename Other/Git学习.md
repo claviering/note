@@ -1,10 +1,22 @@
 ﻿# Git学习
 
+## 删除远程分支
+
+`git push origin -d <branch>`
+
+## 查看远程分支和本地分支的对应关系
+
+`git remote show origin`
+
+## 远程删除了分支，本地也想删除
+
+`git remote prune origin`
+
 ## 优雅的提交Commit信息
 
 - type: commit 的类型
-- feat: 新特性
-- fix: 修改问题
+- feature: 新特性
+- bugfix: 修改问题
 - refactor: 代码重构
 - docs: 文档修改
 - style: 代码格式修改, 注意不是 css 修改

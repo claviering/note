@@ -1,5 +1,35 @@
 # React 学习
 
+## 函数组件
+
+    一个函数就是一个组件，return一份DOM解构
+    特点：
+    1. 没有生命周期，也会被更新并挂载，但是没有生命周期函数
+    2. 没有this(组件实例）
+    3. 没有内部状态（state）
+    优点 ：轻量，如果你的组件没有涉及到内部状态，只是用来渲染数据，那么就用函数式组件，性能较好。
+
+```js
+// functional component
+function Welcome(props) {
+    return <h1>Hello, {props.name}</h1>;
+}
+```
+
+## 代码分割
+
+[参考](https://reactjs.org/docs/code-splitting.html)
+
+```js
+import("./math").then(math => {
+  console.log(math.add(16, 26));
+});
+```
+
+```js
+React.lazy()
+```
+
 ## react 中使用 函数防抖
 
 ```js

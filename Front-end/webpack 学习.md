@@ -1,39 +1,17 @@
 ﻿#  webpack 学习
 
-<!-- TOC -->
+## 动态加载
 
-- [webpack 学习](#webpack-%E5%AD%A6%E4%B9%A0)
-  - [优化](#%E4%BC%98%E5%8C%96)
-  - [Webpack揭秘——走向高阶前端的必经之路](#webpack%E6%8F%AD%E7%A7%98%E8%B5%B0%E5%90%91%E9%AB%98%E9%98%B6%E5%89%8D%E7%AB%AF%E7%9A%84%E5%BF%85%E7%BB%8F%E4%B9%8B%E8%B7%AF)
-    - [Webpack运行机制](#webpack%E8%BF%90%E8%A1%8C%E6%9C%BA%E5%88%B6)
-  - [代码拆分](#%E4%BB%A3%E7%A0%81%E6%8B%86%E5%88%86)
-  - [基本配置](#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE)
-    - [路径](#%E8%B7%AF%E5%BE%84)
-    - [webpack4.x 配置 mode](#webpack4x-%E9%85%8D%E7%BD%AE-mode)
-  - [三十分钟掌握Webpack性能优化](#%E4%B8%89%E5%8D%81%E5%88%86%E9%92%9F%E6%8E%8C%E6%8F%A1webpack%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96)
-  - [loader 配置](#loader-%E9%85%8D%E7%BD%AE)
-    - [sass-loader / less-loader](#sass-loader--less-loader)
-    - [配置html-loader](#%E9%85%8D%E7%BD%AEhtml-loader)
-    - [url-loader](#url-loader)
-    - [配置 css-loader](#%E9%85%8D%E7%BD%AE-css-loader)
-      - [making CSS modular](#making-css-modular)
-    - [配置typescript ts-loader](#%E9%85%8D%E7%BD%AEtypescript-ts-loader)
-    - [使用babel-loader](#%E4%BD%BF%E7%94%A8babel-loader)
-  - [插件配置](#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)
-    - [webpack-bundle-analyzer](#webpack-bundle-analyzer)
-    - [uglifyjs-webpack-plugin](#uglifyjs-webpack-plugin)
-    - [MiniCssExtractPlugin](#minicssextractplugin)
-    - [Clean for WebPack](#clean-for-webpack)
-    - [DefinePlugin](#defineplugin)
-    - [UglifyJsPlugin](#uglifyjsplugin)
-    - [ExtractTextWebpackPlugin](#extracttextwebpackplugin)
-    - [CommonsChunkPlugin](#commonschunkplugin)
-    - [ProvidePlugin](#provideplugin)
-    - [配置 webpack-dev-server](#%E9%85%8D%E7%BD%AE-webpack-dev-server)
-    - [AutomaticPrefetchPlugin](#automaticprefetchplugin)
-    - [html-webpack-plugin 插件配置](#html-webpack-plugin-%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE)
+`npm i -D @babel/plugin-syntax-dynamic-import`
 
-<!-- /TOC -->
+babel plugins 添加 @babel/plugin-syntax-dynamic-import
+
+## babel配置
+
+babel-polyfill 和 babel-plugin-transform-runtime 不能同时使用
+
+> 补充几点，一般来说，在自己写框架或者库的时候，使用babel-plugin-transform-runtime是个很好的选择，主要是不污染环境。而如果自己写项目，不使用它，使用babel-polyfill会更简单一些。另外，babel-polyfill和babel-plugin-transform-runtime是独立的，两者没有依赖关系，不要两个一起安装，没意义～
+
 ## 优化
 构建优化
 1. 减少编译体积 ContextReplacementPugin、IgnorePlugin、babel-plugin-import、babel-plugin-transform-runtime。
@@ -57,19 +35,6 @@
 
 初始化配置参数 -> 绑定事件钩子回调 -> 确定Entry逐一遍历 -> 使用loader编译文件 -> 输出文件
 
-
-## 代码拆分
-
-```js
-module.export = {
-    // ...
-    optimization: {
-        splitChunks: {
-            chunks: 'all'
-        }
-    }
-}
-```
 
 ## 基本配置
 
