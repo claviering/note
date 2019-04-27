@@ -76,6 +76,7 @@ abstract class Animal{
 }
 ```
 ## 接口
+
 ```js
 interface FullName(
     firstName:string;
@@ -84,43 +85,72 @@ interface FullName(
 function printName(name:FullName){
     console.log(name.firstName)
 }
+// 相当于
+function printName(name: {firstName: string, secondName?: string}) {
+    console.log(name.firstName)
+}
 ```
+
+## Readonly 属性
+
+```ts
+interface Point {
+    readonly x: number;
+    readonly y: number;
+}
+```
+
+ReadonlyArray<T> 用法和 Array<T>  一样
+
+```ts
+let a: number[] = [1, 2, 3, 4];
+let ro: ReadonlyArray<number> = a;
+ro[0] = 12; // error!
+ro.push(5); // error!
+ro.length = 100; // error!
+a = ro; // error!
+```
+
+对比 readonly 和 const
+
+变量使用 const, 对象属性使用 readonly
 
 ## 函数接口
 ```js
 interface encrypt {
-    (key:string, value:string):string
+    // (函数参数: 类型, 函数参数: 类型): 返回类型
+    (key: string, value: string): string
 }
 
-var sha1:encrypt = function(){}
+let sha1:encrypt = function(){}
 ```
 ## 数组接口
 
 ```js
 interface Arr{
-    [index:number]:string
+    [index: number]: string
 }
-var myarr:Arr=['aa', 'bb']
+let myarr: Arr= ['aa', 'bb']
 myarr[0]
 ```
 ## 类接口
 ```js
 interface Animal{
-    name:string
-    eat():void
+    name: string
+    eat(): void
 }
-class Dog implements Animal{}
+class Dog implements Animal {}
 ```
 
 ## 接口拓展
 
 ```js
 interface Animal{
-    eat():void
+    eat(): void
 }
 
 interface Person extends Animal{
-    work():string
+    work(): string
 }
 
 class Web implements Person{
@@ -131,7 +161,7 @@ class Web implements Person{
 
 ## 泛型
 ```js
-function getData<T>(value:T):T{
+function getData<T>(value: T): T {
     return valur
 }
 getData<number>(123)
@@ -140,18 +170,18 @@ getData<string>('hello world')
 
 泛型类
 ```js
-class MinClass<T>{
-    public list:T
+class MinClass<T> {
+    public list: T
 }
 ```
 
 泛型接口
 ```js
 interface Config<T> {
-    (value:T):T
+    (value: T): T
 }
-function getData<T>(value:T):T{
+function getData<T>(value: T): T {
     return valur
 }
-var myGetData:Config<string> = getData
+let myGetData: Config<string> = getData
 ```
