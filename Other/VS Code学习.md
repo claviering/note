@@ -1,5 +1,26 @@
 ﻿# VS Code学习
 
+## 配置 ESLint
+
+npm i -D 下载包
+```json
+"devDependencies": {
+ "eslint-config-airbnb": "^17.1.0",
+ "eslint-config-prettier": "^3.1.0",
+ "eslint-plugin-import": "^2.14.0",
+ "eslint-plugin-jsx-a11y": "^6.1.1",
+ "eslint-plugin-prettier": "^3.0.0",
+ "eslint-plugin-react": "^7.11.0"
+}
+```
+ESLint 勾选 Auto Fix On Save
+
+## 冲突合并提示
+
+设置
+
+Merge-conflict > Code Lens: Enabled, Editor: Code Lens: Enabled
+
 ## VSCode terminal
 
 VSCode 默认使用不登陆的 shell, 加载 .bashrc 文件

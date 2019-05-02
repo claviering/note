@@ -1,5 +1,118 @@
 ﻿# JS学习
 
+## 操作 URL
+
+`URLSearchParams API`
+
+## 如何阻止冒泡
+
+冒泡型事件：事件按照从最特定的事件目标到最不特定的事件目标(document对象)的顺序触发
+
+w3c的方法是e.stopPropagation()，IE则是使用e.cancelBubble = true
+
+```js
+//阻止冒泡行为 
+function stopBubble(e) { 
+//如果提供了事件对象，则这是一个非IE浏览器 
+if ( e && e.stopPropagation ) 
+    //因此它支持W3C的stopPropagation()方法 
+    e.stopPropagation(); 
+else 
+    //否则，我们需要使用IE的方式来取消事件冒泡 
+    window.event.cancelBubble = true; 
+}
+
+```
+
+## 如何阻止默认事件
+
+```js
+//阻止浏览器的默认行为 
+function stopDefault( e ) { 
+    //阻止默认浏览器动作(W3C) 
+    if ( e && e.preventDefault ) 
+        e.preventDefault(); 
+    //IE中阻止函数器默认动作的方式 
+    else 
+        window.event.returnValue = false; 
+    return false; 
+}
+
+```
+
+## JS 装逼
+
+```js
+// 创建过去七天的数组，如果将代码中的减号换成加号，你将得到未来7天的数组集合
+// 创建过去七天的数组
+let a = [...Array(7).keys()].map(days => new Date(Date.now() - 86400000 * days));
+
+// 生成长度为11的随机字母数字字符串
+// toString(36) 36 进制 10 个数字 + 26 个英文字母
+// substring(2) 截取字符串 从位置 2 开始
+let a = Math.random().toString(36).substring(2);
+// 获取URL的查询参数
+// ?foo=bar&baz=bing => {foo: bar, baz: bing}
+// 参考 MDN replace 用法
+q={};location.search.replace(/([^?&=]+)=([^&]+)/g,(_,k,v)=>q[k]=v);q;
+// 随机更改数组元素顺序，混淆数组
+// Math.random() - 0.5 一半几率 返回 True / False
+(arr) => arr.slice().sort(() => Math.random() - 0.5)
+// 生成随机十六进制代码 如：'#c618b2'
+'#' + Math.floor(Math.random() * 0xffffff).toString(16).padEnd(6, '0');
+// 这是一个臭名昭著的面试题，让你写出他的运行结果，受不了~
+// 整除 5 输出 Buzz 整除 3 的 输出 Fizz
+// 同时整除 5 和 3 的 输出 FizzBuzz 其他输出数字
+for(i=0;++i<101;console.log(i%5?f||i:f+'Buzz'))f=i%3?'':'Fizz'
+// 用字符串返回一个键盘图形
+(_=>[..."`1234567890-=~~QWERTYUIOP[]\\~ASDFGHJKL;'~~ZXCVBNM,./~"].map(x=>(o+=`/${b='_'.repeat(w=x<y?2:' 667699'[x=["BS","TAB","CAPS","ENTER"][p++]||'SHIFT',p])}\\|`,m+=y+(x+'    ').slice(0,w)+y+y,n+=y+b+y+y,l+=' __'+b)[73]&&(k.push(l,m,n,o),l='',m=n=o=y),m=n=o=y='|',p=l=k=[])&&k.join`
+`)()
+
+```
+
+## 数组扁平化
+
+数组拆解: flat: [1,[2,3]] --> [1, 2, 3]
+
+```js
+Array.prototype.flat = function() {
+    return this.toString().split(',').map(item => +item )
+}
+```
+
+## 函数执行改变this
+
+this 指向，其实就是要搞清楚 函数的运行环境，说人话就是，谁调用了函数
+- obj.fn()，便是 obj 调用了函数，既函数中的 this === obj
+- fn()，这里可以看成 window.fn()，因此 this === window
+
+手动修改 this 指向
+
+- call: fn.call(target, 1, 2)
+- apply: fn.apply(target, [1, 2])
+- bind: fn.bind(target)(1,2)
+
+## 很稳的类型判断
+
+```js
+let class2type = {}
+'Array Date RegExp Object Error'.split(' ').forEach(e => class2type[ '[object ' + e + ']' ] = e.toLowerCase()) 
+
+function type(obj) {
+    if (obj == null) return String(obj)
+    return typeof obj === 'object' ? class2type[ Object.prototype.toString.call(obj) ] || 'object' : typeof obj
+}
+```
+
+## assign
+
+只是单层的深复制，多层的浅复制
+
+深复制 JSON.parse(JSON.stringify(obj))
+
+1. 具有循环引用的对象时，报错
+2. 当值为函数、undefined、或symbol时，无法拷贝
+
 ## 柯里化（Curring, 以逻辑学家Haskell Curry命名)
 
 [函数柯里化](https://www.codercto.com/a/54607.html)
@@ -381,6 +494,9 @@ console.log(test()); // John Doe
 自动垃圾收集机制，它的原理其实很简单：
 
 确定变量中有哪些还在使用，哪些已经不再使用，然后 **垃圾收集器**会按照固定的时间间隔去周期性的释放已经不再继续使用的变量所占的内存。
+
+算法: 标记-清除 (除标记的对象外，所有对象都被删除)
+
 ## html上获取事件对象
 
 `<li poetry='a' onclick="showDraw(this)">`
@@ -452,7 +568,7 @@ isChromeFirefox()
 - 使用 Array.reduce 替代 Array.filter 与 Array.map 的组合
 
 ## 函数节流
-函数节流是间隔时间执行
+函数节流是间隔时间执行，将高频操作优化成低频操作，滚动条事件 或者 resize 事件
 
 ## 函数防抖
 

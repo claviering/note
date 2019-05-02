@@ -1,5 +1,13 @@
 # React 学习
 
+## react 生命周期
+
+[Blog](https://github.com/YvetteLau/Blog/issues/3)
+
+## Redux
+
+当 React 有 Context 和 Hooks 时, 你真的还需要 Redux 吗
+
 ## 函数组件
 
     一个函数就是一个组件，return一份DOM解构

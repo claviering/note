@@ -1,5 +1,11 @@
 # hexo
 
+## 图片居中
+
+```html
+<p align="center">![](4.PNG)</p>
+```
+
 ## hexo 插入数学公式
 
 文件中引入
