@@ -1,5 +1,27 @@
 ﻿# JS学习
 
+## RelativeTimeFormat
+
+时间格式化，替代 moment.js
+
+The Intl.RelativeTimeFormat object is a constructor for objects that enable language-sensitive relative time formatting.
+
+## 是否为空对象
+
+```js
+const obj = {};
+const flag = !Array.isArray(obj) && Object.prototype.toString.call(obj) && !Object.keys(obj).length;
+// flag => true
+```
+
+## 前面补零
+
+```js
+const fillZero = (num, len) => num.toString().padStart(len, "0");
+const num = fillZero(169, 5);
+// num => "00169"
+```
+
 ## 操作 URL
 
 `URLSearchParams API`

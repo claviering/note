@@ -1,5 +1,14 @@
 # linux 学习
 
+## 后台运行命令
+
+`CTRL + Z` 暂停任务，使用`bg` 放到后台运行。或者命令最后加 `&`，查看后台运行进程 `jobs`。使用 `fg [%job_id]` 把程序放到前台运行
+
+### 终端退出保持后台运行
+
+1. disown 命令 `disown -h %1` % 后面加 jobs 查看的 ID
+2. nohup 命令 `nohup python demo.py &` 使用 ps ax | grep test.py 结束进程
+
 ## 查找排除文件夹
 
 `find . -path "./node_modules" -prune -o -print`

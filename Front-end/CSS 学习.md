@@ -1,5 +1,26 @@
 ﻿# CSS 学习
 
+## JS in CSS
+
+## 滚动的另类使用
+
+[滚动换衣服](https://zhuanlan.zhihu.com/p/60201227)
+
+```css
+.main-content {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+section {
+  scroll-snap-align: center;
+}
+```
+
+## 动态生成内容
+
+动态生成内容 [Demo](https://codepen.io/airen/pen/bZzdoB)
+
 ## 单行隐藏省略号
 
 ```css
