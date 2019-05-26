@@ -1,5 +1,44 @@
 ﻿# CSS 学习
 
+## 使用 margin-top: auto 实现粘性 footer 布局
+
+[margin auto 用法](https://github.com/chokcoco/iCSS/issues/64)
+
+## rem 布局不再使用 JavaScript 设置
+
+js ` document.querySelector('html').style.fontSize = `${window.innerWidth / 7.5 }px`;`
+
+在不需要兼容太低版本的安卓机情况下
+
+```css
+html{
+  font-size: calc(100vw  /  7.5)
+}
+```
+
+## caret-color
+
+Input 光标颜色
+
+## IOS 滚动流畅
+
+```css
+body{
+-webkit-overflow-scrolling: touch; /* ios5+ */
+}
+```
+
+`-webkit-overflow-scrolling` 属性具有继承效果，所以在 body 上设置即可，这样局部滚动条就非常的流畅了。
+
+
+## text-align-last
+
+最后一行文字对齐方式，实现文字两端对齐 `text-align-last: justify;`
+
+## writing-mode
+
+writing-mode 是用来实现文字可以竖着呈现的
+
 ## JS in CSS
 
 ## 滚动的另类使用

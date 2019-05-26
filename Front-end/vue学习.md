@@ -1,5 +1,31 @@
 ﻿# vue学习
 
+## 页面上加上 fps
+
+```js
+import fps from 'fps-indicator'
+fps({
+  position: 'top-right',
+  style: `
+    font-size: 24px;
+  `,
+})
+```
+
+## vue 性能优化
+
+[Bilibili](https://www.bilibili.com/video/av52738855?from=search&seid=12483499691643118692)
+
+1. 函数型组件。没有生命周期
+2. 子组件拆分。重处理放到子组件中，父子组件的生命周期
+3. 局部变量。 let base = this.base 不要每次都使用 this.base 会触发 getter
+4. v-show 代替 v-if。减少操作 DOM
+5. keep-alive.路由 cache
+6. 活用延迟加载(Defer)，延迟 v-if = true 显示组件
+7. 分批处理。多数据分块处理
+8. 非响应式。让 vue 不观察变量 Object.defineProperty(itemData, 'data', {configurable: false, value: item})
+9. 仅渲染可视部分
+
 ## 动态动态路劲
 
 > [vue动态定义图片路径](https://www.jianshu.com/p/fab484498e4e)
@@ -376,7 +402,7 @@ methods: {
 
 ```
 watch: {
-    '$route': {'getMyBank', immediate: true} // 路由有变化的时候执行
+    '$route': {'getMyBank', immediate: true} // 路由有变化的时候执行 只能监听当前路由下的子路由
     'key': 'function', // key改变的时候执行function
     data: {
         handler () {

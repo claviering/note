@@ -1,5 +1,17 @@
 ﻿# JS学习
 
+## 金钱格式化
+
+`(12345.67).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67`
+
+## 数组对象转对象
+
+```js
+// [{key: key1, value: value1}, {key: key2, value: value2}, {key: key3, value: value3}]
+// => {key1: valye, key2: value2, key3: value3}
+var obj = list.reduce((obj, item) => (obj[item.key] = item.value, obj) ,{});
+```
+
 ## RelativeTimeFormat
 
 时间格式化，替代 moment.js
@@ -175,10 +187,6 @@ const xxx = require('./lib')
 
 xxx 就等于 module.exports 或者 xxx 等于 exports
 
-xxx 就等于 module.exports 或者 xxx 等于 exports
-
-require('./lib') 就等于 module.exports 或者 require('./lib') 等于 exports
-
 require('./lib') 就等于 module.exports 或者 require('./lib') 等于 exports
 
 ES6
@@ -318,7 +326,9 @@ let b = 2.22
 ## 数字格式化
 
 `Number.toLocaleString()`
+
 小数点后保留2位
+
 `num.toFixed(2)`
 
 ## 正则表达式
@@ -590,7 +600,8 @@ isChromeFirefox()
 - 使用 Array.reduce 替代 Array.filter 与 Array.map 的组合
 
 ## 函数节流
-函数节流是间隔时间执行，将高频操作优化成低频操作，滚动条事件 或者 resize 事件
+
+函数节流是间隔时间执行，将高频操作优化成低频操作，单位时间内只触发第一次，并且计时结束后作出相应，滚动条事件 或者 resize 事件
 
 ## 函数防抖
 

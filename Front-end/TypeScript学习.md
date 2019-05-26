@@ -16,7 +16,8 @@ tsc helloworld.ts
 - boolean
 - number
 - string
-- array
+- Array
+- Object
 - tuple
 - enum
 - any
@@ -78,10 +79,11 @@ abstract class Animal{
 ## 接口
 
 ```js
-interface FullName(
+interface FullName{
     firstName:string;
     secondName?:string; // 可选接口
-)
+}
+
 function printName(name:FullName){
     console.log(name.firstName)
 }

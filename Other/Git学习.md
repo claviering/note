@@ -1,5 +1,9 @@
 ﻿# Git学习
 
+## 冲突合并
+
+`git commit -am 'Conflicts resolved'`
+
 ## 删除远程分支
 
 `git push origin -d <branch>`
@@ -30,6 +34,7 @@
 ## 查看某段代码是谁写的
 
 `git blame <file-name>`
+`git blame -L 104,+10 <file-name>`
 
 ## tag
 
