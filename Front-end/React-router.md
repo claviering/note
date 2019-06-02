@@ -19,14 +19,14 @@ tmpTodoList = () => (<TodoList store={ this.store }></TodoList>) // 先封装一
 var data = {id:3,name:sam,age:36};
 var path = {
   pathname:'/user',
-  query:data,
+  query: data,
 }
 
 <Link to={path}>用户</Link>
 ```
 获取数据
 ```js
-var data = this.props.location.state;
+var data = this.props.location.query;
 var {id,name,age} = data;
 ```
 ### state 方式类似于 post 方式
@@ -36,7 +36,7 @@ var {id,name,age} = data;
 var data = {id:3,name:sam,age:36};
 var path = {
   pathname:'/user',
-  state:data,
+  state: data,
 }
 <Link to={path}>用户</Link>
 ```
