@@ -1,5 +1,26 @@
 ﻿# CSS 学习
 
+## 多列布局
+
+```css
+column-width: 14em;
+column-gap: 2em;
+column-rule: 1px solid #ccc;
+column-span: all;
+break-before: avoid;
+break-after: avoid;
+break-inside: avoid;
+```
+
+## Vertical-Align 你应该知道的一切
+
+[参考](https://zhuanlan.zhihu.com/p/62743439)
+
+关键
+- 行盒子的基线和上、下边界在哪儿？
+- 行内元素的基线和上、下边界在哪儿？
+
+
 ## 使用 margin-top: auto 实现粘性 footer 布局
 
 [margin auto 用法](https://github.com/chokcoco/iCSS/issues/64)

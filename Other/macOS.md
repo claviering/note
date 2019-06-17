@@ -12,3 +12,7 @@ System -> Preferences -> Accessibilty -> Mouse & Trackpad -> Trackpad Options ->
 ## 1/4 调节亮度/音量
 
 Shift + option + 亮度/音量
+
+## 截屏
+
+command + Shift + 5

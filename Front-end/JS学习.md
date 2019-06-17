@@ -781,8 +781,7 @@ b.style.property = new style
 ## 设置CSS
 ```js
 var b = document.querySelector("button"); 
-
-b.style("name", "helloButton");
+el.style.display = 'flex';
 ```
 
 ## JS 添加z-index属性
