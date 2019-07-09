@@ -1,5 +1,11 @@
 ﻿# CSS 学习
 
+## pointer-events
+
+指针穿透属性
+
+[参考](https://www.jianshu.com/p/3eba945fc19e)
+
 ## 多列布局
 
 ```css

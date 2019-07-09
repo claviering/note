@@ -1,5 +1,96 @@
 ﻿# JS学习
 
+## 获取 DOM attribute
+
+`e.target.getAttribute("attribute")`
+
+## 动态属性名
+
+```js
+const dynamic = 'email';
+let user = {
+    name: 'John',
+    [dynamic]: 'john@doe.com'
+}
+console.log(user); // outputs { name: "John", email: "john@doe.com" }
+```
+
+## 有条件的对象属性
+
+```js
+nst getUser = (emailIncluded) => {
+  return {
+    name: 'John',
+    surname: 'Doe',
+    ...emailIncluded && { email : 'john@doe.com' }
+  }
+}
+
+const user = getUser(true);
+console.log(user); // outputs { name: "John", surname: "Doe", email: "john@doe.com" }
+
+const userWithoutEmail = getUser(false);
+console.log(userWithoutEmail); // outputs { name: "John", surname: "Doe" }
+```
+
+## 你不知道的 JSON API
+
+[参考](https://juejin.im/post/5d15e1f4e51d45773e418abe)
+
+JSON.stringify()
+
+使用方法为 JSON.stringify(value, replacer?, space?)
+
+JSON.parse()
+
+使用方法 JSON.parse(text, reviver?)
+
+
+## 日期格式化
+
+`toLocaleDateString()` 格式化成 "2019/1/23"
+
+## 日期比较
+
+比较日期的前后，可以直接使用>, <, >= 和 <= 时行比较。
+
+```js
+const earlier = new Date(2019, 0, 26)
+const later = new Date(2019, 0, 27)
+
+console.log(earlier < later) // true
+```
+
+比较相等，可以getTime获取它们的时间戳，用时间戳进行比较。
+
+```js
+const isSameTime = (a, b) => {
+  return a.getTime() === b.getTime()
+}
+
+const a = new Date(2019, 0, 26)
+const b = new Date(2019, 0, 26)
+console.log(isSameTime(a, b)) // true
+
+```
+
+## toFixed() 保留两位小数不要四舍五入
+
+原来：保留 3 位，剪掉最后一位
+
+`var clip = a => Number(parseFloat(a).toFixed(3).slice(0,-1))`
+
+## 自动滚动元素
+
+```js
+var element = document.getElementById("box");
+
+element.scrollIntoView();
+element.scrollIntoView(false);
+element.scrollIntoView({block: "end"});
+element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+```
+
 ## 金钱格式化
 
 `(12345.67).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');  // 12,345.67`
@@ -37,6 +128,12 @@ const num = fillZero(169, 5);
 ## 操作 URL
 
 `URLSearchParams API`
+
+```js
+const paramsString = 'name=jawil&age=24';
+const searchParams = new URLSearchParams(paramsString);
+console.log(searchParams.get('name')); // jawil
+```
 
 ## 如何阻止冒泡
 

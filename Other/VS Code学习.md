@@ -1,5 +1,9 @@
 ﻿# VS Code学习
 
+## 水平自动换行
+
+`alt + z`
+
 ## 配置 ESLint
 
 npm i -D 下载包
