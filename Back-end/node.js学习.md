@@ -1,5 +1,30 @@
 # node.js学习
 
+## 定时任务 运行 shell 命令
+
+```js
+var schedule = require('node-schedule');
+var exec = require("child_process").exec;
+
+// 明天 0 点 0 分 0 秒执行
+var j = schedule.scheduleJob('0 0 0 * * *', function() {
+  // 删除 .pm2 目录和子目录下的所有 .log 文件
+  var removeCommand = "find .pm2 -name '*.log' -print0 | xargs -0 rm -rf";
+  // 使用 xz 打包压缩 *.log 文件，并且用时间命名，打包压缩好之后删除 *.log 文件
+  var compressCommand = "tar -Jcvf logs/$(date +%F_%T)_log.tar.xz logs/*.log && rm logs/*.log"
+  exec(removeCommand, function(error, stdout, stderr) {
+    if (error) console.log('删除日志 执行错误', error);
+    if (stdout) console.log('删除日志 输出流日志', stdout);
+    if (stderr) console.log('删除日志 输出流错误日志', stderr);
+  })
+  exec(compressCommand, function(error, stdout, stderr) {
+    if (error) console.log('压缩日志 执行错误', error);
+    if (stdout) console.log('压缩日志 输出流日志', stdout);
+    if (stderr) console.log('压缩日志 输出流错误日志', stderr);
+  })
+});
+```
+
 ## Buffer 理解使用
 
 > https://semlinker.com/node-buffer/

@@ -1,5 +1,17 @@
 # anguler学习.md
 
+## angular中控制器之间传递参数的方式
+
+[angular中控制器之间传递参数的方式](https://segmentfault.com/a/1190000009167725)
+
+1. 通过$rootscope传参
+2. 通过事件的方式
+3. 通过服务
+
+## 路由 ui-router
+
+`ui-sref="notFound"` `ui-sref` 加的是 routes 配置中 state 的 名字 不是路由路径
+
 ## 安装
 
 ```

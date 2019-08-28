@@ -1,8 +1,175 @@
 ﻿# JS学习
 
+## closest()
+
+`document.closest()` 向上选择元素, 查询到父元素
+
+## dataset()
+
+获取标签上以"data-"为前缀的属性集合
+
+```
+<p data-name="蜘蛛侠" data-age="16"></p>
+document.querySelector("p").dataset; // {name: "蜘蛛侠", age: "16"}
+```
+
+## contenteditable 可以使一个元素可以被用户编辑
+
+`<p contenteditable>我是P元素，但是我也可以被编辑</p>`
+
+## 获取元素空间信息
+
+`getBoundingClientRect()`
+
+## 监听网络变化
+
+`online`
+
+```
+window.addEventListener("online", xxx);
+
+window.addEventListener("offline", () => {
+  alert("你断网啦！");
+});
+```
+
+## contains()
+
+判断指定元素是否包含了指定的子元素
+
+## html 属性 speelcheck
+
+拼写检查
+
+## 获取设备的电池状态
+
+```
+navigator.getBattery().then(battery => console.log(battery));
+// 返回
+{
+  charging, // 是否在充电
+  chargingTime, // 充满电所需时间
+  dischargingTime, // 当前电量可使用时间
+  level, 剩余电量
+
+  onchargingchange, // 监听充电状态变化
+  onchargingtimechange, // 监听充满电所需时间变化
+  ondischargingtimechange, // 监听当前电量可使用时间变化
+  onlevelchange // 监听电量变化
+}
+```
+## 使设备进行震动
+
+```
+// 震动一次
+navigator.vibrate(100);
+
+// 连续震动，震动200ms、暂停100ms、震动300ms
+navigator.vibrate([200, 100, 300]);
+```
+
+## 监听页面可见性
+
+在PC端标签栏切换、最小化会触发、在移动端程序切到后台会触发
+
+```
+document.addEventListener("visibilitychange", () => {
+  console.log(`页面可见性：${document.visibilityState}`);
+});
+```
+
+## 陀螺仪
+
+deviceOrientation
+
+陀螺仪，也就是设备的方向，又名重力感应，该API在IOS设备上失效的解决办法，将域名协议改成https；
+
+## 视频加速
+
+`document.getElementById("video").playbackRate = 10`
+
+## addEventListener 参数
+
+```js
+element.addEventListener('click', doSomething, {
+    capture: false,
+    once: true,
+    passive: false
+});
+```
+
+- capture：一个布尔值和useCapture参数一样
+- once：一个布尔值，如果为true，表示事件只在目标元素上运行一次，然后被删除
+- passive：一个布尔值，如果为true，表示函数不会调用preventDefault()，即使它包含在函数体中
+
+## 通知控制
+
+只能在 https 域名下使用
+
+```
+Notification.requestPermission(prem => {
+  prem == "granted" // 同意
+})
+const notice = new Notification("通知标题", {
+  body: "通知内容"
+});
+```
+
+## 全屏
+
+```
+/**
+ * @method launchFullScreen 开启全屏
+ * @param {Object} elem = document.documentElement 作用的元素
+ */
+const launchFullScreen = (elem = document.documentElement) => {
+  if(elem.requestFullScreen) {
+    elem.requestFullScreen();
+  } else if(elem.mozRequestFullScreen) {
+    elem.mozRequestFullScreen();
+  } else if(elem.webkitRequestFullScreen) {
+    elem.webkitRequestFullScreen();
+  }
+}
+/**
+ * @method exitFullScreen 关闭全屏
+ */
+const exitFullScreen = () => {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitCancelFullScreen) {
+    document.webkitCancelFullScreen();
+  }
+}
+```
+
+## 监听用户手机设备的旋转方向变化
+
+```
+window.addEventListener("orientationchange", () => {
+  document.body.innerHTML += `<p>屏幕旋转后的角度值：${window.orientation}</p>`;
+}, false);
+```
+
 ## 获取 DOM attribute
 
 `e.target.getAttribute("attribute")`
+
+```
+window.addEventListener("deviceorientation", event => {
+  let {
+    alpha,
+    beta,
+    gamma
+  } = event;
+
+  console.log(`alpha：${alpha}`);
+  console.log(`beta：${beta}`);
+  console.log(`gamma：${gamma}`);
+});
+```
 
 ## 动态属性名
 
@@ -125,7 +292,7 @@ const num = fillZero(169, 5);
 // num => "00169"
 ```
 
-## 操作 URL
+## 操作 URL 获取 url 参数
 
 `URLSearchParams API`
 

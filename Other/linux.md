@@ -1,5 +1,26 @@
 # linux 学习
 
+## 输入时间
+
+`date +%F\ %T`
+
+用时间命名文件
+
+`$(date +%F_%T).log`
+
+## 压缩
+
+gzip 压缩 tar -zcvf file.tar *.log
+
+bz2 压缩 tar -jcvf log.tar.xz *.log
+
+xz 压缩 tar -Jcvf log.tar.xz *.log
+
+- -z 使用 gz 压缩
+- -c 建立压缩档案
+- -v 显示过程
+- -f 使用档案名字
+
 ## 后台运行命令
 
 `CTRL + Z` 暂停任务，使用`bg` 放到后台运行。或者命令最后加 `&`，查看后台运行进程 `jobs`。使用 `fg [%job_id]` 把程序放到前台运行

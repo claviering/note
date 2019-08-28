@@ -1,5 +1,26 @@
 ﻿# Git学习
 
+## git reset
+
+`git reset --hard [commit id] | [tag name]`  文件内容全部回滚, 文件丢失
+
+`git reset --mixed [commit id] | [tag name]` 文件内容不回滚, 回滚到 add 之前
+
+`git reset --soft [commit id] | [tag name]` 文件内容不回滚, 回滚到 comit 之前 add 之后
+
+## 提交空文件夹
+
+文件夹下面新建 `.gitkeep`
+
+## http 保存密码
+
+```
+$ git config credential.helper store
+$ git push http://example.com/repo.git
+Username: <type your username>
+Password: <type your password>
+```
+
 ## 冲突合并
 
 `git commit -am 'Conflicts resolved'`
@@ -176,6 +197,7 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 `git clean -f`
 
 ## 找到要回滚的commitID
+
 `git log`
 `git reset --hard cedc856`
 `git push --force origin master`

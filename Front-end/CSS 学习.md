@@ -1,5 +1,25 @@
 ﻿# CSS 学习
 
+## 动画立即执行
+
+animation-delay 改成负向
+
+## outline
+
+在 margin 外面
+
+## letter-spacing
+
+文字间距, 设置负值, 实现文字倒叙
+
+## 上下翻转
+
+scale(-1)
+
+## mix-blend-mode || background-blend-mode
+
+[混合模式](https://github.com/chokcoco/iCSS/issues/31)
+
 ## pointer-events
 
 指针穿透属性

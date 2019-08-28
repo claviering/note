@@ -1,5 +1,9 @@
 ﻿# VS Code学习
 
+## GitLens 插件水平滚动问题
+
+ set the `gitlens.currentLine.scrollable` setting to `false`
+
 ## 水平自动换行
 
 `alt + z`
@@ -363,6 +367,7 @@ clg -> console.log
 - setting sync 配置同步到 git
 - REST Client 比 postman 好用的的插件
 - polacode 代码截图保存 >polacode
+- GitLens
 
 ### React插件
 
