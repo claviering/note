@@ -1,5 +1,45 @@
 ﻿# JS学习
 
+## moment 时区问题
+
+`moment(value).utcOffset(8).format('YYYY-MM-DD HH:mm:ss')`
+
+本地时间(北京时间) = UTC + 时区差, 时区差东为正，西为负。在此，把东八区时区差记为 +0800
+
+
+## 多维数组转一维数组
+
+```js
+const deepFlatten = arr => [].concat(...arr.map(v => (Array.isArray(v) ? deepFlatten(v) : v)));
+deepFlatten([1, [2], [[3], 4], 5]); // [1,2,3,4,5]
+```
+
+## 数组交集
+
+```js
+const similarity = (arr, values) => arr.filter(v => values.includes(v));
+similarity([1, 2, 3], [1, 2, 4]); // [1,2]
+```
+
+## JS 对象转 url 查询字符串
+
+```js
+const objectToQueryString = (obj) => Object.keys(obj).map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(obj[key])}`).join('&');
+objectToQueryString({name: 'Jhon', age: 18, address: 'beijing'})
+// name=Jhon&age=18&address=beijing
+```
+
+## 基于某个条件为对象设置属性
+
+```js
+const myObject = {... myProperty && {propName：myPoperty}};
+
+let myProperty = 'Jhon'
+const myObject = {...myProperty && {propName: myProperty}}; // {propName: "Jhon"}
+let myProperty = ''
+const myObject = {...myProperty && {propName: myProperty}}; // {}
+```
+
 ## closest()
 
 `document.closest()` 向上选择元素, 查询到父元素

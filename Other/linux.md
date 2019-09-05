@@ -1,5 +1,9 @@
 # linux 学习
 
+## 统计文件中单词出现次数
+
+`grep -o -i [word] [file] | wc -l`
+
 ## 输入时间
 
 `date +%F\ %T`
