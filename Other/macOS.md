@@ -1,5 +1,9 @@
 # mac
 
+## IOS 调试器
+
+Command + Space 输入 Simulator, mac 上打开 safari, develop -> simulator 选择模拟器的页面调试
+
 ## 3指滑动复制
 
 System -> Preferences -> Accessibilty -> Mouse & Trackpad -> Trackpad Options -> Enable deagging -> three finger drag

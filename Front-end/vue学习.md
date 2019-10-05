@@ -1,5 +1,13 @@
 ﻿# vue学习
 
+## vue 获取标签 contenteditable 改变的内容
+
+给元素绑定 input 事件
+
+```html
+<p contenteditable @input="onInput" >
+```
+
 ## 页面上加上 fps
 
 ```js

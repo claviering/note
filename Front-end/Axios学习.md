@@ -1,5 +1,29 @@
 ﻿# Axios学习
 
+## axios 发送 form-data 请求上传文件
+
+```js
+const fs = require('fs')
+const axios = require('axios')
+const FormData = require('form-data')
+let form = new FormData()
+
+form.append('certFileStream', fs.createReadStream('/Users/name/Downloads/apiclient_cert.p12'))
+form.append('appId', 'TPOS')
+form.append('orgCode', '10CC')
+form.append('tradeAccountConfig', '{"appID":"b","certPassword":"e","key":"d","mchID":"c"}')
+form.append('tradeAccountDesc', '描述')
+form.append('tradeAccountType', 'WXPAY')
+
+
+axios.post('http://url/payment/tradeAccount/add', form, {
+  headers: form.getHeaders(),
+}).then(result => {
+  // Handle result…
+  console.log(result.data);
+});
+```
+
 ## 创建实例
 
 ```js

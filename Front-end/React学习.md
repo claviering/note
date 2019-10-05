@@ -1,5 +1,9 @@
 # React 学习
 
+## Hook
+
+函数组件有自己的 state, 同时还可以更新自己的 state
+
 ## react 生命周期
 
 [Blog](https://github.com/YvetteLau/Blog/issues/3)

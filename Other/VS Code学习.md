@@ -1,5 +1,9 @@
 ﻿# VS Code学习
 
+## Kite 插件
+
+AI python 补全插件
+
 ## python 不会自动补全问题
 
 打开 setting, 搜索 `python.autoComplete` 把 `Auto Complete: Add Brackets` 选上

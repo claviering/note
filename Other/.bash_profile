@@ -56,14 +56,39 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion""""]""""]""
 alias cl='clear'
 alias jc='javac'
-alias c1='cd ..'
+alias c='cd ..'
+alias e='exit'
 alias c2='cd ../..'
 alias c3='cd ../../..'
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
+alias ga='git add .'
+alias gc='git commit -m'
+alias gsh='git push origin'
+alias gb='git branch'
+alias gl='git log'
+alias gll='git pull origin'
+alias gcd='git clone --depth 1'
+alias gcl='git clone'
+alias grb='git rebase -i'
+alias gta='git tag -a'
+alias gtg='git tag'
+alias gp='git remote prune origin'
+alias gco='git checkout -- .'
+alias dev='npm run dev'
+alias pi='pip install -i https://pypi.tuna.tsinghua.edu.cn/simple'
+export PATH=/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin:$PATH
 export PATH=~/Documents/mongodb/bin:$PATH
 export PATH=~/Documents/openssl-1-1-1/bin:$PATH
 export PATH=~/Documents/seleniumDriver:$PATH
 export PATH=~/Documents/flutter/bin:$PATH
+export C_INCLUDE_PATH=/Users/linweiye/Documents/openssl-1-1-1/include:$C_INCLUDE_PATH
+export CPLUS_INCLUDE_PATH=/Users/linweiye/Documents/openssl-1-1-1/include:$CPLUS_INCLUDE_PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
+export HISTSIZE=10000
+export HISEFILESIZE=10000
+# export SSLKEYLOGFILE=~/Documents/me/tls/sslkeylog.log
 eval "$(pyenv init -)"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

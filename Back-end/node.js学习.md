@@ -1,5 +1,65 @@
 # node.js学习
 
+## HTTP 调试
+
+`npm install -g whistle`
+
+`w2 start`
+
+`w2 stop`
+
+浏览器打开 `http://127.0.0.1:8899/`
+
+## node 发送 form-data 请求上传文件
+
+```js
+var fs = require("fs");
+var request = require("request");
+
+var options = {
+  method: 'POST',
+  url: 'http://10.7.7.58:9018/payment/tradeAccount/add',
+  headers: {
+    'cache-control': 'no-cache',
+    'content-type': 'multipart/form-data;'
+  },
+  formData: {
+    certFileStream: {
+      value: 'fs.createReadStream("/Users/linweiye/Downloads/apiclient_cert.p12")',
+      options: {
+        filename: '/Users/linweiye/Downloads/apiclient_cert.p12',
+        contentType: null
+      }
+    },
+    appId: 'TPOS',
+    orgCode: '10CC',
+    tradeAccountConfig: '{"appID":"b","certPassword":"e","key":"d","mchID":"c"}',
+    tradeAccountDesc: '支付宝账号描述',
+    tradeAccountType: 'WXPAY'
+  }
+};
+
+
+
+function name(options) {
+  return new Promise((resolve, reject) => {
+    request(options, function (error, response, body) {
+      if (error) reject(error)
+      resolve(body)
+    });
+  });
+}
+
+
+
+async function post(options) {
+  let res = await name(options)
+  console.log('res', res);
+}
+
+post(options)
+```
+
 ## 定时任务 运行 shell 命令
 
 ```js

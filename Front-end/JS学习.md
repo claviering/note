@@ -1,5 +1,33 @@
 ﻿# JS学习
 
+## 中文排序
+
+```js
+const arr = ["博","啊","吃","世","中","超"]
+arr.sort((x,y)=>x.localeCompare(y, 'zh-CN'))
+```
+
+## JavaScript 8 种类型
+
+## 为什么 typeof null === 'object'
+
+null 代表的是所有引用类型的默认值
+
+## new Data() 时区问题
+```js
+time = new Date()
+time.setMinutes(time.getMinutes() + time.getTimezoneOffset() + 480);
+```
+
+## 可选链式调用
+
+```js
+if (db && db.user && db.user.name) 
+  nameLength = db.user.name.length;
+
+const nameLength = db?.user?.name?.length;
+```
+
 ## moment 时区问题
 
 `moment(value).utcOffset(8).format('YYYY-MM-DD HH:mm:ss')`
@@ -960,6 +988,15 @@ appendChild(DOM)
 alert(navigator.userAgent)
 ```
 ## 操作cookie
+
+获取 cookie
+```js
+window.getCookie = function(name) {
+  var match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+  if (match) return match[2];
+}
+```
+
 ```js
 <script>
  //设置cookie

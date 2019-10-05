@@ -1,5 +1,59 @@
 ﻿# CSS 学习
 
+## 丝滑滚动
+
+`scroll-behavior: smooth;`
+
+## ios端微信h5页面上下滑动时卡顿、页面缺失
+
+```css
+*{
+  -webkit-overflow-scrolling: touch;
+}
+```
+
+## for 和 id 绑定使用
+
+点击 label 触发 input 的选中
+
+```html
+<div class="preference">
+    <label for="cheese">Do you like cheese?</label>
+    <input type="checkbox" name="cheese" id="cheese">
+</div>
+
+<div class="preference">
+    <label for="peas">Do you like peas?</label>
+    <input type="checkbox" name="peas" id="peas">
+</div>
+```
+
+## 使用linear-gradient描绘波浪线
+
+`background: linear-gradient(135deg, transparent, transparent 45%, $color, transparent 55%, transparent 100%), linear-gradient(45deg, transparent, transparent 45%, $color, transparent 55%, transparent 100%);`
+
+## 使用:scrollbar改变滚动条样式
+
+## 使用caret-color改变光标颜色
+
+## 使用::selection 改变文本选择颜色
+
+## 使用resize拉伸分栏
+
+`resize: horizontal;`
+
+## 使用attr()抓取data-*
+
+css 中使用 attr 获取 dom 元素上的值
+
+## 右对齐
+
+使用flexbox横向布局时，最后一个元素通过margin-left:auto实现向右对齐
+
+## 文本倒序
+
+`letter-spacing: -100px;`
+
 ## 动画立即执行
 
 animation-delay 改成负向

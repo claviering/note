@@ -1,5 +1,29 @@
 ﻿# Git学习
 
+## 拉取某个分支
+
+`git clone -b <branch> <remote_repo>`
+
+## git merge 与 git rebase 的区别
+
+`git merge` 合并分支并生成新的 commit ID
+
+`git rebase` 把当前分支的 commit ID 提到 rebase commit ID 的最前面, 生成新的 commit ID, 之前的 commit ID 丢失
+
+## git pull fetch
+
+- git pull 从远程拉取最新版本到本地, 自动合并
+
+- git fetch 从远程获取最新版本到本地的远程仓库副本, 不会自动合并
+
+## 查找全部历史 commit 的特殊修改内容
+
+`git grep <regexp> $(git rev-list --all)`
+
+if you run into an "Argument list too long" error.
+
+`git rev-list --all | xargs git grep <expression>`
+
 ## git reset
 
 `git reset --hard [commit id] | [tag name]`  文件内容全部回滚, 文件丢失
