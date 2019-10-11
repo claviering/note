@@ -1,5 +1,11 @@
 ﻿# VS Code学习
 
+## 添加环境变量
+
+Now open the Command Palette (⇧⌘P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.
+
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+
 ## Kite 插件
 
 AI python 补全插件

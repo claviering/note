@@ -1,5 +1,12 @@
 # mac
 
+## 切换不同的 shell
+
+列出全部 shell `cat /etc/shells`
+
+- 使用 zsh `chsh -s /bin/zsh`
+- 使用 bash `chsh -s /bin/bash`
+
 ## IOS 调试器
 
 Command + Space 输入 Simulator, mac 上打开 safari, develop -> simulator 选择模拟器的页面调试

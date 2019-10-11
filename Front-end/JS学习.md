@@ -1,5 +1,55 @@
 ﻿# JS学习
 
+## 计算2个日期相差的天数
+
+```js
+/** 
+ * 计算2个日期相差的天数，不包含今天，如：2016-12-13到2016-12-15，相差2天 
+ * @param startDateString 
+ * @param endDateString 
+ * @returns 
+ */
+function dateDiff(startDateString, endDateString) {
+  var separator = "-"; //日期分隔符  
+  var startDates = startDateString.split(separator);
+  var endDates = endDateString.split(separator);
+  var startDate = new Date(startDates[0], startDates[1] - 1, startDates[2]);
+  var endDate = new Date(endDates[0], endDates[1] - 1, endDates[2]);
+  return parseInt(Math.abs(endDate - startDate) / 1000 / 60 / 60 / 24); //把相差的毫秒数转换为天数   
+}
+
+
+/** 
+ * 计算2个日期相差的天数，包含今天，如：2016-12-13到2016-12-15，相差3天 
+ * @param startDateString 
+ * @param endDateString 
+ * @returns 
+ */
+function dateDiffIncludeToday(startDateString, endDateString) {
+  var separator = "-"; //日期分隔符  
+  var startDates = startDateString.split(separator);
+  var endDates = endDateString.split(separator);
+  var startDate = new Date(startDates[0], startDates[1] - 1, startDates[2]);
+  var endDate = new Date(endDates[0], endDates[1] - 1, endDates[2]);
+  return parseInt(Math.abs(endDate - startDate) / 1000 / 60 / 60 / 24) + 1; //把相差的毫秒数转换为天数   
+}
+```
+## 计算当前日期的周数（第几周）
+
+```js
+// 计算当前日期的周数（第几周）
+function getYearWeek(date) {
+  date = new Date(date)
+  var date2 = new Date(date.getFullYear(), 0, 1);
+  var day1 = date.getDay();
+  if (day1 == 0) day1 = 7;
+  var day2 = date2.getDay();
+  if (day2 == 0) day2 = 7;
+  d = Math.round((date.getTime() - date2.getTime() + (day2 - day1) * (24 * 60 * 60 * 1000)) / 86400000);
+  return Math.ceil(d / 7) + 1;
+}
+```
+
 ## 中文排序
 
 ```js
@@ -57,7 +107,7 @@ objectToQueryString({name: 'Jhon', age: 18, address: 'beijing'})
 // name=Jhon&age=18&address=beijing
 ```
 
-## 基于某个条件为对象设置属性
+## 基于某个条件为对象设置属性, 动态属性
 
 ```js
 const myObject = {... myProperty && {propName：myPoperty}};
