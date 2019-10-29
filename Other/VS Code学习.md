@@ -1,5 +1,10 @@
 ﻿# VS Code学习
 
+## 快捷键
+
+### Toggle folding
+You can now expand and collapse a folding region with the Toggle Fold (⌘K ⌘L) command
+
 ## 添加环境变量
 
 Now open the Command Palette (⇧⌘P) and type 'shell command' to find the Shell Command: Install 'code' command in PATH command.

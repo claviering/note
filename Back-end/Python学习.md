@@ -1,5 +1,10 @@
 ﻿# Python学习
 
+## .zshrc 配置
+
+`eval "$(pyenv init -)"`
+
+
 ## 测试
 
 pytest

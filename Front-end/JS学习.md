@@ -1,5 +1,24 @@
 ﻿# JS学习
 
+## 访问数组中元素
+
+```
+const colors = [];
+
+let firstColor = 'white';
+if (colors.length > 0) {
+ firstColor = colors[0];
+}
+
+firstColor; // => 'white'
+
+const colors = [];
+
+const [firstColor = 'white'] = colors;
+
+firstColor; // => 'white
+```
+
 ## 计算2个日期相差的天数
 
 ```js
@@ -753,7 +772,7 @@ c = a ∪ b
 c = [...new Set([...a, ...b])]
 ```
 
-## 差集
+## 数组差集
 ```js
 var a = [1,2,3,4,5]
 var b = [2,4,6,8,10]
@@ -763,6 +782,15 @@ var sa = new Set(a);
 var sb = new Set(b);
 let minus = a.filter(x => !sb.has(x));
 
+```
+
+## 数组对象差集
+
+```js
+var a = [{key: 1}, {key: 2}];
+var b = [{key: 1}];
+let s = [...a].filter(x => [...b].every(y => y.key !== x.key))
+console.log(s);
 ```
 
 ## 获取 url 参数

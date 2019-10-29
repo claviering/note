@@ -1,5 +1,14 @@
 # zsh 配置
 
+## 自动补全插件
+
+1. Clone this repository into $ZSH_CUSTOM/plugins (by default ~/.oh-my-zsh/custom/plugins)
+`git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+
+2. Add the plugin to the list of plugins for Oh My Zsh to load (inside ~/.zshrc):
+`plugins=(zsh-autosuggestions)`
+
+## 配置
 ```
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH

@@ -1,5 +1,9 @@
 # anguler学习.md
 
+## ng-if
+
+ng-if这个指令单独开了一个作用域，它只可以继承，不可以进行往外传值，所以，必须要在要传值的地方给加上$parent. 例如我要将（ng-model=“item”），我要获得query，这是打印不出的，只能（ng-model=“$parent.item”）；
+
 ## angular中控制器之间传递参数的方式
 
 [angular中控制器之间传递参数的方式](https://segmentfault.com/a/1190000009167725)
