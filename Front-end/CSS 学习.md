@@ -1,5 +1,32 @@
 ﻿# CSS 学习
 
+## 让页面里的字体变清晰，变细用CSS怎么做
+
+`-webkit-font-smoothing: antialiased;`
+
+## 如何修改chrome记住密码后自动填充表单的黄色背景
+
+```css
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background-color: rgb(250, 255, 189); /* #FAFFBD; */
+  background-image: none;
+  color: rgb(0, 0, 0);
+}
+```
+
+## 禁止用户选择
+
+```css
+body{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+```
+
 ## 丝滑滚动
 
 `scroll-behavior: smooth;`

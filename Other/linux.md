@@ -14,11 +14,18 @@
 
 ## 压缩
 
-gzip 压缩 tar -zcvf file.tar *.log
+gzip 压缩 tar -zcvf file.tar.gz *.log
 
-bz2 压缩 tar -jcvf log.tar.xz *.log
+gzip 解压 tar -xzvf file.tar.gz
+
+bz2 压缩 tar -jcvf log.tar.bz2 *.log
+
+bz2 解压 tar -xjvf file.tar.bz2
 
 xz 压缩 tar -Jcvf log.tar.xz *.log
+
+xz 解压 tar -xJvf file.tar.xz
+
 
 - -z 使用 gz 压缩
 - -c 建立压缩档案

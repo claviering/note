@@ -1,5 +1,67 @@
 ﻿# vue学习
 
+## children 获取父组件实例，parent 获取子组件实例
+
+```js
+//父组件
+mounted(){
+  console.log(this.$children) 
+  //可以拿到 一级子组件的属性和方法
+  //所以就可以直接改变 data,或者调用 methods 方法
+}
+
+//子组件
+mounted(){
+  console.log(this.$parent) //可以拿到 parent 的属性和方法
+}
+
+```
+
+## 子组件调用父组件方法
+
+```js
+// 父组件
+<home @change="change"/>
+
+// 子组件
+mounted() {
+  console.log(this.$listeners) //即可拿到 change 事件
+}
+```
+
+## attrs 父组件传多个属性给子组件
+
+```js
+// 父组件
+<home title="这是标题" width="80" height="80" imgUrl="imgUrl"/>
+
+// 子组件
+mounted() {
+  console.log(this.$attrs) //{title: "这是标题", width: "80", height: "80", imgUrl: "imgUrl"}
+},
+
+```
+
+## 深度监听
+
+watch 的 deep 属性,深度监听
+
+
+## 页面需要导入多个组件
+
+`require.context()`
+
+```js
+const path = require('path')
+const files = require.context('@/components/home', false, /\.vue$/)
+const modules = {}
+files.keys().forEach(key => {
+  const name = path.basename(key, '.vue')
+  modules[name] = files(key).default || files(key)
+})
+components:modules
+```
+
 ## vue 获取标签 contenteditable 改变的内容
 
 给元素绑定 input 事件

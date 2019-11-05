@@ -1,5 +1,9 @@
 # anguler学习.md
 
+## 数据检查
+
+`$scope.$apply();`
+
 ## ng-if
 
 ng-if这个指令单独开了一个作用域，它只可以继承，不可以进行往外传值，所以，必须要在要传值的地方给加上$parent. 例如我要将（ng-model=“item”），我要获得query，这是打印不出的，只能（ng-model=“$parent.item”）；

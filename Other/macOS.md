@@ -1,5 +1,13 @@
 # mac
 
+## 截图
+
+cmd+shift+3：对整个屏幕进行截图；
+
+cmd+shift+4：对自行选择的区域进行截图；
+
+cmd+shift+4+space（空格键）：对选定的某个应用程序界面窗口进行截图。使用 Snip滚动截图，实现对一个网页的长截图
+
 ## 切换不同的 shell
 
 列出全部 shell `cat /etc/shells`
