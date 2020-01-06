@@ -1,5 +1,23 @@
 ﻿# VS Code学习
 
+## 调试指定版本
+
+`"runtimeVersion": "7.10.1",`
+
+## 调试设置环境
+
+```
+"env": {
+    "NODE_ENV": "uat"
+},
+```
+
+## 字体和显示
+
+Font Weight 设置为 Bold
+
+Font Aliasing 设置为 antialiased
+
 ## 快捷键
 
 ### Toggle folding

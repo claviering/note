@@ -1,5 +1,9 @@
 # MongoDB 学习
 
+## 命令启动的时候设置数据库文件夹
+
+`mongod --dbpath mongodb-data`
+
 ## 可视化工具
 
 Node.js 工具 adminMongo

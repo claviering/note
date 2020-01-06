@@ -1,4 +1,142 @@
-﻿# JS学习
+# JS学习
+
+## 原型链解决 if else
+
+```js
+// 可以解决if...else if...简单的问题
+
+Function.prototype.after = function (nextFn) {
+  let self = this
+  return function (...rest) {
+    let code = self(...rest)
+    if (code ==='next') {
+      return nextFn(...rest)
+    }
+    return code
+  }
+}
+// 重构原函数
+function isAnswer1(type) {
+  if (type === 1 ) {
+    return '11'
+  }
+  return 'next'
+}
+function isAnswer2(type) {
+  if (type === 2 ) {
+    return '22'
+  }
+  return 'next'
+}
+function isAnswer3(type) {
+  if (type === 3 ) {
+    return '33'
+  }
+  return 'next'
+}
+let isAnswerFn = isAnswer1.after(isAnswer2).after(isAnswer3)
+console.log(isAnswerFn(4));
+
+```
+
+## 交叉观察者 IntersectionObserver
+
+`new IntersectionObserver(callback, options);`
+
+子元素跟父元素发生交叉触发事件
+
+[交叉观察者](https://mp.weixin.qq.com/s/uRMYrxaduPaMkc97Upjkqg)
+
+### 图片懒加载
+
+```js
+let images = document.querySelectorAll("img.lazyload");
+
+let observer = new IntersectionObserver(entries => {
+  entries.forEach(item => {
+    if (item.isIntersecting) {
+      item.target.src = item.target.dataset.origin; // 开始加载图片
+      observer.unobserve(item.target); // 停止监听已开始加载的图片
+    }
+  });
+});
+
+images.forEach(item => observer.observe(item));
+```
+
+### 触底
+
+```html
+<!-- 数据列表 -->
+<ul>
+  <li>index</li> // 多个li
+</ul>
+
+<!-- 参照元素 -->
+<div class="reference"></div>
+```
+
+```js
+new IntersectionObserver(entries => {
+  let item = entries[0]; // 拿第一个就行，反正只有一个
+  if (item.isIntersecting) console.log("滚动到了底部，开始请求数据");
+}).observe(document.querySelector(".reference")); // 监听参照元素
+```
+
+### 吸顶
+
+```html
+<!-- 参照元素 -->
+<div class="reference"></div>
+
+<nav>我可以吸顶</nav>
+
+```
+
+```css
+nav {
+  &.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+
+```
+
+```js
+let nav = document.querySelector("nav");
+let reference = document.querySelector(".reference");
+
+reference.style.top = nav.offsetTop + "px";
+
+new IntersectionObserver(entries => {
+
+  let item = entries[0];
+  let top = item.boundingClientRect.top;
+
+  // 当参照元素的的top值小于0，也就是在视窗的顶部的时候，开始吸顶，否则移除吸顶
+  if (top < 0) nav.classList.add("fixed");
+  else nav.classList.remove("fixed");
+
+}).observe(reference);
+```
+
+
+## 检查横屏竖屏
+
+```js
+window.addEventListener("resize", ()=> {
+if (window.orientation === 180 || window.orientation === 0) {
+  // 正常方向或屏幕旋转180度
+}
+if (window.orientation === 90 || window.orientation === -90 ) {
+  // 屏幕顺时钟旋转90度或屏幕逆时针旋转90度
+}
+});
+
+```
 
 ## 如何将浮点数点左边的数每三位添加一个逗号，如12000000.11转化为『12,000,000.11』?
 
@@ -1024,6 +1162,53 @@ isChromeFirefox()
 ## 函数节流
 
 函数节流是间隔时间执行，将高频操作优化成低频操作，单位时间内只触发第一次，并且计时结束后作出相应，滚动条事件 或者 resize 事件
+
+lodash.js 的实现
+
+```js
+/**
+ * 函数节流
+ * @param fn 需要进行节流操作的事件函数
+ * @param interval 间隔时间
+ * @returns {Function}
+ */
+function throttle(fn, interval) {
+  let enterTime = 0; //触发的时间
+  let gapTime = interval || 500; //间隔时间，如果interval不传，则默认500ms
+  return function () {
+    let context = this;
+    let backTime = new Date(); //第一次函数return即触发的时间
+    if (backTime - enterTime > gapTime) {
+      fn.call(context, arguments[0]); //arguments[0]是事件处理函数默认事件参数event call绑定当前page对象
+      enterTime = backTime; //赋值给第一次触发的时间，这样就保存了第二次触发的时间
+    }
+  };
+}
+
+/**
+ * 函数防抖
+ * @param fn 需要进行防抖操作的事件函数
+ * @param interval 间隔时间
+ * @returns {Function}
+ */
+function debounce(fn, interval) {
+  let timer;
+  let gapTime = interval || 1000; //间隔时间，如果interval不传，则默认1000ms
+  return function () {
+    clearTimeout(timer);
+    let context = this;
+    let args = arguments[0]; //保存此处的arguments，因为setTimeout是全局的，arguments无法在回调函数中获取，此处为闭包。
+    timer = setTimeout(function () {
+      fn.call(context, args); //args是事件处理函数默认事件参数event  call绑定当前page对象
+    }, gapTime);
+  };
+}
+
+export default {
+  throttle,
+  debounce
+}; //es6规范，如需CommonJS规范请自行修改
+```
 
 ## 函数防抖
 

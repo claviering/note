@@ -1,5 +1,91 @@
 ﻿# CSS 学习
 
+
+## 网页变黑白
+
+`filter: grayscale(100%);`
+
+## css
+
+https://zhuanlan.zhihu.com/p/93814457
+
+1. 使用:not()去除无用属性
+2. 使用letter-spacing排版倒序文本
+3. 使用text-align-last对齐两端文本 `text-align-last: justify;`
+4. 使用margin-left排版左重右轻列表, 使用flexbox横向布局时，最后一个元素通过margin-left:auto实现向右对齐
+5. 使用attr()抓取data-*
+6. 使用pointer-events禁用事件触发
+7. 使用:hover描绘鼠标跟随
+8. 通过resize设置横向自由拉伸来调整目标元素的宽度
+
+
+## 自定义文本选择
+
+`::selection { background: #e2eae2; }`
+
+## 图像灰度
+
+```css
+img {
+    filter: gray; 
+    -webkit-filter: grayscale(1);
+}
+```
+
+## 模糊文本
+
+```css
+.text {
+   filter: blur(1px);
+}
+```
+
+## filter: invert
+
+颜色反转
+
+## mix-blend-mode
+
+颜色混合
+
+## Grid
+
+1fr 平分剩下的自由空间
+
+[fr 单位](https://zhuanlan.zhihu.com/p/27502596)
+
+## 检查横屏竖屏
+
+```css
+@media screen and ( orientation : portrait ) {
+/*竖屏...*/
+}
+ 
+@media screen and ( orientation : landscape ) {
+/*横屏...*/
+}
+```
+
+## 动画
+
+动画时间
+
+`transition: 1s;`
+
+## placeholder-class
+
+设置 placeholder class
+
+`<input class="input-money" type="number" placeholder-class='input-placeholder' placeholder="输入金额" />`
+
+## 绝对定位垂直居中
+
+```css
+transform: translateY(-50%) translateX(-50%);
+top: 50%;
+left: 50%;
+```
+
 ## 让页面里的字体变清晰，变细用CSS怎么做
 
 `-webkit-font-smoothing: antialiased;`

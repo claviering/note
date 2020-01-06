@@ -1,5 +1,16 @@
 ﻿# Python学习
 
+## jupyter 使用
+
+`jupyter notebook`
+
+## 格式化错误输出
+
+[一行代码简化Python异常信息：错误清晰指出，排版简洁美观](https://mp.weixin.qq.com/s/OdAGGHMd6tg-_Jn-wZIifQ)
+
+`python -m pip install pretty_errors`
+
+
 ## .zshrc 配置
 
 `eval "$(pyenv init -)"`

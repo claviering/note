@@ -1,5 +1,17 @@
 # linux 学习
 
+## 命令消耗时间
+
+`time ls`
+
+## 查看文件夹大小
+
+`du -shc /var/*`
+
+降序 `du -shc /var/* | sort -hr`
+
+升序 `du -shc /var/* | sort -h`
+
 ## 统计文件中单词出现次数
 
 `grep -o -i [word] [file] | wc -l`
@@ -14,17 +26,17 @@
 
 ## 压缩
 
-gzip 压缩 tar -zcvf file.tar.gz *.log
+gzip 压缩 tar -zcvf -9 file.tar.gz *.log
 
 gzip 解压 tar -xzvf file.tar.gz
 
-bz2 压缩 tar -jcvf log.tar.bz2 *.log
+bz2 压缩 tar -jcvf -9 log.tar.bz2 *.log
 
 bz2 解压 tar -xjvf file.tar.bz2
 
-xz 压缩 tar -Jcvf log.tar.xz *.log
+xz 压缩 tar -Jcvf -9 -T 0 log.tar.xz *.log
 
-xz 解压 tar -xJvf file.tar.xz
+xz 解压 tar -xJvf -T 0 file.tar.xz
 
 
 - -z 使用 gz 压缩

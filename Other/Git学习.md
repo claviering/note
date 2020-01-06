@@ -1,5 +1,32 @@
 ﻿# Git学习
 
+$$ m = M (\frac{1}{2} )^ \frac{t}{T} $$
+
+m 进过 t 时间后的质量
+
+M 原来的质量
+
+t 时间
+
+T 半衰期
+
+## 查看提交
+
+```
+git log --since="0 am" 　　　     # 查看今日的提交
+git log --author="shfshanyue"     # 查看 shfshanyue 的提交
+git log --grep="#12"              # 查找提交信息中包含关键字的提交
+git log -S "setTimeout"           # 查看提交内容中包含关键字的提交
+```
+
+## 从 git 中删除文件, 但是项目中不删除
+
+`git rm --cached fileName`
+
+## Another git process seems to be running in this repository
+
+`rm -f ./.git/index.lock`
+
 ## 拉取某个分支
 
 `git clone -b <branch> <remote_repo>`
@@ -257,10 +284,10 @@ git push --set-upstream origin new_branch   # Push the new branch, set local bra
 
 `git commit -m "message"`
 
-`git rebase --continue` 可以不用这命令
+`git rebase --continue`
 `git rebase --skip` || `git pull (rebase) vsCode`
 
-8. 回到主分支
+1. 回到主分支
 `$ git checkout master`
 
 9. 合并工作分支的修改，此时不会产生冲突。

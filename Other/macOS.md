@@ -1,5 +1,9 @@
 # mac
 
+## 全屏
+
+`control + command + F`
+
 ## 截图
 
 cmd+shift+3：对整个屏幕进行截图；

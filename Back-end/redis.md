@@ -8,9 +8,9 @@
 
 `get key`
 
-删库
+删除当前数据库 `FLUSHDB`
 
-`FLUSHDB`
+删除所有数据库 `flushall`
 
 ## 可视化工具
 

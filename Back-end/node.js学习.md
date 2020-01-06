@@ -1,5 +1,10 @@
 # node.js学习
 
+
+## node-prune
+
+[tj Remove unnecessary files from node_modules](https://github.com/tj/node-prune)
+
 ## HTTP 调试
 
 `npm install -g whistle`
