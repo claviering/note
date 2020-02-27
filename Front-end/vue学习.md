@@ -46,6 +46,13 @@ mounted() {
 
 watch 的 deep 属性,深度监听
 
+```
+params: {
+  handler: function (val, oldVal) { /* ... */ },
+  deep: true
+}
+```
+
 
 ## 页面需要导入多个组件
 

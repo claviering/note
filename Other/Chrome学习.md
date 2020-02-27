@@ -1,5 +1,9 @@
 ﻿# Chrome学习
 
+## 插件
+
+Leoh New Tab
+
 ## console
 console.time()和console.timeEnd()打印计时。用来跟踪某一个操作的占用时长。每一个计时器必须拥有唯一的名字，time()的参数名和timeEnd()的参数名要一样。可以没有参数，默认计时提示为default
 

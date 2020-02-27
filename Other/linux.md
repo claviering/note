@@ -1,5 +1,31 @@
 # linux 学习
 
+## 删除小于文件大小的文件
+
+`find . -name "*.tif" -type 'f' -size -160k -delete`
+
+## rm 参数过长
+
+`find . -name "*.jpg" -delete`
+
+## Linux统计文件夹下的文件数目数量
+
+统计当前目录下文件的个数（不包括目录）
+
+`$ ls -l | grep "^-" | wc -l`
+
+统计当前目录下文件的个数（包括子目录）
+
+`$ ls -lR| grep "^-" | wc -l`
+
+查看某目录下文件夹(目录)的个数（包括子目录）
+
+`ls -lR | grep "^d" | wc -l`
+
+## curl 用法
+
+curl -d'login=emma＆password=123' https://google.com/login
+
 ## 统计文件夹大小
 
 `du -ach`

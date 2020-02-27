@@ -1,5 +1,13 @@
 ﻿# VS Code学习
 
+## 实时可视化Debug：VS Code 开源新工具，一键解析代码结构
+
+Debug Visualizer
+
+https://mp.weixin.qq.com/s/943dZHSZyQbjlxTpv54w7Q
+
+项目地址：https://github.com/hediet/vscode-debug-visualizer
+
 ## egg.js 调试配置
 
 ```js
@@ -23,7 +31,10 @@
       // 因为无需再 proxy，故改回原来的 9229 端口
       "port": 9229,
       // 自动 attach 子进程 
-      "autoAttachChildProcesses": true
+      "autoAttachChildProcesses": true,
+      "env": {
+        "NODE_ENV": "uat"
+      },
     }
   ]
 }
@@ -31,7 +42,7 @@
 
 ## 调试指定版本
 
-`"runtimeVersion": "7.10.1",`
+`"runtimeVersion": "7.8.0",`
 
 ## 调试设置环境
 

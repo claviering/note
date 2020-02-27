@@ -1,14 +1,44 @@
 # openssl 学习
 
-## 私钥中输出公钥
+## RSA 密钥
+
+### RSA 密钥 (PKCS#1 格式)
+
+1. 生成RSA密钥: `openssl genrsa -des3 -out private.pem 2048`
+2. 导出公钥: `openssl rsa -in private.pem -outform PEM -pubout -out public.pem`
+3. 导出私钥: `openssl rsa -in private.pem -out private_unencrypted.pem -outform PEM`
+
+从 pkcs1 私钥中生成 pkcs8 公钥 `openssl rsa -in pkcs1-private.pem -pubout -out pkcs8-public.pem`
+
+从 pkcs8 私钥中生成 pkcs8 公钥: `openssl rsa -in pkcs8-private.pem -pubout -out pkcs8-public.pem`
+
+### RSA 公钥格式转化
+
+To convert from PKCS#8 to PKCS#1: `openssl rsa -pubin -in pkcs8-public.pem -RSAPublicKey_out -out pkcs1-public.pem`
+
+To convert from PKCS#1 to PKCS#8: `openssl rsa -RSAPublicKey_in -in pkcs1-public.pem -pubout -out pkcs8-public.pem`
+
+
+
+### RSA 私钥格式转化
+
+PKCS#1 to PKCS#8: `openssl pkcs8 -topk8 -inform PEM -in pkcs1-private.pem -outform pem -nocrypt -out pkcs8-private.pem`
+
+PKCS#8 to PKCS#1 `openssl rsa -in pkcs8.pem -out pkcs1.pem`
+
+
+
+## EC 椭圆曲线加密法
+
+### 私钥中输出公钥
 
 `openssl ec -in tls/server.key -pubout -out public.pem`
 
-## 证书输出公钥
+### 证书输出公钥
 
 `openssl x509 -pubkey -noout -in server.crt > server.public.key`
 
-## 输出证书信息
+### 输出证书信息
 
 `openssl x509 -noout -text -in client/certs/test1.cert.pem`
 
@@ -64,7 +94,7 @@ HOST: halfrost.com
 Early-Data: 657567765
 ```
 
-## 口令加密
+## 口令加密文件
 
 ```
 加密
@@ -73,7 +103,7 @@ $ openssl enc -base64 -aes-256-cbc -salt -pbkdf2 -in file.txt -out file.txt.enc
 $ openssl enc -base64 -aes-256-cbc -d -pbkdf2 -in file.txt.enc -out file.txt
 ```
 
-非交互
+非交互, PASS 为密码
 
 ```
 加密

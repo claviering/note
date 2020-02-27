@@ -1,5 +1,11 @@
 # anguler学习.md
 
+## 组件传值
+
+1. =: 双向绑定，建立起父 scope 和 directive 独立 scope 的双向联系，如果 directive 中需要更改传入的变量，并且这个更改要传回父 scope，则使用这种绑定。
+2. @: 字符串绑定，它是将父 scope 的字符串传入独立 scope，比如aaa="bbb"则传入 bbb 这个字面字符串，`aaa={{bbb}}`则传入 bbb 变量在父 scope 上的值，总之它的结果是字符串。很多地方将其解释为单向绑定是不对的，因为它只能绑定字符串。
+3. &: 表达式绑定，简单来说就是将传入的表达式在父 scope 上执行，一般用于传入函数表达式，它将一个函数绑定在独立 scope 上。也可以将&用于单向绑定，如aaa=bbb则会将一个aaa()函数绑定在独立 scope 上，它的返回值是父 scope 上的 bbb 属性值（相当于一个 getter 函数），但 aaa()函数返回的仅仅是初始化 directive 时计算得到的 bbb 的值，后续父 scope 对 bbb 的更改不会反应到独立 scope 上。
+
 ## 数据检查
 
 `$scope.$apply();`

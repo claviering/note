@@ -1,5 +1,9 @@
 # mac
 
+## 多开微信
+
+open -n /Applications/WeChat.app/Contents/MacOS/WeChat
+
 ## 全屏
 
 `control + command + F`

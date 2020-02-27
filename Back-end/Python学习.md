@@ -1,5 +1,13 @@
 ﻿# Python学习
 
+## 爬虫库
+
+Scrapy 安装 `pip install scrapy`
+
+## 密码学库
+
+一般用这个比较多 [crypto](https://pypi.org/project/pycrypto/)
+
 ## jupyter 使用
 
 `jupyter notebook`
