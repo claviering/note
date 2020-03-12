@@ -1,5 +1,15 @@
 # linux 学习
 
+## task，命令行任务管理
+
+
+
+## 查看用得最多的命令
+
+`history 1 -1 | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head`
+
+`zsh_stats`
+
 ## 删除小于文件大小的文件
 
 `find . -name "*.tif" -type 'f' -size -160k -delete`

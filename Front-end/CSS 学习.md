@@ -1,5 +1,155 @@
 ﻿# CSS 学习
 
+## 巧用CSS属性值正则匹配选择器
+
+```css
+[attr^="val"]
+[attr$="val"]
+[attr*="val"]
+```
+CSS属性选择器搜索过滤技术
+
+```html
+<input type="search" id="input" placeholder="输入城市名称或拼音" />
+<ul>
+    <li data-search="重庆市 chongqing">重庆市</li>
+    <li data-search="哈尔滨市 haerbin">哈尔滨市</li>
+    <li data-search="长春市 changchun">长春市</li>
+    <li data-search="长沙市 changsha">长沙市</li>
+    <li data-search="上海市 shanghai">上海市</li>
+    <li data-search="杭州市 hangzhou">杭州市</li>
+</ul>
+```
+
+```js
+var eleStyle = document.createElement('style');
+document.head.appendChild(eleStyle);
+// 文本输入框
+input.addEventListener('input', function() {
+    var value = this.value.trim();
+    eleStyle.innerHTML = value ? '[data-search]:not([data-search*="' + value +'"]) { display: none; } ' : '';
+});
+
+```
+
+
+## 设置字体禁止缩放
+
+```css
+body {
+  -webkit-text-size-adjust: 100% !important;
+  text-size-adjust: 100% !important;
+  -moz-text-size-adjust: 100% !important;
+}
+
+```
+
+## 0.5px 细线
+
+拿 2 倍屏来说，设备的物理像素要实现 1 像素，而 DPR=2，所以 css 像素只能是 0.5。
+
+```css
+/* 底边框 */
+.b-border {
+  position: relative;
+}
+.b-border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #d9d9d9;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+/* 上边框 */
+.t-border {
+  position: relative;
+}
+.t-border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background: #d9d9d9;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+/* 右边框 */
+.r-border {
+  position: relative;
+}
+.r-border:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 1px;
+  height: 100%;
+  background: #d9d9d9;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+/* 左边框 */
+.l-border {
+  position: relative;
+}
+.l-border:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 1px;
+  height: 100%;
+  background: #d9d9d9;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+
+/* 四条边 */
+.setBorderAll {
+  position: relative;
+  &:after {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: left top;
+    box-sizing: border-box;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+  }
+}
+```
+
+## 禁止用户选择页面中的文字或者图片
+
+```css
+div {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+```
+
 
 ## 网页变黑白
 

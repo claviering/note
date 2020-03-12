@@ -1,5 +1,28 @@
 # JS学习
 
+## 如何平滑滚动到页面顶部
+
+```js
+const scrollToTop = () => {
+  const c = document.documentElement.scrollTop || document.body.scrollTop;
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+  }
+}
+
+// 事例
+scrollToTop()
+
+```
+
+## 改变 this 的指向
+
+- 使用 ES6 的箭头函数
+- 在函数内部使用 _this = this
+- 使用 apply、call、bind
+- new 实例化一个对象
+
 ## 正则表达式判断日期
 
 ```js
@@ -381,6 +404,8 @@ deviceOrientation
 ## 视频加速
 
 `document.getElementById("video").playbackRate = 10`
+
+`document.querySelector("video").playbackRate = 10`
 
 ## addEventListener 参数
 
