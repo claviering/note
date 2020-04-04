@@ -1,5 +1,62 @@
 ﻿# CSS 学习
 
+## 网站变灰
+
+```css
+html {
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+}
+```
+
+## :empty 伪类
+
+`:empty` 伪类用来匹配空标签元素
+
+```html
+<div class="cs-empty"></div>
+.cs-empty:empty{
+    width: 120px;
+    padding: 20px;
+    border: 10px dashed;
+}
+```
+
+隐藏空元素
+
+```css
+.cs-module:empty {
+    display: none;
+}
+```
+
+字段缺失智能提示
+
+```css
+dd:empty::before {
+    content: '暂无';
+    color: gray;
+}
+```
+
+
+## CSS 埋点
+
+```css
+.button-1:active::after {
+    content: url(./pixel.gif?action=click&id=button1);
+    display: none;
+}
+.button-2:active::after {
+    content: url(./pixel.gif?action=click&id=button2);
+    display: none;
+}
+```
+
 ## 巧用CSS属性值正则匹配选择器
 
 ```css
