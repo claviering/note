@@ -1,5 +1,35 @@
 # JS学习
 
+## 检测元素的可视状态或者两个元素的相对可视状态
+
+https://juejin.im/post/5de5baf2518825235b095cbe
+
+```js
+// 观察者创建
+this.observer = new IntersectionObserver(callback, options);
+
+// 观察列表第一个以及最后一个元素
+this.observer.observe(this.firstItem);
+this.observer.observe(this.lastItem);
+```
+
+## 得到N天前日期
+```js
+function dateFormat(beforeDay){
+  var t_nowDate = new Date();
+  t_nowDate.setDate(t_nowDate.getDate() - beforeDay);
+}
+```
+
+## 浏览器的恢复滚动行为
+
+```js
+if ('scrollRestoration' in history) {
+    // 默认值为'auto'
+    history.scrollRestoration = 'manual';
+}
+```
+
 ## 如何平滑滚动到页面顶部
 
 ```js
