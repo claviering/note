@@ -1,5 +1,51 @@
 ﻿#  webpack 学习
 
+## 比 DLL 更优秀的插件
+
+https://juejin.im/post/5d8aac8fe51d4578477a6699#heading-3
+
+抛弃 DLL：Vue & React 官方的共同选择
+
+HardSourceWebpackPlugin
+
+貌似这个技术直接放到了 webpack 5 里，开箱即用
+
+## hash chunkhash contenthash
+
+hash 计算与整个项目的构建相关；
+
+chunkhash 计算与同一 chunk 内容相关；
+
+contenthash 计算与文件内容本身相关。
+
+## 魔法注释
+
+```js
+const { default: _ } = await import(/* webpackChunkName: "lodash" */ /* webpackPrefetch: true */ 'lodash');
+```
+
+就会以 `<link rel="prefetch" as="script">` 的形式预拉取 lodash 代码：
+
+## 打包优化
+
+https://zhuanlan.zhihu.com/p/115100052
+
+一个 chunk 增删 module，会导致其他 chunk 中的 moduleId 发生改变，增删 chunk，更会导致其他 chunk 的 chunkId 和 包含的 moduleId 同时改变，也就是说一个 chunk 文件无法使用稳定的 hash 作为标识，也就没法使用稳定的浏览器文件缓存了
+
+配置
+
+```js
+module.exports = {
+  optimization: {
+    namedChunks: true,
+    moduleIds: 'hashed',
+  },
+  output: {
+    chunkFileName: '[name].[contenthash:8].js'
+  }
+};
+```
+
 ## 动态加载
 
 `npm i -D @babel/plugin-syntax-dynamic-import`

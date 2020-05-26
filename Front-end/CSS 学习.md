@@ -1,5 +1,11 @@
 ﻿# CSS 学习
 
+## CSS中的混合模式，制作高级特效的必备技巧
+
+https://github.com/qq449245884/xiaozhi/issues/231
+
+mix-Blend-Mode
+
 ## 网站变灰
 
 ```css

@@ -1,5 +1,21 @@
 # JS学习
 
+## 编辑页面上的任何文本
+
+`document.body.contentEditable="true"`
+
+## MutationObserver 监听 DOM 树变化
+
+`MutationObserver`
+
+## 事件冒泡
+
+event.currentTarget始终是监听事件者，而event.target是事件的真正发出者
+
+## 慎用target="_blank"
+
+https://juejin.im/post/5eb8ed20e51d454db55fb353
+
 ## 检测元素的可视状态或者两个元素的相对可视状态
 
 https://juejin.im/post/5de5baf2518825235b095cbe

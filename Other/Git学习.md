@@ -1,5 +1,13 @@
 ﻿# Git学习
 
+## 文件回滚
+
+`git checkout <commit hash> -- file1/to/restore file2/to/restore`
+
+## 删除 master 以外的所有分支
+
+`alias gbr="git branch | grep -v "master" | xargs git branch -D"`
+
 ## 修改最后一次提交信息
 
 `git commit --amend`
