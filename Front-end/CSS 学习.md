@@ -1,5 +1,21 @@
 ﻿# CSS 学习
 
+## 圆角的渐变边框
+
+https://github.com/chokcoco/iCSS/issues/77
+
+## 暗夜模式
+
+```css
+@media (prefers-color-scheme: dark) { 
+  ... 暗夜模式下的css样式
+}
+
+@media (prefers-color-scheme: light) {
+  ... 白天模式下css样式
+}
+```
+
 ## CSS中的混合模式，制作高级特效的必备技巧
 
 https://github.com/qq449245884/xiaozhi/issues/231

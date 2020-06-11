@@ -1,5 +1,17 @@
 ﻿# Python学习
 
+## 截屏转文字
+
+英文: https://github.com/ianzhao05/textshot
+
+设置 alias
+
+`alias textshot="python /Users/linweiye/Documents/textshot/textshot.py"`
+
+使用 textshot
+
+中文识别: https://github.com/ouyanghuiyu/chineseocr_lite
+
 ## 爬虫库
 
 Scrapy 安装 `pip install scrapy`

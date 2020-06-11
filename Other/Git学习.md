@@ -1,5 +1,11 @@
 ﻿# Git学习
 
+## 删除多个分支
+
+```
+git branch -d `git branch --list 'bugfix.*'`
+```
+
 ## 文件回滚
 
 `git checkout <commit hash> -- file1/to/restore file2/to/restore`

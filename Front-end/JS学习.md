@@ -1,5 +1,169 @@
 # JS学习
 
+## this
+
+“箭头函数”的this，总是指向**定义时所在的对象**，而不是运行时所在的对象。
+
+所有的箭头函数都没有自己的this，都指向外层
+
+## ie 不支持 html5 标签
+
+使用 `document.createElement`, 再添加默认样式
+
+## 1px
+
+```html
+<html>
+  <head>
+      <title>1px question</title>
+      <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+      <meta name="viewport" id="WebViewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">        
+      <style>
+          html {
+              font-size: 1px;
+          }            
+          * {
+              padding: 0;
+              margin: 0;
+          }
+          .top_b {
+              border-bottom: 1px solid #E5E5E5;
+          }
+
+          .a,.b {
+                      box-sizing: border-box;
+              margin-top: 1rem;
+              padding: 1rem;                
+              font-size: 1.4rem;
+          }
+
+          .a {
+              width: 100%;
+          }
+
+          .b {
+              background: #f5f5f5;
+              width: 100%;
+          }
+      </style>
+      <script>
+          var viewport = document.querySelector("meta[name=viewport]");
+          //下面是根据设备像素设置viewport
+          if (window.devicePixelRatio == 1) {
+              viewport.setAttribute('content', 'width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no');
+          }
+          if (window.devicePixelRatio == 2) {
+              viewport.setAttribute('content', 'width=device-width,initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=no');
+          }
+          if (window.devicePixelRatio == 3) {
+              viewport.setAttribute('content', 'width=device-width,initial-scale=0.3333333333333333, maximum-scale=0.3333333333333333, minimum-scale=0.3333333333333333, user-scalable=no');
+          }
+          var docEl = document.documentElement;
+          var fontsize = 32* (docEl.clientWidth / 750) + 'px';
+          docEl.style.fontSize = fontsize;
+      </script>
+  </head>
+  <body>
+      <div class="top_b a">下面的底边宽度是虚拟1像素的</div>
+      <div class="b">上面的边框宽度是虚拟1像素的</div>
+  </body>
+</html>
+
+```
+
+## 获取页面性能指标
+
+```js
+const navTimes = performance.getEntriesByType('navigation')
+```
+
+## 元素在窗口中间
+
+```js
+// 开始动画的 scrollTop
+// $('#imgWrapper') 放图片的容器，html 结构下面有
+// offset 距离顶部距离
+startOpen = $('#imgWrapper').offset().top - (window.innerHeight / 2 - $('#imgWrapper').height() / 2);
+
+```
+
+## 闭包
+
+https://zhuanlan.zhihu.com/p/144538992
+
+闭包是一个相对封闭的环境, 它跟外部环境隔绝, 不会被外部环境所影响, 也不会被回收.
+
+闭包的作用就是, 读取和处理内部数据, 并使它们永远保存在内存中不被销毁.
+
+缺点就是. 很耗内存
+
+## 判断类型
+
+```js
+function typeOf (value) {
+    return function (obj) {
+        const toString = Object.prototype.toString;
+        const map = {
+            '[object Boolean]'	 : 'boolean',
+            '[object Number]' 	 : 'number',
+            '[object String]' 	 : 'string',
+            '[object Function]'  : 'function',
+            '[object Array]'     : 'array',
+            '[object Date]'      : 'date',
+            '[object RegExp]'    : 'regExp',
+            '[object Undefined]' : 'undefined',
+            '[object Null]'      : 'null',
+            '[object Object]' 	 : 'object'
+        };
+        return map[toString.call(obj)] === value;
+    }
+}
+
+var isNumber = typeOf('number');
+var isFunction = typeOf('function');
+var isRegExp = typeOf('regExp');
+
+isNumber(0); // => true
+isFunction(function () {}); // true
+isRegExp({}); // => false
+
+```
+
+## 原型 原型链
+
+1. 每个对象都有 __proto__ 属性，但只有函数对象才有 prototype 属性
+
+## 刘海屏
+
+```js
+function deviceDetection() {
+  const ua = navigator.userAgent
+  let osVersion = ''
+  let device = ''
+  try {
+    if (/android/i.test(ua)) {
+      device = 'android'
+      osVersion = ua.match(/Android\s+([\d.]+)/i)[0].replace('Android ', '')
+    } else if (/ipad|iphone|ipod/i.test(ua)) {
+      device = 'ios'
+      osVersion = ua.match(/OS\s+([\d_]+)/i)[0].replace(/_/g, '.').replace('OS ', '')
+    }
+  } catch (err) {
+    /* istanbul ignore next line */
+    console.error(err)
+  }
+  return { osVersion, device }
+}
+
+// 判断是否为刘海屏
+export function isFringe() {
+  const { device } = deviceDetection()
+  const { screen } = global
+  return device === 'ios' && 
+    ((screen.width === 375 && screen.height === 812) || (screen.width === 414 && screen.height === 896))
+}
+```
+
 ## 编辑页面上的任何文本
 
 `document.body.contentEditable="true"`
