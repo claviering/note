@@ -3,7 +3,7 @@
 ## 删除多个分支
 
 ```
-git branch -d `git branch --list 'bugfix.*'`
+git branch -d `git branch --list 'bugfix*'`
 ```
 
 ## 文件回滚

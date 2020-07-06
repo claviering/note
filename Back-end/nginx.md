@@ -1,5 +1,18 @@
 # Nginx 学习
 
+## http 服务器文件默认目录
+
+/usr/share/nginx/html
+
+## 配置文件路径
+
+1. /etc/nginx/nginx.conf
+2. /usr/local/nginx/conf/nginx.conf
+
+## CentOS 安装
+
+https://nginx.org/en/linux_packages.html#RHEL-CentOS
+
 ## 编译安装
 
 [下载源代码](https://nginx.org/download/)

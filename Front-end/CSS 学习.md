@@ -1,5 +1,86 @@
 ﻿# CSS 学习
 
+## 两行css代码实现瀑布流，html,css最简单的瀑布流实现方式且没有缺点！
+
+https://zhuanlan.zhihu.com/p/151229080
+
+```css
+.waterfall-container {
+  /*分几列*/
+  column-count: 2;
+}
+
+.waterfall-item {
+  /*不留白，不知道什么意思可以取消这个样式试试*/
+  break-inside: avoid;
+}
+/*列间距，可有可无，默认30px*/
+/*column-gap: 0;*/
+```
+
+## 暂停 CSS 动画 animation
+
+`animation-play-state: paused;`
+
+## nth-child 范围选择
+
+限制范围 选择第6个到第9个，取两者的交集
+
+`:nth-child(-n+9):nth-child(n+6){}`
+
+## critical CSS
+
+Critical CSS是一种提取首屏中 CSS 的技术，以便尽快将内容呈现给用户。这是快速加载网页首屏的好方法。
+核心思路：
+（1）、抽取出首页的CSS；
+（2）、用行内css样式，加载这部分的css(critical CSS);
+（3）、等到页面加载完之后，再加载整个css，会有一部分css与critical css重叠；
+
+作者：hh_phoebe
+链接：https://juejin.im/post/5ee0cf335188254ec9505381
+来源：掘金
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+## 使用 广色域
+
+css 写法
+```css
+.rect {
+  background: rgb(255, 0, 0); /* 此行代码可兼容不支持color()语法的浏览器 */
+  /* 背景色：红色 */
+  background: color(display-p3 1 0 0);
+}
+```
+
+媒体查询
+
+```css
+@media (color-gamut: p3) {
+  /* Do colorful stuff. */
+}
+```
+supports 字段
+
+```css
+@supports (color: color(display-p3 1 1 1)) {
+  /* Do colorful stuff. */
+}
+```
+
+js 判断
+
+```js
+if (window.matchMedia("(color-gamut: p3)").matches) {
+  // Add your code.
+}
+
+```
+
+
+## 透明色
+
+transparent
+
 ## 圆角的渐变边框
 
 https://github.com/chokcoco/iCSS/issues/77

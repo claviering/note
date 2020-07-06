@@ -21,8 +21,8 @@ https://mp.weixin.qq.com/s/943dZHSZyQbjlxTpv54w7Q
       "cwd": "${workspaceRoot}",
       "runtimeExecutable": "npm",
       "windows": { "runtimeExecutable": "npm.cmd" },
-      // 启动我们的 egg-bin debug 并默认是 brk
-      "runtimeArgs": [ "run", "debug", "--", "--inspect-brk" ],
+      // 启动我们的 egg-bin debug 并默认是 brk, 传命令行参数
+      "runtimeArgs": [ "run", "debug", "--", "--inspect-brk", "--port", "3002"],
       // 日志输出到 Terminal，否则启动期的日志看不到
       "console": "integratedTerminal",
       "protocol": "auto",

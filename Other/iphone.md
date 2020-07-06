@@ -1,5 +1,9 @@
 # Iphone 11 IOS 13
 
+## 如果您的 iPhone、iPad 或 iPod touch 开不了机或死机怎么办
+
+https://support.apple.com/zh-cn/HT201412
+
 ##  静音模式下微信新消息不会震动
 
 1. Setting -> Sounds & Haptics -> 开启 VIBRATE 下的两个选项, 

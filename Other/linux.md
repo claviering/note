@@ -1,5 +1,13 @@
 # linux 学习
 
+## homebrew 不自动更新
+
+`export HOMEBREW_NO_AUTO_UPDATE=1`
+
+## 查看文件编码
+
+vim 打开文件 使用 `:set fileencoding` 查看文件编码
+
 ## mv 参数过长
 
 `find . -name '*.jpg' -exec mv {} ../ \;`

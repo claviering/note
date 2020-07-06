@@ -1,5 +1,87 @@
 # JS学习
 
+## 在解构中使用别名
+
+```js
+const object = { number: 10 }
+
+const { number } = object
+
+// 使用别名
+const { number: otherNumber } = object
+
+console.log(otherNumber) //10
+```
+
+## 免费 CDN
+
+[jsdelivr](https://www.jsdelivr.com/?docs=gh)
+
+## 图片懒加载 JQ
+
+```js
+start()
+$(window).on('scroll', function(){
+ start()
+})
+
+function start(){
+  //.not('[data-isLoaded]')选中已加载的图片不需要重新加载
+ $('.datagrid img').not('[data-isLoaded]').each(function(){
+   var $node = $(this)
+   if( isShow($node) ){
+     loadImg($node)
+   }
+ })
+ }
+
+//判断一个元素是不是出现在窗口(视野)
+function isShow($node){
+ return $node.offset().top <= document.body.clientHeight + $(window).scrollTop()
+ }
+//加载图片
+ function loadImg($img){
+//.attr(值)
+//.attr(属性名称,值)
+$img.attr('src', $img.attr('data-src')) //把data-src的值 赋值给src
+$img.attr('data-isLoaded', 1)//已加载的图片做标记
+}
+```
+
+## 还有一个更硬核点的，也是 axios 源码里所用到的，利用 promise 本身的链式调用来实现串行。
+
+```js
+const list = [1, 2, 3]
+const square = num => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(num * num)
+    }, 1000)
+  })
+}
+let promise = Promise.resolve()
+function test(i = 0) {
+  if (i === list.length) return
+  promise = promise.then(() => square(list[i]))
+  test(i + 1)
+}
+test()
+```
+
+## websocket 连接 pm2 负载均衡多次连接问题
+
+配置 socket opstions
+
+```js
+opstions = {
+  transports: ['websocket']
+}
+```
+
+## 浏览器滚动行为
+
+`scrollRestoration`
+
 ## this
 
 “箭头函数”的this，总是指向**定义时所在的对象**，而不是运行时所在的对象。
