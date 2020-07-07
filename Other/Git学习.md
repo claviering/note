@@ -10,6 +10,10 @@ git branch -d `git branch --list 'bugfix*'`
 
 `git checkout <commit hash> -- file1/to/restore file2/to/restore`
 
+```
+git checkout df5c941b6100660 -- modules/allocate/client/assets/css/allocate.css modules/core/client/assets/css/font/font-awesome.css modules/core/client/assets/css/inspinia/inspinia.css modules/dashboard/client/assets/css/dashboard.css modules/operation/client/assets/css/operation.css modules/order/client/assets/css/order.css modules/store/client/assets/css/store.css modules/target/client/assets/css/target.css
+```
+
 ## 删除 master 以外的所有分支
 
 `alias gbr="git branch | grep -v "master" | xargs git branch -D"`

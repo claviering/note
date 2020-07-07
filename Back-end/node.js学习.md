@@ -1,5 +1,15 @@
 # node.js学习
 
+## 获取 socket 连接人数
+
+```js
+// check if your room isn't undefined.
+if (io.sockets.adapter.rooms['your room name']) 
+{
+   // result
+   console.log(io.sockets.adapter.rooms['your room name'].length);
+}
+```
 
 ## node-prune
 
