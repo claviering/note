@@ -1,5 +1,22 @@
 ﻿# VS Code学习
 
+## 发布插件
+插件管理地址
+
+https://marketplace.visualstudio.com/manage/publishers/weiye?noPrompt=true
+
+发布教程
+
+https://code.visualstudio.com/api/working-with-extensions/publishing-extension
+
+```shell
+nvm use 14
+npm i -g vsce
+vsce login weiye
+vsce publish 0.1.1
+```
+
+
 ## 实时可视化Debug：VS Code 开源新工具，一键解析代码结构
 
 Debug Visualizer

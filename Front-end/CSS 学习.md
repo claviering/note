@@ -18,7 +18,7 @@ https://zhuanlan.zhihu.com/p/151229080
 /*column-gap: 0;*/
 ```
 
-## 暂停 CSS 动画 animation
+## 停止暂停 CSS 动画 animation
 
 `animation-play-state: paused;`
 

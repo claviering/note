@@ -1,9 +1,16 @@
 # Flutter
 
+## Flutter解决 警告 Waiting for another flutter command to release the startup lock
+
+删除 lockfile 文件
+
+`rm flutter/bin/cache/lockfile`
+
+`killall -9 dart`
+
 ## 发布 Android
 
 https://flutter.dev/docs/deployment/android
-
 
 
 ## 发布 Web
