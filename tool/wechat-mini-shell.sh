@@ -1,12 +1,3 @@
-# shell 编程
-
-## git
-
-git branch -d feature-broadcast-weiye && git branch feature-broadcast-weiye && git checkout feature-broadcast-weiye && git add . && git commit -m "feature: 直播列表ui优化, 地址删除空格" && git push origin feature-broadcast-weiye
-
-## 多项目修改提交，微信开发者工具上传代码
-
-```shell
 #!/bin/bash
 
 branchName="feature-broadcast-weiye"
@@ -45,11 +36,8 @@ wechatwebdevtoolsUpload() {
   for var in ${projectName[@]};
   do
     cd /Users/linweiye/Documents/${var[0]}
-    git checkout master
-    git pull
     /Applications/wechatwebdevtools.app/Contents/MacOS/cli upload --project /Users/linweiye/Documents/${var[0]} -v ${var[1]} -d 'commitMessage'
   done
 }
-pushToGitlab
+# pushToGitlab
 wechatwebdevtoolsUpload
-```

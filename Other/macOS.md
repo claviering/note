@@ -1,5 +1,15 @@
 # mac
 
+
+## MacBook 重新创建账户
+
+MacBook 重新创建账户
+1. 长按cmd+S
+2. fsck -y
+3. mount -uaw /
+4. rm /var/db/.AppleSetupDone
+5. reboot
+
 ## 多开微信
 
 open -n /Applications/WeChat.app/Contents/MacOS/WeChat

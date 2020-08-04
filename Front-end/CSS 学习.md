@@ -1,5 +1,30 @@
 ﻿# CSS 学习
 
+
+## css 硬件加速
+
+在 Chrome and Safari中
+```css
+.cube {
+   -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0);
+   /* Other transform properties here */
+}
+```
+在webkit内核的浏览器中
+```css
+.cube {
+   -webkit-transform: translate3d(0, 0, 0);
+   -moz-transform: translate3d(0, 0, 0);
+   -ms-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+  /* Other transform properties here */
+}
+```
+
 ## 两行css代码实现瀑布流，html,css最简单的瀑布流实现方式且没有缺点！
 
 https://zhuanlan.zhihu.com/p/151229080

@@ -1,5 +1,54 @@
 # Flutter
 
+Flutter还提供了 Material 和Cupertino两种视觉风格的组件库
+
+Gallery源码：Gallery是Flutter官方示例APP，里面有丰富的示例，读者可以在网上下载安装。Gallery的源码在Flutter源码“examples”目录下。
+
+## Dart DevTools
+
+布局检查工具，性能工具，内存工具，使用 flutter 编写
+
+### Flutter Inspector
+
+了解 widget 层次结构的整体视图
+
+点击节点 -> 点击 Select Widget Mode ，查看节点布局, 在 Detail Tree 可以看到特定的属性, 查看 renderObject 约束
+
+Layout Explorer，可以调整属性值，并且能看到更改热重载到正在运行的应用程序
+
+### 性能问题
+
+打开 Timeline, 选择性能有问题的一帧, 下面展示了时间轴事件，清除记录，使用 Track Widget Builds，在 build 过程, 每个Widget发送事件
+
+夸帧问题，不是单个 flutter 帧，不能好好的在 Timeline 发现, 使用传统的 CPU 分析器来了解发送了什么，点击 Performance 面板
+
+将计算分配到多个帧，或者在另一个线程上运行
+
+
+## 测试
+
+`flutter analyze` 测试你的代码
+
+## 保持页面状态
+
+with AutomaticKeepAliveClientMixin
+
+## 状态管理
+
+provider
+
+## 持久化
+
+share_preferences
+
+## 深入理解布局约束
+
+首先，上层 widget 向下层 widget 传递约束条件；
+
+然后，下层 widget 向上层 widget 传递大小信息。
+
+最后，上层 widget 决定下层 widget 的位置。
+
 ## Flutter解决 警告 Waiting for another flutter command to release the startup lock
 
 删除 lockfile 文件
