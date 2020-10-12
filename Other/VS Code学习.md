@@ -1,6 +1,21 @@
 ﻿# VS Code学习
 
+## 调试忽略文件
+
+配置 skipFiles
+
+## 调试自动重启
+
+```json
+{
+  "runtimeExecutable": "nodemon",
+  "restart": true,
+  "console": "integratedTerminal"
+}
+```
+
 ## 发布插件
+
 插件管理地址
 
 https://marketplace.visualstudio.com/manage/publishers/weiye?noPrompt=true
@@ -99,6 +114,8 @@ AI python 补全插件
  set the `gitlens.currentLine.scrollable` setting to `false`
 
 ## 水平自动换行
+
+设置 wordWrap off
 
 `alt + z`
 

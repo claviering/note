@@ -1,5 +1,149 @@
 # JS学习
 
+## MutationObserver 监听DOM节点变化
+
+https://segmentfault.com/a/1190000023707760
+
+## 如何判断图片是否在可视区域中？
+
+原生js判断元素是否在可视区域内，这里的可视区域的距离都是以垂直距离为准
+
+方法一：
+
+A: document.documentElement.clientHeight 可视窗口的高度
+
+B: element.offsetTop dom相对于文档顶部的距离
+
+C: document.documentElement.scrollTop 滚动条滚动的距离
+
+B - C < A 即说明元素在可视区域内
+
+方法二：getBoundingClientRect
+
+const domObj = element.getBoundingClientRect();
+
+domObj.top：元素上边到视窗上边的距离;
+
+domObj.right：元素右边到视窗左边的距离;
+
+domObj.bottom：元素下边到视窗上边的距离;
+
+domObj.left：元素左边到视窗左边的距离;
+
+const clientHeight = window.innerHeight;
+
+当 domObj.top < clientHeight 表示dom在可视区域内了
+
+链接：https://juejin.im/post/6844903760695656455
+
+## wx.agentConfig is not a function
+
+1. html 中引入 https://res.wx.qq.com/open/js/jweixin-1.2.0.js
+2. html 中引入 https://res.wx.qq.com/wwopen/js/jsapi/jweixin-1.0.0.js
+3. config的时候jsApiList包含agentConfig，使用wx.invoke('agentConfig')进行调用即可
+
+```js
+wx.config({
+    beta: true, // 这个官方文档说要为true
+    debug: true,
+    appId: '',
+    timestamp: '',
+    nonceStr: '',
+    signature: '',
+    jsApiList: ['agentConfig', ....]
+});
+
+wx.ready(function(res: any) {
+    wx.checkJsApi({
+        jsApiList: [],
+       success: function (res: any) {
+          return;
+       },
+    });
+
+    wx.invoke(
+        'agentConfig',
+        {
+          agentid:  '',  // 这个格式为字符串
+          corpid: '',
+          timestamp:'',
+          nonceStr: '',
+          signature: '',
+          jsApiList: [],
+        },
+        function (res: any) {
+          return;
+        },
+     );
+})
+```
+
+
+## 键盘
+
+```js
+// 判断设备类型
+var judgeDeviceType = function () {
+  var ua = window.navigator.userAgent.toLocaleLowerCase();
+  var isIOS = /iphone|ipad|ipod/.test(ua);
+  var isAndroid = /android/.test(ua);
+
+  return {
+    isIOS: isIOS,
+    isAndroid: isAndroid
+  }
+}()
+
+// 监听输入框的软键盘弹起和收起事件
+function listenKeybord($input) {
+  if (judgeDeviceType.isIOS) {
+    // IOS 键盘弹起：IOS 和 Android 输入框获取焦点键盘弹起
+    $input.addEventListener('focus', function () {
+      console.log('IOS 键盘弹起啦！');
+      // IOS 键盘弹起后操作
+    }, false)
+
+    // IOS 键盘收起：IOS 点击输入框以外区域或点击收起按钮，输入框都会失去焦点，键盘会收起，
+    $input.addEventListener('blur', () => {
+      console.log('IOS 键盘收起啦！');
+      // IOS 键盘收起后操作
+    })
+  }
+
+  // Andriod 键盘收起：Andriod 键盘弹起或收起页面高度会发生变化，以此为依据获知键盘收起
+  if (judgeDeviceType.isAndroid) {
+    var originHeight = document.documentElement.clientHeight || document.body.clientHeight;
+
+    window.addEventListener('resize', function () {
+      var resizeHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      if (originHeight < resizeHeight) {
+        console.log('Android 键盘收起啦！');
+        // Android 键盘收起后操作
+      } else {
+        console.log('Android 键盘弹起啦！');
+        // Android 键盘弹起后操作
+      }
+
+      originHeight = resizeHeight;
+    }, false)
+  }
+}
+
+var $inputs = document.querySelectorAll('.input');
+
+for (var i = 0; i < $inputs.length; i++) {
+  listenKeybord($inputs[i]);
+}
+
+```
+
+## cssText 操作 css
+
+```js
+var head= document.getElementById("head");
+head.style.cssText="width:200px;height:70px;display:bolck";
+```
+
 ## 在解构中使用别名
 
 ```js
@@ -37,7 +181,7 @@ function start(){
 
 //判断一个元素是不是出现在窗口(视野)
 function isShow($node){
- return $node.offset().top <= document.body.clientHeight + $(window).scrollTop()
+ return $node.offset().top <= document.body.clientHeight + document.documentElement.scrollTop
  }
 //加载图片
  function loadImg($img){

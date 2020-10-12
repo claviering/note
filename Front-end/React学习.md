@@ -1,5 +1,12 @@
 # React 学习
 
+## 多选select组件有多个时onChange如何知道是哪一个呢 
+
+```js
+<Select onChange={this.handleChange.bind(this, 'fieldname1')}> ... </Select>
+<Select onChange={this.handleChange.bind(this, 'fieldname2')}> ... </Select>
+```
+
 ## 强制更新
 
 `this.forceUpdate();`

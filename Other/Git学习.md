@@ -1,5 +1,9 @@
 ﻿# Git学习
 
+## 合并多个分支
+
+`git reset --soft HEAD~3 && git commit -m 'xxx'`
+
 ## 删除多个分支
 
 ```

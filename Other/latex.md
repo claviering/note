@@ -1,5 +1,10 @@
 # latex
 
+## 分页命令
+
+`\newpage`：分页命令。
+`\clearpage`：和 `\newpage` 类似。我们在使用 CJK 环境时会加入 \clearpage 在环境末尾。
+
 ## 空白页
 
 `\afterpage{\null\newpage}`

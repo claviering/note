@@ -1,6 +1,18 @@
 ﻿# CSS 学习
 
 
+## li 左边的小圆点样式
+
+```css
+li::marker{
+  color: #7e12ff
+}
+```
+
+## skew
+
+skew() 函数定义了一个元素在二维平面上的倾斜转换
+
 ## css 硬件加速
 
 在 Chrome and Safari中
@@ -114,7 +126,9 @@ https://github.com/chokcoco/iCSS/issues/77
 
 ```css
 @media (prefers-color-scheme: dark) { 
-  ... 暗夜模式下的css样式
+  /* ... 暗夜模式下的css样式 */
+  filter: brightness(0.8); // 图片加过滤
+  background-color: #191919; // 对应 #fff
 }
 
 @media (prefers-color-scheme: light) {
