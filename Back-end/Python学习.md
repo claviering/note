@@ -1,5 +1,13 @@
 ﻿# Python学习
 
+## 国内镜像下载
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
+
+## 多版本安装包
+
+`python3.9 -m pip install tensorflow`
+
 ## 截屏转文字
 
 英文: https://github.com/ianzhao05/textshot
@@ -117,6 +125,7 @@ pyenv global 3.6.3   # Set your system's Python version
 pyenv shell 3.6.3   # Set your shell's Python version
 pyenv shell   # show your shell's Python version
 pyenv whence # Lists all Python versions with the given command installed.
+pyenv install --list # 可以下载的版本
 ```
 
 ## xampp Apache服务器配置Python

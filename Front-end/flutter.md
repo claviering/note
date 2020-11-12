@@ -4,6 +4,31 @@ Flutter还提供了 Material 和Cupertino两种视觉风格的组件库
 
 Gallery源码：Gallery是Flutter官方示例APP，里面有丰富的示例，读者可以在网上下载安装。Gallery的源码在Flutter源码“examples”目录下。
 
+## 字重对应关系
+```
+100 - Thin
+200 - Extra Light (Ultra Light)
+300 - Light
+400 - Regular (Normal、Book、Roman)
+500 - Medium
+600 - Semi Bold (Demi Bold)
+700 - Bold
+800 - Extra Bold (Ultra Bold)
+900 - Black (Heavy)
+```
+
+## api参数报错
+
+flutter clean and then restart VS Code
+
+## 手动下载包
+
+`flutter packages get`
+
+## Flutter解决 警告 Waiting for another flutter command to release the startup lock
+
+rm ~/Documents/flutter/bin/cache/lockfile
+
 ## Dart DevTools
 
 布局检查工具，性能工具，内存工具，使用 flutter 编写

@@ -2,6 +2,10 @@
 
 [tensorflow](https://www.tensorflow.org/)
 
+## jupyter 自动提示
+
+第一个格子添加 `%config IPCompleter.greedy=True # TAB 键代码自动提示`
+
 ## 保存和恢复模型变量
 
 ```py

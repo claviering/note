@@ -1,5 +1,9 @@
 ﻿# Axios学习
 
+## 自定义适配器
+
+axios-mock-adapter 这个库，该库通过自定义适配器，让开发者可以轻松地模拟请求
+
 ## axios 发送 form-data 请求上传文件
 
 ```js

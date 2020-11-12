@@ -1,5 +1,50 @@
 ﻿# CSS 学习
 
+## 适配iPhoneX
+
+viewport-fit
+
+`<meta name = "viewport" content = "viewport-fit=cover" >`
+
+safe-area-inset-left：安全区域距离左边边界距离
+
+safe-area-inset-right：安全区域距离右边边界距离
+
+safe-area-inset-top：安全区域距离顶部边界距离
+
+safe-area-inset-bottom：安全区域距离底部边界距离
+
+constant在 iOS<11.2的版本中生效， env在 iOS>=11.2的版本中生效，这意味着我们往往要同时设置他们，将页面限制在安全区域内：
+```css
+body { 
+  padding-bottom : constant ( safe-area-inset-bottom );
+  padding-bottom : env ( safe-area-inset-bottom );
+}
+```
+
+## 展示不同分辨率的图片
+
+media查询(只适用于背景图)
+```css
+.avatar { 
+  background-image: url ( "conardLi_1x.png" );
+} 
+@media only screen and (-webkit-min-device-pixel-ratio : 2 ) { 
+  .avatar { 
+    background-image : url ( "conardLi_2x.png" );
+  } 
+}
+@media only screen and (-webkit-min-device-pixel-ratio : 3 ) {
+  .avatar {
+    background-image : url ( "conardLi_3x.png" ); 
+  }
+}
+```
+
+srcset 使用 img标签的 srcset属性，浏览器会自动根据像素密度匹配最佳显示图片
+```html
+<img src = "conardLi_1x.png" srcset = " conardLi_2x.png 2x, conardLi_3x.png 3x" >
+```
 
 ## li 左边的小圆点样式
 
