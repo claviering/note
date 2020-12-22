@@ -9,7 +9,7 @@
 `plugins=(zsh-autosuggestions)`
 
 ## 配置
-```
+```shell
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -82,6 +82,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+ZSH_DISABLE_COMPFIX=true # 提示权限错误的时候加上这个
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -131,6 +132,9 @@ alias gtg='git tag'
 alias gp='git remote prune origin'
 alias gco='git checkout -- .'
 alias dev='npm run dev'
+alias uat='npm run uat'
+alias 10uat='nvm use 10 && uat'
+alias 10dev='nvm use 10 && dev'
 alias pi='pip install -i https://pypi.tuna.tsinghua.edu.cn/simple'
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"

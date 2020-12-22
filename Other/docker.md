@@ -1,5 +1,9 @@
 # docker
 
+## 重命名镜像名字
+
+`docker image tag d583c3ac45fd myname/server:latest`
+
 ## 重启容器
 
 `docker restart [CONTAINER ID]`
