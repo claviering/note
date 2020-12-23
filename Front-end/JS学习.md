@@ -402,6 +402,10 @@ export function isFringe() {
 
 event.currentTarget始终是监听事件者，而event.target是事件的真正发出者
 
+target = element that triggered event.
+
+currentTarget = element that has the event listener.
+
 ## 慎用target="_blank"
 
 https://juejin.im/post/5eb8ed20e51d454db55fb353
