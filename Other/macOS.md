@@ -1,5 +1,10 @@
 # mac
 
+## 合盖待机耗电多
+
+查看  `pmset -g custom`
+
+设置 `sudo pmset -b tcpkeepalive 0` 恢复 `sudo pmset -b tcpkeepalive 1`
 
 ## 查看文件夹大小
 
