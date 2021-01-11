@@ -1,5 +1,17 @@
 # vue 3 学习
 
+## VUE3 3个核心模块
+
+1. 响应式模块
+2. 编译器模块
+3. 渲染模块 (render function -> virtual DOM node -> webpage)
+
+### 渲染模块
+
+1. Render Phase: render function -> virtual DOM node
+2. Mount Phase: virtual DOM node -> webpage
+3. Patch Phase: Old Vnode <-> New VNode
+
 ## Q: 为什么要使用 Composition API
 
 A: 解决 VUE2 的局限性
