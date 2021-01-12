@@ -1,5 +1,9 @@
 ﻿# VS Code学习
 
+## debug python 添加参数
+
+`"args": ["-i", "pa.png"],`
+
 ## 调试忽略文件
 
 配置 skipFiles

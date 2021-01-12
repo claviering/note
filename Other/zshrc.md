@@ -136,6 +136,8 @@ alias uat='npm run uat'
 alias 10uat='nvm use 10 && uat'
 alias 10dev='nvm use 10 && dev'
 alias pi='pip install -i https://pypi.tuna.tsinghua.edu.cn/simple'
+alias togif="python3 /Users/linweiye/Documents/pythonroom/convert-to-gif/main.py"
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
