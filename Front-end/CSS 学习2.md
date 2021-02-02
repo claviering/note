@@ -1,5 +1,9 @@
 # css 笔记
 
+## 当元素不面向屏幕时其可见性如何定义
+
+`backface-visibility: visible | hidden`
+
 ## 元素占满父元素
 
 object-fit: contain;

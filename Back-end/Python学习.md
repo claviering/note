@@ -1,5 +1,51 @@
 ﻿# Python学习
 
+## Pipenv 开发工作流程
+
+创建虚拟工作环境
+
+1. 不需要使用 pip 和 virtualenv
+2. 管理 requirements.txt 文件
+3. 深入了解您的依赖关系图 `pipenv graph`
+
+```
+Usage Examples:
+   Create a new project using Python 3.7, specifically:
+   $ pipenv --python 3.7
+
+   Remove project virtualenv (inferred from current directory):
+   $ pipenv --rm
+
+   Install all dependencies for a project (including dev):
+   $ pipenv install --dev
+
+   Create a lockfile containing pre-releases:
+   $ pipenv lock --pre
+
+   Show a graph of your installed dependencies:
+   $ pipenv graph
+
+   Check your installed dependencies for security vulnerabilities:
+   $ pipenv check
+
+   Install a local setup.py into your virtual environment/Pipfile:
+   $ pipenv install -e .
+
+   Use a lower-level pip command:
+   $ pipenv run pip freeze
+   
+```
+
+## python requirements.txt创建和使用
+
+使用pip生成requirements.txt文件
+
+`pip freeze > requirements.txt`
+
+安装requirements.txt依赖
+
+`pip install -r requirements.txt`
+
 ## 国内镜像下载
 
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple some-package
