@@ -1,5 +1,13 @@
 ﻿# Chrome学习
 
+
+## 命令行 HTML 转 PDF
+
+`google-chrome --headless --disable-gpu --print-to-pdf filename.html`
+
+指定pdf文件名
+`google-chrome --headless --disable-gpu --print-to-pdf=filename.pdf filename.html`
+
 ## 插件
 
 Leoh New Tab

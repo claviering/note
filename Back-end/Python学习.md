@@ -38,6 +38,10 @@ Usage Examples:
 
 ## python requirements.txt创建和使用
 
+`pip install pipreqs`
+
+`pipreqs ./`
+
 使用pip生成requirements.txt文件
 
 `pip freeze > requirements.txt`
