@@ -1,5 +1,19 @@
 ﻿# Git学习
 
+## git submodule 子模块
+
+项目中添加子模块 `git submodule add <remote_repo> <dir>`
+
+初始化子模块 `git submodule init` .git/config 中才会引入子模块
+
+提交子模块 `cd <submodule dir> && git add . && git commit -m "message" && git push origin main`
+
+更新项目中的子模块 `git submodule update`
+
+更新项目中子模块的 commit id `git add . && git commit -m "update submodule to lastest commit id"`
+
+克隆带有子模块的项目 `git clone --recurse-submodules <remote_repo>`
+
 ## 合并多个分支
 
 `git reset --soft HEAD~3 && git commit -m 'xxx'`
