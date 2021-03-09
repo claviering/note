@@ -12,6 +12,8 @@
 
 更新项目中子模块的 commit id `git add . && git commit -m "update submodule to lastest commit id"`
 
+更新多个子模块 `git submodule foreach git pull`
+
 克隆带有子模块的项目 `git clone --recurse-submodules <remote_repo>`
 
 ## 合并多个分支

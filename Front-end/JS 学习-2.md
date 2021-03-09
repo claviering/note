@@ -1,5 +1,10 @@
 # js 学习
 
+
+## 删除 url 上面的参数
+
+`history.replaceState(null, "", location.href.split("?")[0]);`
+
 ## 扁平一个多维数组
 
 ```js
