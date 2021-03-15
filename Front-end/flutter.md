@@ -4,6 +4,11 @@ Flutter还提供了 Material 和Cupertino两种视觉风格的组件库
 
 Gallery源码：Gallery是Flutter官方示例APP，里面有丰富的示例，读者可以在网上下载安装。Gallery的源码在Flutter源码“examples”目录下。
 
+
+## flutter web 默认用的canvaskit渲染,会下载一个3.x MB的wasm的文件导致白屏
+
+`flutter build web --web-renderer html`
+
 ## 字重对应关系
 ```
 100 - Thin
