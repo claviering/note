@@ -51,3 +51,10 @@ tokenizer.fit_on_texts(sentences)
 word_index = tokenizer.word_index
 print(word_index)
 ```
+
+## one hot 编码
+
+缺点
+
+1. 维度大
+2. 无法比较相似度，內积为 0
