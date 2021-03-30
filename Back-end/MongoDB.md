@@ -1,8 +1,20 @@
 # MongoDB 学习
 
+
+## 查询语法
+
+```json
+{
+  "key": {
+    "$in": ["22"]
+  },
+  "orgCode": "FP"
+}
+```
+
 ## 命令启动的时候设置数据库文件夹
 
-`mongod --dbpath mongodb-data`
+`sudo mongod --dbpath mongodb-data`
 
 ## 可视化工具
 

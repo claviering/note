@@ -1,5 +1,15 @@
 ﻿# VS Code学习
 
+## VueDX 插件
+
+通过扩展TypeScript扩展，此扩展为.vue文件提供了诸如类型检查，自动补全，重命名和重构之类的功能。
+
+1. Import Vue files in JS/TS files.
+2. Use named exports from Vue files.
+3. Infers global components in the project.
+4. Suggests named exports from Vue files
+5. Auto import components from Vue files
+
 ## debug python 添加参数
 
 `"args": ["-i", "pa.png"],`
