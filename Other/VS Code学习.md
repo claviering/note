@@ -1,5 +1,20 @@
 ﻿# VS Code学习
 
+## 科技感十足的主题 monokai charcoal
+
+### how to use
+
+```
+cd ~/.vscode/extensions/
+git clone git@github.com:74th/vscode-monokaicharcoal.git
+```
+
+restart VSCode and change the theme to monokai-charcoal(HC)
+
+## 颜色设置
+
+在 user setting 中才有效
+
 ## VueDX 插件
 
 通过扩展TypeScript扩展，此扩展为.vue文件提供了诸如类型检查，自动补全，重命名和重构之类的功能。
