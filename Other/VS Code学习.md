@@ -474,6 +474,7 @@ clg -> console.log
 
 快捷键Ctrl + P，打开插件，输入 ext install
 ### 插件列表
+- live-server 文件热加载
 - HTML Snippets
 - HTML CSS Support view a list of attributes via ctrl + space 配置"css.fileExtensions": [ "css", "scss"]
 - emmet 开发者jakethashi

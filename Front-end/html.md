@@ -1,5 +1,19 @@
 # HTML
 
+## 自动填充表单
+
+web.dev/sign-in-form-best-practices
+
+Use `autocomplete="new-password"` and `id="new-password"` for the password input in a sign-up form, and for the new password in a reset-password form.
+
+`<input type="password" autocomplete="new-password" id="new-password" …>`
+
+Use `autocomplete="current-password"` and `id="current-password"` for a sign-in password input.
+
+`<input type="password" autocomplete="current-password" id="current-password" …>`
+
+数字输入键盘 `inputmode="numeric"`
+
 ## 密码表单使用
 
 ```html

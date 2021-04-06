@@ -1,6 +1,28 @@
 # js 学习
 
 
+## 以指定的精度返回该数值对象的字符串表示
+
+```js
+// 以指定的精度返回该数值对象的字符串表示
+(0.1 + 0.2).toPrecision(21)
+=> "0.300000000000000044409"
+(0.3).toPrecision(21)
+=> "0.299999999999999988898"
+```
+
+## 函数柯里化
+
+```js
+// segmentfault 的@大笑平 补充的高颜值写法：
+var curry = fn =>
+    judge = (...args) =>
+        args.length === fn.length
+            ? fn(...args)
+            : (arg) => judge(...args, arg)
+```
+
+
 ## 删除 url 上面的参数
 
 `history.replaceState(null, "", location.href.split("?")[0]);`
