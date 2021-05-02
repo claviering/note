@@ -1,5 +1,12 @@
 ﻿# VS Code学习
 
+## 隐藏导航栏文件路径
+
+```
+How to hide directory/function path top bar in VSCode
+From Preferences -> Settings, type breadcrumb
+```
+
 ## 科技感十足的主题 monokai charcoal
 
 ### how to use

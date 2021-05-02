@@ -1,5 +1,20 @@
 ﻿# TypeScript学习
 
+
+## 获取对象的值
+
+```ts
+// bad
+const _getKeyValue = (key: string) => (obj: object) => obj[key];
+
+// better
+const _getKeyValue_ = (key: string) => (obj: Record<string, any>) => obj[key];
+
+// best
+const getKeyValue = <T extends object, U extends keyof T>(key: U) => (obj: T) =>
+  obj[key];
+```
+
 ## 安装
 ```
 npm i -g typescripe

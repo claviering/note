@@ -2,7 +2,12 @@
 
 ## 自动填充表单
 
-web.dev/sign-in-form-best-practices
+https://web.dev/sign-in-form-best-practices
+
+https://search.library.edu.eu.org/extdomains/developers.google.com/web/updates/2015/06/checkout-faster-with-autofill
+
+`<label for="username">Email</label>`
+`<input id="username" name="username" autocomplete="username" type="text" >`
 
 Use `autocomplete="new-password"` and `id="new-password"` for the password input in a sign-up form, and for the new password in a reset-password form.
 
