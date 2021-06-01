@@ -1,5 +1,15 @@
 # Nginx 学习
 
+## 文件类型
+
+```
+types {
+    text/html                             html htm shtml;
+    text/css                              css;
+    text/xml                              xml;
+    image/gif                             gif;
+```
+
 ## http 服务器文件默认目录
 
 /usr/share/nginx/html

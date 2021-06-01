@@ -1,5 +1,9 @@
 ﻿# CSS 学习
 
+## 一次只滑一个元素
+
+scroll-snap
+
 ## 适配iPhoneX
 
 viewport-fit
