@@ -1,6 +1,14 @@
 # js 学习
 
 
+## 控制台输出控制样式
+
+```js
+console.log("%c%s",
+            "color: red; background: yellow; font-size: 24px;",
+            "警告！");
+```
+
 ## 简单的发布/订阅模式
 
 ```js

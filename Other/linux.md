@@ -1,5 +1,13 @@
 # linux 学习
 
+## 查找重命名
+
+`find . -depth -name "index.js" -exec sh -c 'f="{}"; mv -- "$f" "${f%.html}.php"' \;`
+
+js 结尾的改 jsx
+
+`find src/components/* -depth -name "*.js" -exec sh -c 'f="{}"; mv -- "$f" "${f%.js}.jsx"' \;`
+
 ## 文件上传下载
 
 将 文件/文件夹 从远程 Ubuntu 机拷至本地(scp)
