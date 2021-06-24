@@ -1,15 +1,3 @@
-# zsh 配置
-
-## 自动补全插件
-
-1. Clone this repository into $ZSH_CUSTOM/plugins (by default ~/.oh-my-zsh/custom/plugins)
-`git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
-
-2. Add the plugin to the list of plugins for Oh My Zsh to load (inside ~/.zshrc):
-`plugins=(zsh-autosuggestions)`
-
-## 配置
-```shell
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -80,9 +68,12 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  zsh-autosuggestions
+  z
+)
 
-ZSH_DISABLE_COMPFIX=true # 提示权限错误的时候加上这个
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -133,25 +124,43 @@ alias gp='git remote prune origin'
 alias gco='git checkout -- .'
 alias dev='npm run dev'
 alias uat='npm run uat'
-alias 10uat='nvm use 10 && uat'
 alias 10dev='nvm use 10 && dev'
+alias 10uat='nvm use 10 && uat'
 alias pi='pip install -i https://pypi.tuna.tsinghua.edu.cn/simple'
+alias f='fuck -y'
+alias gbr="git branch | grep -v "master" | xargs git branch -D"
+alias textshot="python /Users/linweiye/Documents/textshot/textshot.py"
 alias togif="python3 /Users/linweiye/Documents/pythonroom/convert-to-gif/main.py"
 alias gsf="git submodule foreach git pull"
+alias note="code note.code-workspace"
+alias cli="/Applications/wechatwebdevtools.app/Contents/MacOS/cli"
+alias cli-upload="/Users/linweiye/Documents/shell-script/wechatDevToolsUpload.sh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$PATH:$HOME/Documents/mongodb/bin"
+export PATH="$PATH:$HOME/Documents/mongodb-macos-x86_64-4.4.4/bin"
 export PATH="$PATH:$HOME/Documents/openssl-1-1-1/bin"
 export PATH="$PATH:$HOME/Documents/seleniumDriver"
 export PATH="$PATH:$HOME/Documents/flutter/bin"
-export C_INCLUDE_PATH="$PATH:/Users/linweiye/Documents/openssl-1-1-1/include"
-export CPLUS_INCLUDE_PATH="$PATH:/Users/linweiye/Documents/openssl-1-1-1/include"
-export JAVA_HOME="$PATH:/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home"
+export PATH="$PATH:$HOME/Documents/apache-maven-3.6.3/bin"
+export PATH="$PATH:$HOME/Applications/wechatwebdevtools.app/Contents/MacOS"
+export PUB_HOSTED_URL=https://pub.flutter-io.cn # flutter中国镜像
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # flutter中国镜像
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
+export PATH="$PATH:$JAVA_HOME/bin"
+export CLASSPATH="$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:"
 export HISTSIZE=10000
 export HISEFILESIZE=10000
+export LC_ALL=$LANG
+export HOMEBREW_NO_AUTO_UPDATE=1
+export CPATH=":/usr/local/include"
+export CPLUS_INCLUDE_PATH=":/usr/local/include"
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+export PATH="$PATH:$HOME/Documents/protoc-3.13.0-osx-x86_64/bin"
 
-export NVM_DIR=~/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
-```
+# eval "$(pyenv init -)"
+
+# eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+# eval $(thefuck --alias FUCK)
