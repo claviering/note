@@ -1,5 +1,11 @@
 # linux 学习
 
+## 现代化命令
+
+https://github.com/ibraheemdev/modern-unix
+
+[别再用ls、cat命令了，这有一套全新升级版，简洁快速还易上手](https://mp.weixin.qq.com/s/tMi1XahpMj6hdkNzDOUDSw)
+
 ## 查找重命名
 
 `find . -depth -name "index.js" -exec sh -c 'f="{}"; mv -- "$f" "${f%.html}.php"' \;`
