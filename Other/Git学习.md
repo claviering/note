@@ -134,6 +134,7 @@ Password: <type your password>
 - subject: commit 的概述
 - body: commit 具体修改内容, 可以分为多行
 - footer: 一些备注, 通常是 BREAKING CHANGE 或修复的 bug 的链接.
+- revert: 恢复之前的提交
 
 ## 查看某段代码是谁写的
 

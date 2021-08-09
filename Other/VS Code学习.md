@@ -1,5 +1,12 @@
 ﻿# VS Code学习
 
+
+## 调试 mocha
+
+```json
+
+```
+
 ## vscode 调试 typescript
 
 launch.json

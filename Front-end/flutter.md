@@ -4,6 +4,25 @@ Flutter还提供了 Material 和Cupertino两种视觉风格的组件库
 
 Gallery源码：Gallery是Flutter官方示例APP，里面有丰富的示例，读者可以在网上下载安装。Gallery的源码在Flutter源码“examples”目录下。
 
+## Android 开启网络
+
+```
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+```
+
+## 打开新页面动画
+
+`OpenContainer()`
+
+## 关闭debug提示
+
+```
+MaterialApp(
+  debugShowCheckedModeBanner: false
+)
+```
+
 
 ## flutter web 默认用的canvaskit渲染,会下载一个3.x MB的wasm的文件导致白屏
 

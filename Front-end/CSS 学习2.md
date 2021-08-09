@@ -1,5 +1,10 @@
 # css 笔记
 
+
+## scrollWidth、clientWidth、offsetWidth、width的区别
+
+clientWidth是内容可视区的宽度 > offsetWidth是元素的实际宽度 > scrollWidth为实际内容的宽度
+
 ## 当元素不面向屏幕时其可见性如何定义
 
 `backface-visibility: visible | hidden`

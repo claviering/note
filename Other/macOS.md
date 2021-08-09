@@ -1,5 +1,9 @@
 # mac
 
+## 查看端口占用 
+
+`lsof -i tcp:3109`
+
 ## 合盖待机耗电多
 
 查看  `pmset -g custom`

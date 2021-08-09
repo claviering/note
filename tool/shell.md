@@ -1,5 +1,11 @@
 # shell 编程
 
+## 压缩
+
+忽略 git 文件, 文件大小从 12.7M 减少到 1.6M
+
+`zip -r ~/Desktop/file.zip . -x "*.git*" -x "*clouds*" -9`
+
 ## git
 
 git branch -d feature-broadcast-weiye && git branch feature-broadcast-weiye && git checkout feature-broadcast-weiye && git add . && git commit -m "feature: 直播列表ui优化, 地址删除空格" && git push origin feature-broadcast-weiye
