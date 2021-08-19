@@ -4,11 +4,29 @@ Flutter还提供了 Material 和Cupertino两种视觉风格的组件库
 
 Gallery源码：Gallery是Flutter官方示例APP，里面有丰富的示例，读者可以在网上下载安装。Gallery的源码在Flutter源码“examples”目录下。
 
+## 用法
+
+- Under ListView don't use `Spacer` Widget
+- don't use `Positiond` under `Row` or `Column`
+- `Expanded` can only use with in `column` `row` `Flex`
+
+
+## dpi
+
+| | | | | | | |
+| -|-|-|-|-|-|-|
+|安卓模拟器dpi|ldpi| mdpi|  hdpi| xhdpi| xxhdpi|
+|实际设备dpi| 0.75 | 1 | 1.5 | 2 | 3 | 4 |
+
 ## Android 开启网络
 
+在 `android/app/src/main/AndroidManifest.xml` 添加
+
 ```
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<manifest>
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+</manifest>
 ```
 
 ## 打开新页面动画
