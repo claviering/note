@@ -4,6 +4,11 @@ Flutter还提供了 Material 和Cupertino两种视觉风格的组件库
 
 Gallery源码：Gallery是Flutter官方示例APP，里面有丰富的示例，读者可以在网上下载安装。Gallery的源码在Flutter源码“examples”目录下。
 
+## 组件
+
+- 透明度动画组件 `AnimatedOpacity`
+- 点击穿透 `IgnorePointer`
+
 ## 用法
 
 - Under ListView don't use `Spacer` Widget
