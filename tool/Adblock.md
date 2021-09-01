@@ -9,6 +9,11 @@
 ## 我的过滤规则
 
 ```
+http://c.dailiqing.net
+https://www.google-analytics.com
+https://www.googletagmanager.com
+http://pc.jinrongwang.net
+http://cbjs.baidu.com
 juejin.im##.lazy.thumb.banner-image.loaded
 juejin.im##.banner
 juejin.im##.index-aside.aside
