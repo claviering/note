@@ -1,5 +1,9 @@
 ﻿# Git学习
 
+## 验证 git commit 规范
+
+https://woai3c.gitee.io/introduction-to-front-end-engineering/02.html#git-%E8%A7%84%E8%8C%83
+
 ## git submodule 子模块
 
 项目中添加子模块 `git submodule add <remote_repo> <dir>`
@@ -135,6 +139,17 @@ Password: <type your password>
 - body: commit 具体修改内容, 可以分为多行
 - footer: 一些备注, 通常是 BREAKING CHANGE 或修复的 bug 的链接.
 - revert: 恢复之前的提交
+
+fix（修复BUG）
+
+```
+// 示例1
+fix(global):修复checkbox不能复选的问题
+// 示例2 下面圆括号里的 common 为通用管理的名称
+fix(common): 修复字体过小的BUG，将通用管理下所有页面的默认字体大小修改为 14px
+// 示例3
+fix(test): value.length -> values.length
+```
 
 ## 查看某段代码是谁写的
 
