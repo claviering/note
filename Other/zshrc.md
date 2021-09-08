@@ -159,7 +159,7 @@ export CPLUS_INCLUDE_PATH=":/usr/local/include"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 export PATH="$PATH:$HOME/Documents/protoc-3.13.0-osx-x86_64/bin"
 
-# eval "$(pyenv init -)"
+eval "$(pyenv init -)"
 
 # eval $(thefuck --alias)
 # You can use whatever you want as an alias, like for Mondays:
