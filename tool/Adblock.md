@@ -9,6 +9,7 @@
 ## 我的过滤规则
 
 ```
+www.zhihu.com##a[aria-controls="Topstory-zvideo"]
 https://www.zhihu.com/*/##a[aria-controls="Topstory-zvideo"]
 http://c.dailiqing.net
 https://www.google-analytics.com
