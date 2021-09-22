@@ -1,5 +1,9 @@
 # node.js学习
 
+## 版本查看
+
+`npm outdated`
+
 ## 获取 socket 连接人数
 
 ```js
