@@ -1,5 +1,25 @@
 # js 学习
 
+## 事件委托
+
+```js
+function delegate(element, eventType, selector, fn) {
+  element.addEventListener(eventType, e => {
+    let el = e.target
+    while (!el.matches(selector)) {
+      if (element === el) {
+        el = null
+        break
+      }
+      el = el.parentNode
+    }
+    el && fn.call(el, e, el)
+  })
+  return element
+}
+// 简化下, 不用递归, 直接通过li.contains(e.target);判断触点是否在li上(或内).
+```
+
 ## curry
 
 ```js
