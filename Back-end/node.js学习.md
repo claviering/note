@@ -1,5 +1,24 @@
 # node.js学习
 
+## 调试日志
+```
+// https://nodejs.org/api/util.html#util_util_debuglog_section_callback
+const util = require('util');
+const debug = util.debuglog('egg-bin:test');
+
+debug('launch application at %s', host);
+
+// 通过环境变量 NODE_DEBUG 激活，支持通配。
+$ NODE_DEBUG=egg-core,egg-bin:* node index.js
+```
+
+## 代码覆盖率
+
+```
+$ c8 mocha
+$ open coverage/index.html
+```
+
 ## 版本查看
 
 `npm outdated`
