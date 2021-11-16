@@ -11,3 +11,7 @@
 - 删除光标之前的单词：ctrl + w
 - 删除到文本末尾：ctrl + k
 - 清屏2：ctrl + l
+
+## 隐藏标题
+
+preferences -> profiles -> window -> style

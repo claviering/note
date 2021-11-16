@@ -1,5 +1,9 @@
 ﻿# Git学习
 
+## 修改初始化默认分支
+
+`git config --global init.defaultBranch main`
+
 ## 验证 git commit 规范
 
 https://woai3c.gitee.io/introduction-to-front-end-engineering/02.html#git-%E8%A7%84%E8%8C%83
@@ -220,8 +224,8 @@ fi
 ## 安装配置
 
 ```
-git config --global user.name "Your Name"
-git config --global user.email "email@example.com"
+git config --global user.name "claviering"
+git config --global user.email "claviering@gmail.com"
 ssh-keygen -t rsa -C "youremail@example.com"
 ```
 

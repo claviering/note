@@ -27,7 +27,7 @@ https://nginx.org/en/linux_packages.html#RHEL-CentOS
 
 [下载源代码](https://nginx.org/download/)
 
-安装 pcre
+安装 pcre (注意，不能安装 pcre2, nginx 会报错 fatal error: 'pcre.h' file not found)
 ```
 $ wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.42.tar.gz
 $ tar -zxf pcre-8.42.tar.gz
