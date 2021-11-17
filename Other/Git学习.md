@@ -1,5 +1,11 @@
 ﻿# Git学习
 
+## 不校验证书
+
+`git config http.sslVerify false`
+
+`git -c http.sslVerify=false clone https://example.com/path/to/git`
+
 ## 修改初始化默认分支
 
 `git config --global init.defaultBranch main`
