@@ -1,5 +1,37 @@
 # js 学习
 
+## 国际化时间
+
+`new Date(Date.UTC(year, month - 1, date))`
+
+## 事件委托
+
+Element.matches() API
+
+## 禁止网页滚动
+
+```js
+function preventPageScroll(active: boolean): void {
+  if (active) {
+    window.addEventListener('DOMMouseScroll', scrollingPreventDefault, false);
+    window.addEventListener('wheel', scrollingPreventDefault, {
+      passive: false,
+    });
+    window.addEventListener('mousewheel', scrollingPreventDefault, {
+      passive: false,
+    });
+  } else {
+    window.removeEventListener('DOMMouseScroll', scrollingPreventDefault);
+    window.removeEventListener('wheel', scrollingPreventDefault);
+    window.removeEventListener('mousewheel', scrollingPreventDefault);
+  }
+}
+
+function scrollingPreventDefault(e: Event): void {
+  e.preventDefault();
+}
+```
+
 ## 事件委托
 
 ```js
