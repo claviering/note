@@ -1,4 +1,16 @@
-# Iterm2 快捷键
+# Iterm2 
+
+## Killing a fly with a cannon
+
+快捷键设置
+
+- Go to Preferences... > Profiles > Keys (not Preferences... > Keys)
+- Press Presets... dropdown button.
+- Select Natural Text Editing
+
+就可以 `option` + `left/right` to going one word backwards and forwards
+
+## 快捷键
 
 - 切换全屏：command + enter
 - 查找：command + f
