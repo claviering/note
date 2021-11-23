@@ -1,5 +1,15 @@
 # svn
 
+## 清除登录认证状态
+
+`%APPDATA%\Subversion\auth` 删除文件夹下面的文件
+
+To make it stop remembering the login info:
+
+1. Edit %APPDATA%\Subversion\config.
+2. Set store-auth-creds=no
+
+
 ## 将文件拉到本地目录
 
 svn checkout 简写（svn co）
