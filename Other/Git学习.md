@@ -1,5 +1,17 @@
 ﻿# Git学习
 
+## GitHub 新功能：可以设置markdown的图片只在light mode 或者 dark mode 中显示
+
+Specifying the theme an image is shown to
+You can specify the theme an image is displayed to by appending #gh-dark-mode-only or #gh-light-mode-only to the end of an image URL, in Markdown.
+
+We distinguish between light and dark color modes, so there are two options available. You can use these options to display images optimized for dark or light backgrounds. This is particularly helpful for transparent PNG images.
+
+|Context	|URL|
+|- |-|
+|Dark Theme|	![GitHub Light](https://github.com/github-light.png#gh-dark-mode-only) |
+|Light Theme|	![GitHub Dark](https://github.com/github-dark.png#gh-light-mode-only) |
+
 ## 不校验证书
 
 `git config http.sslVerify false`
