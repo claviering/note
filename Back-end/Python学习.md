@@ -1,5 +1,12 @@
 ﻿# Python学习
 
+## matplotlib 中文乱码问题
+
+```python
+plt.rcParams['font.sans-serif']=['Arial Unicode MS'] #用来正常显示中文标签
+plt.rcParams['axes.unicode_minus']=False #用来正常显示负号
+```
+
 ## Pipenv 开发工作流程
 
 创建虚拟工作环境
