@@ -13,3 +13,11 @@ export GOPRIVATE=git.mycompany.com,github.com/my/private
 go env -w GO111MODULE=on
 go env -w GOPROXY=https://goproxy.io,direct
 ```
+
+## web framework
+
+[Gin](https://github.com/gin-gonic/gin)
+
+## hot reload
+
+[fresh](https://github.com/gravityblast/fresh)

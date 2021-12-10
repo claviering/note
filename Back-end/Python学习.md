@@ -100,6 +100,7 @@ Scrapy 安装 `pip install scrapy`
 [一行代码简化Python异常信息：错误清晰指出，排版简洁美观](https://mp.weixin.qq.com/s/OdAGGHMd6tg-_Jn-wZIifQ)
 
 `python -m pip install pretty_errors`
+`python -m pretty_errors`
 
 
 ## .zshrc 配置
