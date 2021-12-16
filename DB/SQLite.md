@@ -55,14 +55,7 @@ CREATE TABLE "organization" (
 ```
 
 ```sql
-CREATE TABLE "org_user" (
-	id	INTEGER PRIMARY KEY,
-	userid	TEXT,
-	username	TEXT,
-	orgCode	TEXT,
-	mobile	TEXT,
-  createtime INTEGER
-)
+
 ```
 
 ## 插入
