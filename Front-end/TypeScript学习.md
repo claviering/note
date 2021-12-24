@@ -1,5 +1,18 @@
 ﻿# TypeScript学习
 
+## 拓展 String 的 prototype
+
+```js
+// typings.d.ts
+interface String {
+  p2: () => string;
+}
+// main.js
+String.prototype.p2 = function () {
+  return this.padStart(2, "0");
+};
+```
+
 ## 基本配置
 
 ```

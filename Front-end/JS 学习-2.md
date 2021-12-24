@@ -6,6 +6,8 @@
 
 ## 事件委托
 
+可以用到 svg 元素上
+
 Element.matches() API
 
 ## 禁止网页滚动
