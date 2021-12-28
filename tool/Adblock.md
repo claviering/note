@@ -9,13 +9,17 @@
 ## 我的过滤规则
 
 ```
+https://feed.baidu.com
+http://hpd.baidu.com
+http://m.baidu.com/
+https://hectorstatic.baidu.com
+https://m.baidu.com
+https://ss2.baidu.com
+https://ss0.baidu.com
+http://sm.bdimg.com/
+https://feed-image.baidu.com
+https://ss1.baidu.com
 www.zhihu.com##a[aria-controls="Topstory-zvideo"]
-https://www.zhihu.com/*/##a[aria-controls="Topstory-zvideo"]
-http://c.dailiqing.net
-https://www.google-analytics.com
-https://www.googletagmanager.com
-http://pc.jinrongwang.net
-http://cbjs.baidu.com
 juejin.im##.lazy.thumb.banner-image.loaded
 juejin.im##.banner
 juejin.im##.index-aside.aside
@@ -145,6 +149,12 @@ credits.weibo.com##DIV[id="pl_msgLayer"]
 credits.weibo.com##DIV[class="WB_2cols_r"]
 credits.weibo.com##DIV[class="area_03 clearfix WB_border"]
 m.weibo.com##DIV[class="global_footer"]
+https://www.zhihu.com/*/##a[aria-controls="Topstory-zvideo"]
+http://c.dailiqing.net
+https://www.google-analytics.com
+https://www.googletagmanager.com
+http://pc.jinrongwang.net
+http://cbjs.baidu.com
 ||pos.baidu.com/s?hei=250&wid=300&di=u3032528&ltu=https%3A%2F%2Fblog.csdn.net%2Fwangnan537%2Farticle%2Fdetails%2F45222653&prot=2&dai=1&ps=328x106&cfv=0&chi=1&ccd=24&ti=UTF-8%E4%B8%8EUTF-8%20without%20BOM%20-%20Just%20do%20IT%20-%20CSDN%E5%8D%9A%E5%AE%A2&cja=false&ant=0&cec=UTF-8&dri=0&dis=0&drs=1&cpl=3&par=1280x716&ari=2&tcn=1539220657&cmi=4&cce=true&cdo=-1&pis=-1x-1&dc=3&pss=1280x2801&tlm=1539220656&pcs=1280x629&dtm=HTML_POST&psr=1280x800&tpr=1539220656912&exps=111000&ltr=https%3A%2F%2Fcn.bing.com%2F&col=en-US
 ||pos.baidu.com/s?hei=250&wid=300&di=u3392638&ltu=https%3A%2F%2Fblog.csdn.net%2Fqidi_huang%2Farticle%2Fdetails%2F52179279&tcn=1539223280&pis=-1x-1&cdo=-1&tpr=1539223279632&dtm=HTML_POST&tlm=1539223279&cec=UTF-8&par=1280x716&prot=2&ltr=https%3A%2F%2Fcn.bing.com%2F&cja=false&cce=true&exps=111000&chi=1&pss=1280x2483&pcs=1280x629&cpl=3&ccd=24&dc=3&ant=0&drs=1&ps=1996x106&col=en-US&cfv=0&dai=3&cmi=4&psr=1280x800&dri=0&dis=0&ari=2&ti=vim%20%E5%A4%8D%E5%88%B6%2F%E5%89%AA%E5%88%87%2F%E7%B2%98%E8%B4%B4%2F%E6%92%A4%E9%94%80%E6%93%8D%E4%BD%9C%20-%20%E4%B8%80%E7%A8%8B%E5%B1%B1%E6%B0%B4%E4%B8%80%E7%A8%8B%E6%AD%8C%20-%20CSDN%E5%8D%9A%E5%AE%A2
 ||pos.baidu.com/s?hei=250&wid=300&di=u2895327&ltu=https%3A%2F%2Fblog.csdn.net%2Ftomstrong_369%2Farticle%2Fdetails%2F47365181&cce=true&tpr=1539229305493&tcn=1539229306&exps=111000,114007&chi=1&par=1280x716&tlm=1539229305&dri=0&psr=1280x800&dc=3&prot=2&ps=1844x106&cdo=-1&pis=-1x-1&dtm=HTML_POST&dai=2&cja=false&ari=2&cfv=0&ant=0&ti=Brew%3Acommand%20not%20found%20in%20Macbook%20-%20Tomstrong_369%E7%9A%84%E4%B8%93%E6%A0%8F%20-%20CSDN%E5%8D%9A&cec=UTF-8&dis=0&pss=1280x2356&pcs=1280x629&cmi=4&drs=3&col=en-US&cpl=3&ltr=https%3A%2F%2Fcn.bing.com%2F&ccd=24
@@ -196,7 +206,6 @@ e.dtscout.com
 s4.cnzz.com
 weibo.com/*/##div[data-mark*=""]
 s19.cnzz.com
-*cnzz.js
 hm.baidu.com
 wx.sifakaoshi360.com
 https://c.v4dwkcv.com
@@ -210,69 +219,9 @@ https://www.zxzj.me/slade1.js
 https://www.zxzj.me/slade2.js
 https://www.google.com/js/bg/n1KRpsC-mOXJ7g2QPDp_TxSNqegeRJu8ac_a7RtvSLI.js
 @@||img-blog.csdnimg.cn
+*cnzz.js
 ```
-
 微博过滤规则
-```
-weibo.com##DIV[class="WB_right_module"]
-weibo.com##A[id="base_scrollToTop"][class="W_gotop S_line3"]
-weibo.com##DIV[id="pl_leftnav_app"]
-weibo.com##DIV[class="global_footer S_bg4"]
-weibo.com##DIV[class="title_area clearfix"]
-weibo.com##UL[class="sort clearfix"]
-weibo.com##DIV[class="clearfix"]
-weibo.com##DIV[class="W_tips tips_warn clearfix"]
-weibo.com##DIV[id="pl_content_setSkin"]
-weibo.com##DIV[class="W_tips tips_error clearfix"]
-weibo.com##DIV[class="prm_app_card"]
-weibo.com##DIV[class="lock_r"]
-weibo.com##DIV[class="tips_wrapper"]
-weibo.com##DIV[class="M_activities M_abverArea clearfix"]
-weibo.com##DIV[class="layer_tips_bg"]
-weibo.com##DIV[id="pl_ad_envelope"]
-account.weibo.com##SPAN[class="promotion"]
-account.weibo.com##DIV[class="global_footer"]
-weiba.weibo.com##DIV[id="pl_part_topicShow"][class="default_picshow_v3"]
-weiba.weibo.com##DIV[id="pl_content_newBarList"]
-weiba.weibo.com##DIV[id="pl_content_hotBarList"]
-weiba.weibo.com##DIV[class="W8_wrap W8_boxlinecolor"]
-weiba.weibo.com##DIV[id="pl_part_rankList"][class="list_rank list_rank_v2"]
-weiba.weibo.com##DIV[class="list_rank"]
-weiba.weibo.com##DIV[class="default_notice"]
-weiba.weibo.com##DIV[class="W8_footer"]
-weiba.weibo.com##DIV[id="pl_part_goTop"][class="W8_gotop"]
-game.weibo.com##DIV[class="search_gamebox"]
-game.weibo.com##DIV[id="recentGame"][class="recentbox"]
-game.weibo.com##DIV[class="right-nav"]
-game.weibo.com##DIV[id="footerSimple"][class="footer fsimple"]
-game.weibo.com##DIV[class="wyx-common-footer"]
-game.weibo.com##DIV[class="wyx_header"]
-game.weibo.com##DIV[id="ks_right"][class="ks_right"]
-game.weibo.com##DIV[class="activity_wrap"]
-badge.weibo.com##DIV[id="bottomborder"][class="bottomLinks "]
-badge.weibo.com##DIV[id="pl_home_countShow"][class="num"]
-badge.weibo.com##DIV[class="tit"]
-verified.weibo.com##DIV[class="global_footer"]
-verified.weibo.com##DIV[id="pl_base_scrollToTop"][class="W_gotop"]
-help.weibo.com##DIV[class="help_footer"]
-club.weibo.com##DIV[id="pl_home_ad"][class="pl_home_ad"]
-club.weibo.com##DIV[class="task_guide"]
-club.weibo.com##DIV[id="pl_base_offical"][class="pl_base_offical"]
-club.weibo.com##DIV[class="global_footer"]
-club.weibo.com##DIV[id="pl_dida_hotTeams"][class="hot_frame"]
-club.weibo.com##DIV[id="pl_dida_hotFavTeams"][class="hot_frame"]
-club.weibo.com##DIV[id="pl_dida_ad"][class="pl_dida_ad"]
-hao.weibo.com##DIV[id="show_lunbo"][class="num_focus"]
-hao.weibo.com##SPAN[class="t_desc Ntxt_c"]
-hao.weibo.com##DIV[class="F_scnd"]
-hao.weibo.com##DIV[class="num_foot"]
-hao.weibo.com##DIV[class="num_slctNm"]
-hao.weibo.com##DIV[class="event"]
-hao.weibo.com##DIV[class="eventBan"]
-credits.weibo.com##DIV[id="pl_msgLayer"]
-credits.weibo.com##DIV[class="WB_2cols_r"]
-credits.weibo.com##DIV[class="area_03 clearfix WB_border"]
-m.weibo.com##DIV[class="global_footer"]
 ```
 
 weibo.com##.WB_cardtitle_b ~ ##div
