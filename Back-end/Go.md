@@ -16,6 +16,32 @@ go env -w GOPROXY=https://goproxy.io,direct
 
 [gin框架初了解](https://xiaonuo.top/articles/2020/12/14/1607931833092.html)
 
+## 判断map时候存在某个key
+
+```go
+	if _, ok := m[key]; ok {
+		// do something
+	}
+```
+
+## 遍历
+
+1. 遍历切片
+
+	```go
+		for i, v := range s {
+			fmt.Println(i, v)
+		}
+	```
+
+2. 遍历map
+
+	```go
+		for k, v := range m {
+			fmt.Println(k, v)
+		}
+	```
+
 ## 嵌套 JSON
 
 g.H:可以自定义json，一层一层的嵌套返回值，只要每一层加上g.H就好
