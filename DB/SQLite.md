@@ -45,7 +45,7 @@ commit: command + s
 
 ```sql
 CREATE TABLE "organization" (
-	id	INTEGER PRIMARY KEY,
+	id	INTEGER PRIMARY KEY, -- 主键
 	level	INTEGER,
 	orgCode	TEXT,
 	orgName	TEXT,
