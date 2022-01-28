@@ -1,5 +1,26 @@
 # HTML
 
+## input 自动填充样式修改
+
+```css
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0px 100px red inset;
+    box-shadow: 0 0 0px 100px red inset;
+}
+```
+
+## input type=number 隐藏上下箭头
+
+```css
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+```
+
 ## 自动填充表单
 
 https://web.dev/sign-in-form-best-practices
