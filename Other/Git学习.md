@@ -1,5 +1,9 @@
 ﻿# Git学习
 
+## change https to ssh
+
+git remote set-url origin <you ssh remote>
+
 ## GitHub 新功能：可以设置markdown的图片只在light mode 或者 dark mode 中显示
 
 Specifying the theme an image is shown to

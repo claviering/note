@@ -9,6 +9,9 @@
 ## 我的过滤规则
 
 ```
+juejin.cn##.sidebar
+zhihu.com##.TopstoryItem--advertCard
+www.zhihu.com##a[aria-controls="Topstory-recommend"]
 https://feed.baidu.com
 http://hpd.baidu.com
 http://m.baidu.com/

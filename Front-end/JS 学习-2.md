@@ -1,5 +1,27 @@
 # js 学习
 
+## 判断是否可以 JSON.parse
+
+```js
+function isJsonString(str: string) {
+  try {
+    if (typeof JSON.parse(str) == 'object') {
+      return true
+    }
+  } catch (e) {
+    return false
+  }
+}
+```
+
+## 高级 API 
+
+1. MutationObserver 可以监听 DOM 结构变化
+2. IntersectionObserver 了解某个元素是否进入了"视口"（viewport）
+3. getComputedStyle 返回的都是 CSSStyleDeclaration 对象，和 element.style 不一样
+4. getBoundingClientRect 返回元素的大小及其相对于视口的位置
+5. requestAnimationFrame 告诉浏览器——你希望执行一个动画，并且要求浏览器在下次重绘之前调用指定的回调函数更新动画。
+
 ## 国际化时间
 
 `new Date(Date.UTC(year, month - 1, date))`
