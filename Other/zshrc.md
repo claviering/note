@@ -2,17 +2,17 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/linweiye/.oh-my-zsh"
+export ZSH="/Users/weiye/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -23,17 +23,16 @@ ZSH_THEME="robbyrussell"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -45,7 +44,10 @@ DISABLE_UPDATE_PROMPT="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -64,8 +66,8 @@ COMPLETION_WAITING_DOTS="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
@@ -101,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+export HISTSIZE=10000
+export HISEFILESIZE=10000
 
 alias cl='clear'
 alias jc='javac'
@@ -131,36 +135,17 @@ alias f='fuck -y'
 alias gbr="git branch | grep -v "master" | xargs git branch -D"
 alias textshot="python /Users/linweiye/Documents/textshot/textshot.py"
 alias togif="python3 /Users/weiye/Documents/script/convert-to-gif.py"
+alias BatteryPercent="/Users/weiye/Documents/script/BatteryPercent.sh"
 alias gsf="git submodule foreach git pull"
 alias note="code note.code-workspace"
 alias cli="/Applications/wechatwebdevtools.app/Contents/MacOS/cli"
 alias cli-upload="/Users/linweiye/Documents/shell-script/wechatDevToolsUpload.sh"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin"
-export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$PATH:$HOME/Documents/mongodb-macos-x86_64-4.4.4/bin"
-export PATH="$PATH:$HOME/Documents/openssl-1-1-1/bin"
-export PATH="$PATH:$HOME/Documents/seleniumDriver"
-export PATH="$PATH:$HOME/Documents/flutter/bin"
-export PATH="$PATH:$HOME/Documents/apache-maven-3.6.3/bin"
-export PATH="$PATH:$HOME/Applications/wechatwebdevtools.app/Contents/MacOS"
-export PUB_HOSTED_URL=https://pub.flutter-io.cn # flutter中国镜像
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn # flutter中国镜像
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
-export PATH="$PATH:$JAVA_HOME/bin"
-export CLASSPATH="$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar:"
-export HISTSIZE=10000
-export HISEFILESIZE=10000
-export LC_ALL=$LANG
-export HOMEBREW_NO_AUTO_UPDATE=1
-export CPATH=":/usr/local/include"
-export CPLUS_INCLUDE_PATH=":/usr/local/include"
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
-export PATH="$PATH:$HOME/Documents/protoc-3.13.0-osx-x86_64/bin"
-
-eval "$(pyenv init -)"
-
-# eval $(thefuck --alias)
-# You can use whatever you want as an alias, like for Mondays:
-# eval $(thefuck --alias FUCK)
+export PATH="$PATH:$HOME/Documents/node-v16.13.0-darwin-arm64/bin"
+export PATH="$PATH:$HOME/go/bin"
+# Set the GOPROXY environment variable
+export GOPROXY=https://goproxy.io,direct
+# Set environment variable allow bypassing the proxy for specified repos (optional)
+export GOPRIVATE=git.mycompany.com,github.com/my/private
+export GOOS=darwin
+export GOARCH=arm64
