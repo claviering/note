@@ -1,5 +1,20 @@
 # js 学习
 
+## 获取浏览器存储空间
+
+```js
+setInterval(async () => {
+  if (navigator.storage && navigator.storage.estimate) {
+    const quota = await navigator.storage.estimate();
+    const percentageUsed = (quota.usage / quota.quota) * 100;
+    console.log(`You've used ${percentageUsed}% of the available storage.`);
+    const remaining = quota.quota - quota.usage;
+    console.warn('use: ', `${quota.usage / 1024 /1024}`);
+    console.warn('remaining: ', `${remaining / 1024 /1024}`);
+  }
+}, 2000)
+```
+
 ## 判断是否可以 JSON.parse
 
 ```js

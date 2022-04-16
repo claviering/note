@@ -1,5 +1,10 @@
 ﻿# Chrome学习
 
+## Chrome 实时字幕
+
+Setting -> Advanced -> Accessibility -> Turn on Live Caption
+
+or search Live Caption
 
 ## 命令行 HTML 转 PDF
 
