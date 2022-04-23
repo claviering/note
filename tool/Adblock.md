@@ -9,19 +9,13 @@
 ## 我的过滤规则
 
 ```
-juejin.cn##.sidebar
-zhihu.com##.TopstoryItem--advertCard
-www.zhihu.com##a[aria-controls="Topstory-recommend"]
-https://feed.baidu.com
-http://hpd.baidu.com
-http://m.baidu.com/
-https://hectorstatic.baidu.com
-https://m.baidu.com
-https://ss2.baidu.com
-https://ss0.baidu.com
-http://sm.bdimg.com/
-https://feed-image.baidu.com
-https://ss1.baidu.com
+bilibili.com##.eva-extension-area
+bilibili.com##.battle-area
+bilibili.com##.eva-banner
+bilibili.com##.ad-report
+baidu.com###s_side_wrapper
+baidu.com##.s-top-right
+baidu.com###s-top-left
 www.zhihu.com##a[aria-controls="Topstory-zvideo"]
 juejin.im##.lazy.thumb.banner-image.loaded
 juejin.im##.banner
@@ -152,6 +146,19 @@ credits.weibo.com##DIV[id="pl_msgLayer"]
 credits.weibo.com##DIV[class="WB_2cols_r"]
 credits.weibo.com##DIV[class="area_03 clearfix WB_border"]
 m.weibo.com##DIV[class="global_footer"]
+wap.baidu.com##.news-list-wrapper
+cnblogs.com###top_nav
+cnblogs.com##.navbar.forpc
+cnblogs.com###header
+cnblogs.com###sideBar
+cnblogs.com###comment_form
+cnblogs.com##.commentform
+zhihu.com##a[aria-controls="Topstory-recommend"]
+zhihu.com##.TopstoryItem--advertCard
+juejin.cn##.sidebar
+baidu.com##.s-hotsearch-content
+baidu.com##.s-hotsearch-wrapper
+baidu.com###s_top_wrap
 https://www.zhihu.com/*/##a[aria-controls="Topstory-zvideo"]
 http://c.dailiqing.net
 https://www.google-analytics.com
@@ -209,6 +216,7 @@ e.dtscout.com
 s4.cnzz.com
 weibo.com/*/##div[data-mark*=""]
 s19.cnzz.com
+*cnzz.js
 hm.baidu.com
 wx.sifakaoshi360.com
 https://c.v4dwkcv.com
@@ -221,13 +229,19 @@ https://lianzapp.com
 https://www.zxzj.me/slade1.js
 https://www.zxzj.me/slade2.js
 https://www.google.com/js/bg/n1KRpsC-mOXJ7g2QPDp_TxSNqegeRJu8ac_a7RtvSLI.js
+https://ss1.baidu.com
+https://feed-image.baidu.com
+http://sm.bdimg.com/
+https://ss0.baidu.com
+https://ss2.baidu.com
+https://m.baidu.com
+https://hectorstatic.baidu.com
+http://m.baidu.com/
+http://hpd.baidu.com
+https://feed.baidu.com
 @@||img-blog.csdnimg.cn
-*cnzz.js
-```
-微博过滤规则
-```
-
 weibo.com##.WB_cardtitle_b ~ ##div
+```
 
 ## style 过滤
 
