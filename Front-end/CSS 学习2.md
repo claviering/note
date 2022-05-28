@@ -1,5 +1,11 @@
 # css 笔记
 
+## Twitter 背后模糊效果
+
+```css
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+```
 
 ## scrollWidth、clientWidth、offsetWidth、width的区别
 

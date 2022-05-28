@@ -1,5 +1,27 @@
 # js 学习
 
+## 获取屏幕高宽
+  
+```js
+  var width = window.innerWidth
+  || document.documentElement.clientWidth
+  || document.body.clientWidth;
+
+  var height = window.innerHeight
+  || document.documentElement.clientHeight
+  || document.body.clientHeight;
+```
+
+## rem 适配
+
+```js
+  var html = document.getElementsByTagName('html')[0]; 
+  //屏幕的宽度（兼容处理）
+  var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+  //750这个数字是根据你的设计图的实际大小来的，所以值具体根据设计图的大小
+  html.style.fontSize = w / 750 + "px";
+```
+
 ## 获取浏览器存储空间
 
 ```js

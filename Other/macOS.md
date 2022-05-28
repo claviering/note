@@ -1,5 +1,9 @@
 # mac
 
+## ssh with private key
+
+`ssh -i id_rsa username@server -p port`
+ 
 ## 查看端口占用 
 
 `lsof -i tcp:3109`
