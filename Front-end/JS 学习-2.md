@@ -1,5 +1,9 @@
 # js 学习
 
+## cdn jsdelivr 被墙
+
+cdn.jsdelivr.net 换成了 fastly.jsdelivr.net
+
 ## 获取屏幕高宽
   
 ```js
@@ -268,20 +272,22 @@ var res = arr.reduce((x, y) => x.concat(y), []);
 // 防抖
 function debounce(func, time) {
   let timer = null;
-  return () => {
+  return (args) => {
     clearTimeout(timer);
+    let _args = args
     timer = setTimeout(()=> {
-      func.apply(this, arguments)
+      func.apply(this, _args)
     }, time);
   }
 }
 // 节流
 function throtte(func, time){
   let activeTime = 0;
-  return () => {
+  return (args) => {
     const current = Date.now();
+    let _args = args
     if(current - activeTime > time) {
-      func.apply(this, arguments);
+      func.apply(this, _args);
       activeTime = Date.now();
     }
   }
