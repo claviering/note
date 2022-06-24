@@ -1,5 +1,42 @@
 ﻿# MySQL学习
 
+## the query to alter your database, table, or column to `utf8mb4` character set
+
+```sql
+-- Change a database
+ALTER DATABASE [database_name] 
+  CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci; 
+
+-- Change a table
+ALTER TABLE [table_name] 
+  CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci; 
+
+-- Change a column
+ALTER TABLE [table_name] 
+  MODIFY [column_name] VARCHAR(255) 
+  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+## remove all rows from table
+
+```sql
+DELETE FROM table_name;
+```
+
+## create mysql table
+```sql
+create table bilibili_history(
+  id int primary key auto_increment,
+  tag_name varchar(255) comment '分类',
+  author_name varchar(255) comment '作者',
+  author_mid varchar(255) comment '作者 id',
+  title varchar(255) comment '标题',
+  view_at int comment '观看时间',
+  duration int comment '视频总时长',
+  progress int comment '观看时长(秒), 当视频看完时候为 -1'
+)
+```
+
 ## 添加字段
 
 ```

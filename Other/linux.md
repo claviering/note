@@ -1,5 +1,15 @@
 # linux 学习
 
+## How to prevent SSH from disconnecting
+
+Edit `~/.ssh/config` in linux or Edit `/etc/ssh/ssh_config` in MacOS.
+```
+ServerAliveInterval 60
+ServerAliveCountMax 120
+```
+
+reboot in macos
+
 ## 现代化命令
 
 https://github.com/ibraheemdev/modern-unix

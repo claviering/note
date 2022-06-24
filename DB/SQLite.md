@@ -55,7 +55,16 @@ CREATE TABLE "organization" (
 ```
 
 ```sql
-
+CREATE TABLE "bilibili_history" (
+	id	INTEGER PRIMARY KEY, -- 主键
+	tag_name TEXT, -- 分类
+	author_name TEXT, -- 作者
+	author_mid TEXT, -- 作者 id
+	title TEXT, -- 标题
+	view_at INTEGER, -- 观看时间
+	duration INTEGER, -- 视频总时长
+	progress INTEGER, -- 观看时长(秒), 当视频看完时候为 -1
+)
 ```
 
 ## 插入
