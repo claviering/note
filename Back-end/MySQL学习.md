@@ -31,11 +31,19 @@ create table bilibili_history(
   author_name varchar(255) comment '作者',
   author_mid varchar(255) comment '作者 id',
   title varchar(255) comment '标题',
+  bvid varchar(255) comment '视频 id',
   view_at int comment '观看时间',
   duration int comment '视频总时长',
   progress int comment '观看时长(秒), 当视频看完时候为 -1'
 )
 ```
+
+add `bvid` column to bilibili_history table
+
+```sql
+alter table bilibili_history add column bvid varchar(255) comment 'bilibili 视频 id';
+```
+
 
 ## 添加字段
 
