@@ -1,5 +1,11 @@
 # linux 学习
 
+## list the latest file and cat
+
+```shell
+ls -t | head -n 1 | xargs cat
+```
+
 ## How to prevent SSH from disconnecting
 
 Edit `~/.ssh/config` in linux or Edit `/etc/ssh/ssh_config` in MacOS.

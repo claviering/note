@@ -1,5 +1,19 @@
 # mac
 
+## 查询文件所有文件内容
+
+`grep -rnw 'shga_sample_750k/' -e 'text'`
+
+## 输出系统信息
+
+`npx envinfo --system --binaries --browsers`
+
+## open a simulator
+
+```bash
+open -a Simulator
+```
+
 ## ssh with private key
 
 `ssh -i id_rsa username@server -p port`
