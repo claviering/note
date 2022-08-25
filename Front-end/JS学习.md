@@ -517,6 +517,8 @@ console.log(isAnswerFn(4));
 
 [交叉观察者](https://mp.weixin.qq.com/s/uRMYrxaduPaMkc97Upjkqg)
 
+[交叉观察者](https://juejin.cn/post/6844903993559220232)
+
 ### 图片懒加载
 
 ```js

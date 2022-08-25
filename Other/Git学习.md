@@ -1,5 +1,12 @@
 ﻿# Git学习
 
+## git清除已提交的敏感信息
+
+```sh
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch path/to/file_to_del.txt' --prune-empty --tag-name-filter cat -- --all
+git push origin --force --all
+```
+
 ## change https to ssh
 
 git remote set-url origin <you ssh remote>
