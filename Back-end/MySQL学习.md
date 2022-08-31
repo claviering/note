@@ -68,7 +68,7 @@ show grants for 'shiwei'@'%';
 ```
 ## MySQLi防SQL注入
 
-```
+```sh
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 $stmt = $conn->prepare("INSERT INTO table_name (name) VALUES (?)");
 $stmt->bind_param('s', $postedName);
@@ -91,7 +91,7 @@ $stmt->close();  // 最后加上这个
 
 
 
-```
+```sh
 $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 $stmt = $conn->prepare("INSERT INTO CountryLanguage VALUES (?, ?, ?, ?)");
 $stmt->bind_param('sssd', $code, $language, $official, $percent);

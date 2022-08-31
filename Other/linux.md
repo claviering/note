@@ -1,5 +1,9 @@
 # linux 学习
 
+## Set a temporary environment variable
+
+`$ export MY_SITE="linuxconfig.org"`
+
 ## list the latest file and cat
 
 ```shell
