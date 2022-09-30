@@ -157,6 +157,8 @@ Password: <type your password>
 
 `git remote prune origin`
 
+`git fetch -p && git branch -vv | awk "/: gone]/{print \$1}" | xargs git branch -D`
+
 ## 优雅的提交Commit信息
 
 - type: commit 的类型

@@ -9,6 +9,8 @@
 ## 我的过滤规则
 
 ```
+zhihu.com##.Topstory-container>div:nth-child(2)
+zhihu.com##.Question-main>div:nth-child(2)
 bilibili.com##.eva-extension-area
 bilibili.com##.battle-area
 bilibili.com##.eva-banner

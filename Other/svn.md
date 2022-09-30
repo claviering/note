@@ -9,6 +9,8 @@ A  new/webcfg
 Updated to revision 819.
 ```
 
+更新指定目录 `$ svn update /path/to/you/would/to/update`
+
 ## 清除登录认证状态
 
 `%APPDATA%\Subversion\auth` 删除文件夹下面的文件
