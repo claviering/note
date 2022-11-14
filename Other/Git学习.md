@@ -195,8 +195,10 @@ fix(test): value.length -> values.length
 
 标签操作
 
-```
+```shell
 git tag -a v0.0.1 -m 'message'
+# tag an older commit 
+# git tag -a v1.2 9fceb02 -m "Message here"
 git tag
 git push origin --tags
 ```

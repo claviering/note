@@ -9,6 +9,11 @@
 ## 我的过滤规则
 
 ```
+https://ifeng3.yylady.cn
+https://udiab1.jianshu.com
+https://cpro.baidustatic.com
+https://sofire.bdstatic.com
+static.mediav.com
 zhihu.com##.Topstory-container>div:nth-child(2)
 zhihu.com##.Question-main>div:nth-child(2)
 bilibili.com##.eva-extension-area
