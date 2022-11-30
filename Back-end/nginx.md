@@ -1,5 +1,47 @@
 # Nginx 学习
 
+[Nginx 入门](https://xuexb.github.io/learn-nginx/guide/)
+
+[Nginx 示例](https://xuexb.github.io/learn-nginx/example/)
+
+## proxy_pass demo
+
+[proxy_pass url 反向代理的坑](https://xuexb.github.io/learn-nginx/example/proxy_pass.html#url-%E5%8F%AA%E6%98%AF-host)
+
+客户端请求 URL https://172.16.1.1/hello/world.html
+
+第一种场景 后面url加 /
+```
+location /hello/ {
+    proxy_pass http://127.0.0.1/;
+}
+```
+结果：代理到URL：http://127.0.0.1/world.html
+
+第二种场景 后面url没有 /
+```
+location /hello/ {
+    proxy_pass http://127.0.0.1;
+}
+```
+结果：代理到URL：http://127.0.0.1/hello/world.html
+
+第三种场景 后面url添加其它路由，并且最后添加 /
+```
+location /hello/ {
+    proxy_pass http://127.0.0.1/test/;
+}
+```
+结果：代理到URL：http://127.0.0.1/test/world.html
+
+第四种场景 后面url添加其它路由，但最后没有添加 /
+```
+location /hello/ {
+    proxy_pass http://127.0.0.1/test;
+}
+```
+结果：代理到URL：http://127.0.0.1/testworld.html
+
 ## 文件类型
 
 ```

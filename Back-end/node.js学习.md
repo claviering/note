@@ -1,5 +1,9 @@
 # node.js学习
 
+## 镜像
+
+npm install vite -D --registry https://registry.npmmirror.com
+
 ## 调试日志
 ```
 // https://nodejs.org/api/util.html#util_util_debuglog_section_callback

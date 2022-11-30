@@ -1,5 +1,7 @@
 ﻿# Git学习
 
+[git-flight-rules](https://github.com/k88hudson/git-flight-rules/blob/master/README_zh-CN.md)
+
 ## git清除已提交的敏感信息
 
 ```sh
@@ -78,6 +80,8 @@ git checkout df5c941b6100660 -- modules/allocate/client/assets/css/allocate.css 
 ## 修改最后一次提交信息
 
 `git commit --amend`
+
+`$ git commit --amend --only -m 'xxxxxxx'`
 
 ## 查看提交
 

@@ -9,6 +9,8 @@
 ## 我的过滤规则
 
 ```
+pc.stgowan.com
+js.users.51.la
 https://ifeng3.yylady.cn
 https://udiab1.jianshu.com
 https://cpro.baidustatic.com
