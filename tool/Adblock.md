@@ -9,6 +9,7 @@
 ## 我的过滤规则
 
 ```
+zhihu.com##.Topstory>div:first-child
 pc.stgowan.com
 js.users.51.la
 https://ifeng3.yylady.cn
