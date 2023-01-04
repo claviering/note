@@ -1,4 +1,4 @@
-# anguler学习.md
+# Angular.md
 
 ## 组件传值
 
@@ -187,7 +187,7 @@ export class ChildComponent implement OnInit {
 
 data.service.ts
 ```js
-import { Injectable} from '@anguler/core'
+import { Injectable} from '@angular/core'
 import { BehaviorSubject} from 'rxjs/BehaviorSubject'
 
 @Injectable()
