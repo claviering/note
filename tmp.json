@@ -1,0 +1,373 @@
+{
+  "signUpInfos": [
+    {
+      "openStatus": "ON",
+      "signUpType": "QY",
+      "baseInfo": {
+        "categories": [
+          {
+            "cateId": "819947730739613697",
+            "cateName": "单位信息(必填)",
+            "categoryType": "QY_BASE",
+            "signUpOptions": [
+              {
+                "id": "819947730739613698",
+                "desc": "法人单位名称(必填)",
+                "defaultOptionEnum": "FR_COMPANY",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613699",
+                "desc": "统一社会信用代码",
+                "defaultOptionEnum": "USCI",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613700",
+                "desc": "营业执照",
+                "defaultOptionEnum": "BUSINESS_LICENSE",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613701",
+                "desc": "成立日期",
+                "defaultOptionEnum": "CLRQ",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613702",
+                "desc": "单位地址",
+                "defaultOptionEnum": "DWDZ",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613703",
+                "desc": "法人姓名",
+                "defaultOptionEnum": "FR_NAME",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613704",
+                "desc": "法人手机号码",
+                "defaultOptionEnum": "FR_PHONE",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613705",
+                "desc": "法人证件号码",
+                "defaultOptionEnum": "FR_ID_CARD",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613706",
+                "desc": "注册资本",
+                "defaultOptionEnum": "ZCZB",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613707",
+                "desc": "实收资本",
+                "defaultOptionEnum": "SSZB",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613708",
+                "desc": "企业简介(必填)",
+                "defaultOptionEnum": "QY_INTRO",
+                "type": "S_T"
+              }
+            ]
+          },
+          {
+            "cateId": "819947730739613709",
+            "cateName": "企业联系人信息(必填)",
+            "categoryType": "QY_LXR",
+            "signUpOptions": [
+              {
+                "id": "819947730739613710",
+                "desc": "联系人姓名",
+                "defaultOptionEnum": "LXR",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613711",
+                "desc": "联系人身份证号码",
+                "defaultOptionEnum": "LXR_ID_CARD",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613712",
+                "desc": "联系人手机号码(必填)",
+                "defaultOptionEnum": "LXR_PHONE",
+                "type": "S_T"
+              }
+            ]
+          },
+          {
+            "cateId": "819947730739613713",
+            "cateName": "企业其他信息",
+            "signUpOptions": [
+              {
+                "id": "819947730739613714",
+                "desc": "职业",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730739613715",
+                "desc": "单位性质",
+                "type": "S_T"
+              }
+            ]
+          }
+        ]
+      },
+      "rewardConfig": {
+        "options": [
+          {
+            "id": "819947730743808000",
+            "desc": "奖励类型",
+            "defaultOptionEnum": "HJ_TYPE",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808001",
+            "desc": "奖励名称",
+            "defaultOptionEnum": "HJ_NAME",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808002",
+            "desc": "证书号码",
+            "defaultOptionEnum": "HJ_CERT_NO",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808003",
+            "desc": "颁奖单位",
+            "defaultOptionEnum": "HJ_BJDW",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808004",
+            "desc": "获得时间",
+            "defaultOptionEnum": "HJ_TIME",
+            "type": "S_T"
+          }
+        ]
+      },
+      "prospectusConfig": {
+        "options": [
+          {
+            "id": "819947730739613716",
+            "desc": "参赛项目名称",
+            "defaultOptionEnum": "JHS_NAME",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730739613717",
+            "desc": "参赛项目占去年企业收入比例",
+            "defaultOptionEnum": "JHS_ZQNQYSRBL",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730739613718",
+            "desc": "参赛项目结算",
+            "defaultOptionEnum": "JHS_JS",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730739613719",
+            "desc": "产品技术创新点",
+            "defaultOptionEnum": "JHS_JSCXD",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730739613720",
+            "desc": "技术成熟性及可靠性理论",
+            "defaultOptionEnum": "JHS_KKLL",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730739613721",
+            "desc": "产品市场分析及竞争优势",
+            "defaultOptionEnum": "JHS_JZYS",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730739613722",
+            "desc": "商业模式及业务拓展计划",
+            "defaultOptionEnum": "JHS_KZJH",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730739613723",
+            "desc": "经营风险及对策",
+            "defaultOptionEnum": "JHS_JYFX",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730739613724",
+            "desc": "企业管理模式",
+            "defaultOptionEnum": "JHS_GLMS",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730739613725",
+            "desc": "企业其他技术、产品及服务",
+            "defaultOptionEnum": "JHS_QTJS",
+            "type": "S_T"
+          }
+        ]
+      }
+    },
+    {
+      "openStatus": "ON",
+      "signUpType": "GR",
+      "baseInfo": {
+        "categories": [
+          {
+            "cateId": "819947730743808005",
+            "cateName": "基本信息",
+            "categoryType": "GR_BASE",
+            "signUpOptions": [
+              {
+                "id": "819947730743808006",
+                "desc": "姓名",
+                "defaultOptionEnum": "NAME",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730743808007",
+                "desc": "身份证号码",
+                "defaultOptionEnum": "ID_CARD",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730743808008",
+                "desc": "手机号码",
+                "defaultOptionEnum": "PHONE",
+                "type": "S_T"
+              }
+            ]
+          },
+          {
+            "cateId": "819947730743808009",
+            "cateName": "学业信息",
+            "signUpOptions": [
+              {
+                "id": "819947730743808010",
+                "desc": "学校名称",
+                "defaultOptionEnum": "SCHOOL",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730743808011",
+                "desc": "专业",
+                "defaultOptionEnum": "MAJOR",
+                "type": "S_T"
+              }
+            ]
+          },
+          {
+            "cateId": "819947730743808012",
+            "cateName": "工作经历",
+            "signUpOptions": [
+              {
+                "id": "819947730743808013",
+                "desc": "单位名称",
+                "defaultOptionEnum": "COMPANY",
+                "type": "S_T"
+              },
+              {
+                "id": "819947730743808014",
+                "desc": "职务",
+                "defaultOptionEnum": "PROFESSION",
+                "type": "S_T"
+              }
+            ]
+          }
+        ]
+      },
+      "rewardConfig": {
+        "options": [
+          {
+            "id": "819947730743808022",
+            "desc": "奖励类型",
+            "defaultOptionEnum": "HJ_TYPE",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808023",
+            "desc": "奖励名称",
+            "defaultOptionEnum": "HJ_NAME",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808024",
+            "desc": "证书号码",
+            "defaultOptionEnum": "HJ_CERT_NO",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808025",
+            "desc": "颁奖单位",
+            "defaultOptionEnum": "HJ_BJDW",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808026",
+            "desc": "获得时间",
+            "defaultOptionEnum": "HJ_TIME",
+            "type": "S_T"
+          }
+        ]
+      },
+      "prospectusConfig": {
+        "options": [
+          {
+            "id": "819947730743808015",
+            "desc": "参赛项目名称",
+            "defaultOptionEnum": "JHS_NAME",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808016",
+            "desc": "参赛项目结算",
+            "defaultOptionEnum": "JHS_JS",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808017",
+            "desc": "产品技术创新点",
+            "defaultOptionEnum": "JHS_JSCXD",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808018",
+            "desc": "技术成熟性及可靠性理论",
+            "defaultOptionEnum": "JHS_KKLL",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808019",
+            "desc": "产品市场分析及竞争优势",
+            "defaultOptionEnum": "JHS_JZYS",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808020",
+            "desc": "商业模式及业务拓展计划",
+            "defaultOptionEnum": "JHS_KZJH",
+            "type": "S_T"
+          },
+          {
+            "id": "819947730743808021",
+            "desc": "经营风险及对策及其他",
+            "defaultOptionEnum": "JHS_JYFX",
+            "type": "S_T"
+          }
+        ]
+      }
+    }
+  ]
+}

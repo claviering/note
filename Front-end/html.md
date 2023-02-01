@@ -1,5 +1,20 @@
 # HTML
 
+## Safari 全屏打开网页
+
+```html
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+```
+
+把网页保存到桌面，从桌面打开才有全屏效果
+
+## a标签点击自动打开邮箱发邮件
+
+```html
+<a href="mailto:lengyue@lengyue.me" title="E-Mail → mailto:lengyue@lengyue.me"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+```
+
 ## input 自动填充样式修改
 
 ```css

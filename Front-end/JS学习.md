@@ -1,5 +1,20 @@
 # JS学习
 
+## createObjectURL, revokeObjectURL
+
+```js
+var blob = new Blob([arrayBufferWithPNG], {type: "image/png"}),
+    url = URL.createObjectURL(blob),
+    img = new Image();
+
+img.onload = function() {
+    URL.revokeObjectURL(this.src);     // clean-up memory
+    document.body.appendChild(this);   // add image to DOM
+}
+
+img.src = url;                         // can now "stream" the bytes
+```
+
 ## MutationObserver 监听DOM节点变化
 
 https://segmentfault.com/a/1190000023707760
