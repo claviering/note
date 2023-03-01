@@ -9,6 +9,8 @@
 ## 我的过滤规则
 
 ```
+jianshu.com##aside
+jianshu.com##.adad_container
 zhihu.com##.Topstory>div:first-child
 pc.stgowan.com
 js.users.51.la
