@@ -1,5 +1,13 @@
 # css 笔记
 
+## 用户只需要点击一次，就可以选中该段信息
+
+```css
+.g-select-all {
+    user-select: all
+}
+```
+
 ## Twitter 背后模糊效果
 
 ```css

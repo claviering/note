@@ -5,6 +5,17 @@
 - [marktext](https://github.com/marktext/marktext)
 - [wangEditor](https://github.com/wangeditor-team/wangEditor)
 
+## diff 高亮
+
+```diff
+import { Configuration } from "openai";
+
+const configuration = new Configuration({
+  apiKey: OPENAI_API_KEY,
++ basePath: "https://closeai.deno.dev/v1",
+});
+```
+
 ## 代码块语法高亮
 
 ```t
