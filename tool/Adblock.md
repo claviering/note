@@ -9,6 +9,8 @@
 ## 我的过滤规则
 
 ```
+https://4698.chushoushijian.cn
+https://js.users.51.la
 jianshu.com##aside
 jianshu.com##.adad_container
 zhihu.com##.Topstory>div:first-child

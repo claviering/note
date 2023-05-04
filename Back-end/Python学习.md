@@ -1,5 +1,12 @@
 ﻿# Python学习
 
+## 免费 python 部署
+
+https://www.pythonanywhere.com/user/hnaruto/
+
+安装包教程 https://help.pythonanywhere.com/pages/InstallingNewModules
+
+
 ## matplotlib 中文乱码问题
 
 ```python

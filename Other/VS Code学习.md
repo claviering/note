@@ -1,5 +1,14 @@
 ﻿# VS Code学习
 
+## 配置不同语言的格式化工具
+
+```json
+"[python]": {
+  "editor.defaultFormatter": "ms-python.autopep8",
+  "editor.formatOnSave": true
+}
+```
+
 ## 多个 configurations 中 debug
 
 In order to start a debug session, first select the configuration named **Launch Program** using the **Configuration dropdown** in the Run view. Once you have your launch configuration set, start your debug session with `F5`.
