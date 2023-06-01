@@ -1,5 +1,19 @@
 ﻿# MySQL学习
 
+## 计算2个字段的和
+
+```SQL
+SELECT 
+  DATE_FORMAT(FROM_UNIXTIME(updatetime), '%Y-%m') AS time,
+  ROUND(SUM(CASE WHEN category = 'love' OR category = 'gifts' THEN money ELSE 0 END), 2) AS total_money
+FROM ledger
+WHERE YEAR(FROM_UNIXTIME(updatetime)) = 2023
+GROUP BY time 
+ORDER BY time
+```
+
+
+
 ## the query to alter your database, table, or column to `utf8mb4` character set
 
 ```sql
