@@ -1,5 +1,37 @@
 ﻿# Python学习
 
+## 更新包
+
+To update the Flask version, you can use the `pip` package manager in your terminal or command prompt.
+
+1. First, check the current version of Flask installed in your environment by running the command:
+
+```shell
+pip freeze | grep Flask
+```
+
+This command lists all installed packages with "Flask" in their name and their respective versions.
+
+2. To update Flask, run the command:
+
+```shell
+pip install --upgrade Flask
+```
+
+This will upgrade Flask to the latest version available on PyPI.
+
+3. Verify that Flask has been upgraded by running the `pip freeze` command again.
+
+```shell
+pip freeze | grep Flask
+```
+
+This should list the updated version of Flask.
+
+4. Restart your Flask application to make sure the changes take effect.
+
+Note: If you are using a virtual environment, make sure you activate it before running the `pip` commands.
+
 ## 免费 python 部署
 
 https://www.pythonanywhere.com/user/hnaruto/
