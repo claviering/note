@@ -1,5 +1,11 @@
 # js 学习
 
+## 实在丝滑！原生视图转换动画 View Transitions API 了解一下~
+
+document.startViewTransition
+
+https://mp.weixin.qq.com/s/Xs143ON1nEiEYr6kt3fnXg
+
 ## 监听画布尺寸发生变化时，更新可视区域的位置
 
 ResizeObserver
