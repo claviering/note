@@ -2,6 +2,30 @@
 
 作者：治廷君 https://www.bilibili.com/read/cv17708928?spm_id_from=333.999.0.0 出处：bilibili
 
+## 
+
+[油猴开发指南]实战Webpack劫持Vue实例
+
+https://zhuanlan.zhihu.com/p/658486780
+
+```js
+function enableWebpackHook() {
+    let originCall = Function.prototype.call
+    Function.prototype.call = function (...args) {
+        const result = originCall.apply(this, args)
+        if (args[2]?.default?.version === '2.5.2') {
+            args[2]?.default?.mixin({
+                mounted: function () {
+                    this.$el['__Ivue__'] = this
+                }
+            })
+        }
+        return result
+    }
+}
+enableWebpackHook()
+```
+
 ##  JSON HOOK
 
 ```js
