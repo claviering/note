@@ -14,6 +14,8 @@ https://js.users.51.la
 jianshu.com##aside
 jianshu.com##.adad_container
 zhihu.com##.Topstory>div:first-child
+zhihu.com##.ListShortcut>div:first-child:not(.List,.Topstory-follow,Topstory-hot,.Question-mainColumn)
+zhihu.com##.Pc-Business-Card-PcTopFeedBanner
 pc.stgowan.com
 js.users.51.la
 https://ifeng3.yylady.cn
