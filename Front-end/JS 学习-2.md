@@ -6,6 +6,16 @@ document.startViewTransition
 
 https://mp.weixin.qq.com/s/Xs143ON1nEiEYr6kt3fnXg
 
+```js
+if (document.startViewTransition) { // 如果支持就视图变换
+  document.startViewTransition(() => { // 开始视图变换
+    ev.target.remove()
+  });
+} else { // 不支持就执行原来的逻辑
+  ev.target.remove()
+}
+```
+
 ## 监听画布尺寸发生变化时，更新可视区域的位置
 
 ResizeObserver

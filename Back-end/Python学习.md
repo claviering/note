@@ -1,5 +1,9 @@
 ﻿# Python学习
 
+## http server
+
+`$ python3 -m http.server`
+
 ## 更新包
 
 To update the Flask version, you can use the `pip` package manager in your terminal or command prompt.
