@@ -1,5 +1,9 @@
 # mac
 
+## grep 查询字符串
+
+`grep -r '/url/to/base64V2' --exclude-dir={dist,node_modules} ./ > tmp.txt`
+
 ## 查询文件所有文件内容
 
 `grep -rnw 'shga_sample_750k/' -e 'text'`

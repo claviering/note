@@ -16,6 +16,14 @@ if (document.startViewTransition) { // 如果支持就视图变换
 }
 ```
 
+为了让每个元素都有自己的过渡状态，这里需要给每个元素都指定名称
+
+```css
+.item {
+  view-transition-name: item-1;
+}
+```
+
 ## 监听画布尺寸发生变化时，更新可视区域的位置
 
 ResizeObserver
