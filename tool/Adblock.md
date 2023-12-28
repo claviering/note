@@ -9,6 +9,7 @@
 ## 我的过滤规则
 
 ```
+zhihu.com##.Pc-word
 https://4698.chushoushijian.cn
 https://js.users.51.la
 jianshu.com##aside
