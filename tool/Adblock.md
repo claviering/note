@@ -6,6 +6,33 @@
 `##div[isforward="1"]`
 `weibo.com/*/##div[data-mark*=""]`
 
+## 隐藏b站广告
+
+```js
+// ==UserScript==
+// @name         隐藏b站广告
+// @namespace    http://tampermonkey.net/
+// @version      2024-02-14
+// @description  try to take over the world!
+// @author       You
+// @match        https://www.bilibili.com/*
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+// ==/UserScript==
+
+(function() {
+  'use strict';
+    console.log('隐藏b站广告');
+  // 隐藏b站广告
+  let style = document.createElement('style');
+  style.innerHTML = `.feed-card:has(svg.bili-video-card__info--ad) {
+    visibility: hidden;
+  }`;
+  document.body.appendChild(style);
+  // Your code here...
+})();
+```
+
 ## 我的过滤规则
 
 ```
