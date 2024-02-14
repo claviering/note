@@ -4,6 +4,10 @@
 2. sh d2j-dex2jar.sh ~/path/to/classes.dex // 得到 classes-dex2jar.jar
 3. jd-gui 打开 classes-dex2jar.jar // 在 dex2jar-2.1 目录下面
 
+## Android 自动化
+
+autojs
+
 ## HttpCanary
 
 HttpCanary 是 Android 平台下功能最强大的抓包和注入工具

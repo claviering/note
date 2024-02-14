@@ -13,6 +13,10 @@ Updated to revision 819.
 
 只拉取目录 `$ svn update -N` -N [--non-recursive] 
 
+## svn 拉取目录
+
+svn checkout url/path --username=*** --password=***
+
 ## 清除登录认证状态
 
 `%APPDATA%\Subversion\auth` 删除文件夹下面的文件
