@@ -2,6 +2,8 @@
 
 作者：治廷君 https://www.bilibili.com/read/cv17708928?spm_id_from=333.999.0.0 出处：bilibili
 
+[Web 终极拦截技巧（全是骚操作）](https://hughfenghen.github.io/posts/2023/12/23/web-spy/)
+
 ## 
 
 [油猴开发指南]实战Webpack劫持Vue实例

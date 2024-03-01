@@ -8,21 +8,23 @@
 
 ## 隐藏b站广告
 
+https://greasyfork.org/en/scripts/487804-隐藏web端b站广告
+
 ```js
 // ==UserScript==
-// @name         隐藏b站广告
+// @name         隐藏web端b站广告
 // @namespace    http://tampermonkey.net/
-// @version      2024-02-14
-// @description  try to take over the world!
-// @author       You
+// @version      2024-02-20
+// @description  隐藏web端bilibili首页卡片广告
+// @author       weiye
 // @match        https://www.bilibili.com/*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @icon         https://www.bilibili.com/favicon.ico?v=1
 // @grant        none
+// @license MIT
 // ==/UserScript==
 
 (function() {
   'use strict';
-    console.log('隐藏b站广告');
   // 隐藏b站广告
   let style = document.createElement('style');
   style.innerHTML = `.feed-card:has(svg.bili-video-card__info--ad) {

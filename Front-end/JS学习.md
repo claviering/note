@@ -862,7 +862,10 @@ deviceOrientation
 
 `document.getElementById("video").playbackRate = 10`
 
-`document.querySelector("video").playbackRate = 10`
+## 视频结束
+
+`document.querySelector("video").dispatchEvent(new Event("ended"))`
+
 
 ## addEventListener 参数
 
