@@ -27,9 +27,14 @@ https://greasyfork.org/en/scripts/487804-隐藏web端b站广告
   'use strict';
   // 隐藏b站广告
   let style = document.createElement('style');
-  style.innerHTML = `.feed-card:has(svg.bili-video-card__info--ad) {
-    visibility: hidden;
-  }`;
+  style.innerHTML = `
+    .feed-card:has(svg.bili-video-card__info--ad) {
+      visibility: hidden;
+    }
+    .bili-video-card:has(svg.bili-video-card__info--ad) {
+      visibility: hidden;
+    }
+  `;
   document.body.appendChild(style);
   // Your code here...
 })();

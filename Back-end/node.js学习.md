@@ -3,7 +3,7 @@
 ## .yarnrc 配置
 
 ```
-registry "https://registry.npm.taobao.org"
+registry "https://registry.npmmirror.com/"
 sass_binary_site "https://npm.taobao.org/mirrors/node-sass/"
 phantomjs_cdnurl "http://cnpmjs.org/downloads"
 electron_mirror "https://npm.taobao.org/mirrors/electron/"

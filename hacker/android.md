@@ -4,9 +4,12 @@
 2. sh d2j-dex2jar.sh ~/path/to/classes.dex // 得到 classes-dex2jar.jar
 3. jd-gui 打开 classes-dex2jar.jar // 在 dex2jar-2.1 目录下面
 
-## Android 自动化
+## Android 自动化，脚本
 
-autojs
+1. autoxjs
+2. 按键精灵
+3. tasker
+4. Smart AutoClicker
 
 ## HttpCanary
 
